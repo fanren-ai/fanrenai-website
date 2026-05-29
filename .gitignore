@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local environment
+.env
+.env.*
+!.env.example
+*.local
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Caches and temporary files
+.cache/
+.parcel-cache/
+.turbo/
+.eslintcache
+tmp/
+temp/
+
+# Test and coverage output
+coverage/
+.nyc_output/
+
+# Local deployment metadata
+.vercel/
+.netlify/
+
+# Archives and backup packages
+*.zip
+*.7z
+*.rar

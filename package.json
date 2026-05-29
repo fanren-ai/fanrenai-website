@@ -1,0 +1,10 @@
+{
+  "name": "fanren-xiu-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "凡人修AI静态品牌官网与Markdown教程系统",
+  "scripts": {
+    "build": "node scripts/build-site.js",
+    "seed:content-map": "node scripts/seed-content-map.js"
+  }
+}

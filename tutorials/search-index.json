@@ -1,0 +1,77 @@
+[
+  {
+    "title": "AI小白快速入门：先搞懂这5件事",
+    "description": "面向普通人的AI入门教程，用最少概念理解AI工具、模型、Prompt、工作流和价值创造。",
+    "category": "AI基础认知",
+    "level": "新手村",
+    "section": "AI基础认知",
+    "order": 0,
+    "status": "published",
+    "tags": [
+      "AI入门",
+      "普通人",
+      "Prompt"
+    ],
+    "url": "/tutorials/ai-basics-quick-start/"
+  },
+  {
+    "title": "AI案例：用AI把一个副业想法拆成可执行计划",
+    "description": "通过副业案例展示如何用AI完成定位、用户画像、产品形态、内容计划和落地步骤。",
+    "category": "AI副业",
+    "level": "金丹期",
+    "section": "AI副业",
+    "order": 0,
+    "status": "published",
+    "tags": [
+      "AI案例",
+      "副业",
+      "产品"
+    ],
+    "url": "/tutorials/ai-case-side-project/"
+  },
+  {
+    "title": "普通人的AI工具箱：先收藏这几类工具",
+    "description": "整理AI入门阶段最常用的工具类型，帮助普通人从写作、搜索、编程和自动化开始建立工具箱。",
+    "category": "AI工具选择",
+    "level": "新手村",
+    "section": "AI工具选择",
+    "order": 0,
+    "status": "published",
+    "tags": [
+      "AI工具",
+      "效率工具",
+      "工具箱"
+    ],
+    "url": "/tutorials/ai-tools-starter/"
+  },
+  {
+    "title": "Codex入门：用AI从零搭一个静态网站",
+    "description": "适合AI编程新手的Codex实战入门，理解需求、生成代码、检查页面并逐步迭代。",
+    "category": "Codex专区",
+    "level": "筑基期",
+    "section": "Codex专区",
+    "order": 0,
+    "status": "published",
+    "tags": [
+      "Codex",
+      "AI编程",
+      "项目实战"
+    ],
+    "url": "/tutorials/codex-first-project/"
+  },
+  {
+    "title": "Prompt和工作流：从一句话提问到稳定产出",
+    "description": "学会用目标、上下文、约束和检查清单设计Prompt，并把Prompt组合成可复用工作流。",
+    "category": "Prompt工程",
+    "level": "炼气期",
+    "section": "Prompt工程",
+    "order": 0,
+    "status": "published",
+    "tags": [
+      "Prompt",
+      "工作流",
+      "效率"
+    ],
+    "url": "/tutorials/prompt-workflow-basic/"
+  }
+]
