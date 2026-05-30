@@ -1057,6 +1057,8 @@ h3 {
 }
 
 .map-level > header {
+  grid-column: 1;
+  grid-row: 1 / span 20;
   position: sticky;
   top: 96px;
   align-self: start;
@@ -1073,6 +1075,7 @@ h3 {
 }
 
 .map-section {
+  grid-column: 2;
   padding: 28px 0;
   border-bottom: 1px solid rgba(17, 24, 39, 0.1);
 }
@@ -2022,7 +2025,13 @@ h3 {
   }
 
   .map-level > header {
+    grid-column: auto;
+    grid-row: auto;
     position: static;
+  }
+
+  .map-section {
+    grid-column: auto;
   }
 
   .path-grid,
