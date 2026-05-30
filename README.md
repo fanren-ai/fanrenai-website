@@ -56,7 +56,7 @@ related: other-article-slug,another-article-slug
 
 详情页模板会自动读取这些修炼字段：
 
-- `level`：修炼等级，如 `新手村`、`炼气期`、`筑基期`、`金丹期`
+- `level`：修炼等级，如 `新手村`、`炼气期`、`筑基期`、`结丹期`
 - `section`：内容地图栏目
 - `order`：内容地图序号
 - `goal`：修炼目标

@@ -8,7 +8,7 @@ tags: AI案例,副业,产品
 date: 2026-05-29
 status: published
 author: 凡人修AI
-level: 金丹期
+level: 结丹期
 goal: 用AI把一个副业想法拆成可执行、可复盘的行动计划
 duration: 28分钟
 practice: 写下一个你想验证的副业想法|让AI拆出目标用户和最小产品|制定一份7天执行清单

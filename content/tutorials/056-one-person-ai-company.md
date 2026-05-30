@@ -5,12 +5,12 @@ category: ai-startup
 categoryName: AI创业
 section: AI创业
 order: 56
-level: 金丹期
+level: 结丹期
 goal: 完成「一人AI公司模式」这一课，掌握AI创业中的一个关键动作。
 duration: 30分钟
 practice: 用自己的话复述「一人AI公司模式」的核心结论|结合一个真实工作或学习场景做一次AI练习|把本课方法整理成一条可复用的提示词或行动清单
 related: 055-ai-startup-roadmap,057-ai-company-customer-acquisition
-tags: 金丹期,AI创业,凡人修AI
+tags: 结丹期,AI创业,凡人修AI
 date: 2026-05-29
 author: 凡人修AI
 status: planned
@@ -18,7 +18,7 @@ status: planned
 
 # 一人AI公司模式
 
-> 本文是「凡人修AI 内容地图 V1.0」中的第 56 课，属于 **金丹期 / AI创业**。
+> 本文是「凡人修AI 内容地图 V1.0」中的第 56 课，属于 **结丹期 / AI创业**。
 
 ## 本篇修炼目标
 

@@ -320,7 +320,7 @@ function getRelatedArticles(article, articles) {
 }
 
 function renderContentMapPage(articles) {
-  const levels = ["新手村", "炼气期", "筑基期", "金丹期"];
+  const levels = ["新手村", "炼气期", "筑基期", "结丹期"];
   const grouped = levels
     .map((level) => {
       const levelArticles = articles.filter((article) => article.level === level && article.order);
@@ -373,7 +373,7 @@ function renderContentMapPage(articles) {
 
   return layout({
     title: "内容地图 V1.0 | 凡人修AI",
-    description: "凡人修AI内容地图 V1.0，覆盖新手村、炼气期、筑基期、金丹期四个AI修炼阶段。",
+    description: "凡人修AI内容地图 V1.0，覆盖新手村、炼气期、筑基期、结丹期四个AI修炼阶段。",
     base: "../../",
     canonicalUrl: `${site.origin}/tutorials/map/`,
     body

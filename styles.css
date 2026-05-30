@@ -1694,7 +1694,7 @@ h3 {
   font-size: 18px;
 }
 
-/* Homepage V4 */
+/* Homepage V5 */
 .home-v2 {
   background:
     linear-gradient(180deg, #fbfcff 0%, #ffffff 34%, #f7f9fc 100%);
@@ -1798,6 +1798,11 @@ h3 {
   color: #5d6676;
   font-size: 14px;
   line-height: 1.65;
+}
+
+.v2-system-card .btn {
+  width: 100%;
+  margin-top: 22px;
 }
 
 .v2-start {

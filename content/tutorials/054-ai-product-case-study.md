@@ -5,12 +5,12 @@ category: ai-product
 categoryName: AI产品
 section: AI产品
 order: 54
-level: 金丹期
+level: 结丹期
 goal: 完成「AI产品案例分析」这一课，掌握AI产品中的一个关键动作。
 duration: 30分钟
 practice: 用自己的话复述「AI产品案例分析」的核心结论|结合一个真实工作或学习场景做一次AI练习|把本课方法整理成一条可复用的提示词或行动清单
 related: 053-ai-saas-breakdown,055-ai-startup-roadmap
-tags: 金丹期,AI产品,凡人修AI
+tags: 结丹期,AI产品,凡人修AI
 date: 2026-05-29
 author: 凡人修AI
 status: planned
@@ -18,7 +18,7 @@ status: planned
 
 # AI产品案例分析
 
-> 本文是「凡人修AI 内容地图 V1.0」中的第 54 课，属于 **金丹期 / AI产品**。
+> 本文是「凡人修AI 内容地图 V1.0」中的第 54 课，属于 **结丹期 / AI产品**。
 
 ## 本篇修炼目标
 

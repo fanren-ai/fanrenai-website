@@ -8,7 +8,7 @@ const stageGoals = {
   新手村: "让完全不会AI的人迈出第一步。",
   炼气期: "利用AI提升工作效率。",
   筑基期: "学会使用AI开发产品。",
-  金丹期: "利用AI创造收入。"
+  结丹期: "利用AI创造收入。"
 };
 
 const sectionCategory = {
@@ -135,7 +135,7 @@ const contentMap = [
     ]
   },
   {
-    level: "金丹期",
+    level: "结丹期",
     sections: [
       {
         name: "AI副业",
