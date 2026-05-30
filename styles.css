@@ -3481,40 +3481,39 @@ html[data-theme="dark"] .btn-ghost {
   background: rgba(15, 23, 42, 0.72);
 }
 
-body.theme-switching::after {
+.theme-wipe-layer {
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  content: "";
   clip-path: circle(0 at var(--theme-wipe-x, 50%) var(--theme-wipe-y, 0));
-  animation: theme-wipe 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0.98;
+  transition:
+    clip-path 0.68s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.18s ease;
+  will-change: clip-path;
 }
 
-body.theme-wipe-dark::after {
+.theme-wipe-layer.is-active {
+  clip-path: circle(150vmax at var(--theme-wipe-x, 50%) var(--theme-wipe-y, 0));
+}
+
+.theme-wipe-layer.theme-wipe-dark {
   background:
-    radial-gradient(circle at var(--theme-wipe-x, 50%) var(--theme-wipe-y, 0), rgba(96, 165, 250, 0.22), transparent 0 18%),
-    rgba(8, 12, 20, 0.96);
+    radial-gradient(circle at var(--theme-wipe-x, 50%) var(--theme-wipe-y, 0), rgba(96, 165, 250, 0.34), transparent 0 18%),
+    radial-gradient(circle at var(--theme-wipe-x, 50%) var(--theme-wipe-y, 0), rgba(147, 197, 253, 0.16), transparent 0 34%),
+    #080c14;
 }
 
-body.theme-wipe-light::after {
+.theme-wipe-layer.theme-wipe-light {
   background:
-    radial-gradient(circle at var(--theme-wipe-x, 50%) var(--theme-wipe-y, 0), rgba(255, 255, 255, 0.88), transparent 0 18%),
-    rgba(248, 250, 252, 0.96);
-}
-
-@keyframes theme-wipe {
-  from {
-    clip-path: circle(0 at var(--theme-wipe-x, 50%) var(--theme-wipe-y, 0));
-  }
-
-  to {
-    clip-path: circle(150vmax at var(--theme-wipe-x, 50%) var(--theme-wipe-y, 0));
-  }
+    radial-gradient(circle at var(--theme-wipe-x, 50%) var(--theme-wipe-y, 0), rgba(255, 255, 255, 0.96), transparent 0 18%),
+    radial-gradient(circle at var(--theme-wipe-x, 50%) var(--theme-wipe-y, 0), rgba(219, 234, 254, 0.55), transparent 0 34%),
+    #f8fafc;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.theme-switching::after {
-    animation-duration: 0.01ms;
+  .theme-wipe-layer {
+    transition-duration: 0.01ms;
   }
 }

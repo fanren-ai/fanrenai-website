@@ -12,10 +12,8 @@ function syncThemeToggle(theme) {
   if (!themeToggle) return;
 
   const isDark = theme === "dark";
-  const label = isDark ? "切换浅色模式" : "切换深色模式";
   themeToggle.setAttribute("aria-pressed", String(isDark));
-  themeToggle.setAttribute("aria-label", label);
-  themeToggle.setAttribute("title", label);
+  themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
 }
 
 function applyTheme(theme) {
@@ -33,16 +31,20 @@ function applyTheme(theme) {
 function playThemeWipe(theme, event) {
   const x = event?.clientX ?? window.innerWidth - 56;
   const y = event?.clientY ?? 36;
+  const layer = document.createElement("span");
 
-  document.body.style.setProperty("--theme-wipe-x", `${x}px`);
-  document.body.style.setProperty("--theme-wipe-y", `${y}px`);
-  document.body.classList.remove("theme-switching", "theme-wipe-light", "theme-wipe-dark");
-  void document.body.offsetWidth;
-  document.body.classList.add("theme-switching", theme === "dark" ? "theme-wipe-dark" : "theme-wipe-light");
+  layer.className = `theme-wipe-layer theme-wipe-${theme}`;
+  layer.style.setProperty("--theme-wipe-x", `${x}px`);
+  layer.style.setProperty("--theme-wipe-y", `${y}px`);
+  document.body.appendChild(layer);
 
-  window.setTimeout(() => {
-    document.body.classList.remove("theme-switching", "theme-wipe-light", "theme-wipe-dark");
-  }, 760);
+  window.requestAnimationFrame(() => {
+    layer.classList.add("is-active");
+    window.setTimeout(() => applyTheme(theme), 120);
+  });
+
+  layer.addEventListener("transitionend", () => layer.remove(), { once: true });
+  window.setTimeout(() => layer.remove(), 900);
 }
 
 navToggle?.addEventListener("click", () => {
@@ -65,5 +67,4 @@ themeToggle?.addEventListener("click", (event) => {
 
   const nextTheme = getCurrentTheme() === "dark" ? "light" : "dark";
   playThemeWipe(nextTheme, event);
-  applyTheme(nextTheme);
 });
