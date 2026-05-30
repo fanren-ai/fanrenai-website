@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260530-map-spacing";
+const assetVersion = "20260530-home-retention";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -95,7 +95,7 @@ function renderHeader({ base = "", variant = "default" } = {}) {
 function renderFooter(base = "") {
   return `<footer class="site-footer">
       <p>凡人修AI © 2026</p>
-      <p><a href="${base}about/">关于</a> · <a href="${base}community/">道友群</a> · 普通人的AI修行之路</p>
+      <p><a href="${base}about/">关于</a> · <a href="${base}community/">社区</a> · 普通人的AI学习与实践平台</p>
     </footer>`;
 }
 
@@ -333,6 +333,35 @@ function renderHomePage(articles = []) {
     ["AI案例", "拆解普通人如何用AI解决问题、提高效率。", "tutorials/map/"],
     ["AI创业", "探索AI副业、AI产品和一人公司模式。", "tutorials/map/"]
   ];
+  const dailyTasks = [
+    {
+      label: "AI小白任务",
+      title: "让AI帮你写一段自我介绍",
+      description: "学会向AI清楚表达身份、目标和场景。",
+      href: "tutorials/ai-basics-quick-start/"
+    },
+    {
+      label: "效率提升任务",
+      title: "用Prompt生成一份工作计划",
+      description: "把一句模糊需求变成一份可执行计划。",
+      href: "tutorials/prompt-workflow-basic/"
+    },
+    {
+      label: "项目实战任务",
+      title: "用Codex做出第一个静态页面",
+      description: "不懂代码，也能尝试让AI帮你完成一个页面。",
+      href: "tutorials/codex-first-project/"
+    }
+  ];
+  const sevenDayRoute = [
+    "认识AI，搞懂AI能帮你做什么",
+    "学会提问，写出第一个Prompt",
+    "用AI完成一份真实工作内容",
+    "整理你的AI工具箱",
+    "学习Codex，理解AI如何帮你做项目",
+    "完成一个小作品",
+    "复盘并加入社区继续修炼"
+  ];
 
   return layout({
     title: "凡人修AI | 普通人的AI学习与实践平台",
@@ -360,7 +389,7 @@ function renderHomePage(articles = []) {
               <span>AI创业案例</span>
             </div>
           </div>
-          <aside class="platform-hero-panel" aria-label="今天从哪里开始">
+          <aside class="platform-hero-panel" aria-label="学习入口">
             <h2>今天从哪里开始？</h2>
             <div class="platform-start-list">
               ${startItems
@@ -374,23 +403,6 @@ function renderHomePage(articles = []) {
                 .join("")}
             </div>
           </aside>
-        </div>
-      </section>
-
-      <section class="platform-section platform-start-section" aria-labelledby="start-title">
-        <div class="platform-section-head">
-          <h2 id="start-title">今天从哪里开始</h2>
-          <p>按当前目标选择入口，不需要一次学完全部内容。</p>
-        </div>
-        <div class="platform-start-grid">
-          ${startItems
-            .map(
-              (item) => `<a class="platform-start-card" href="${item.href}">
-            <h3>${escapeHtml(item.title)}</h3>
-            <p>${escapeHtml(item.description)}</p>
-          </a>`
-            )
-            .join("")}
         </div>
       </section>
 
@@ -409,6 +421,45 @@ function renderHomePage(articles = []) {
           </article>`
             )
             .join("")}
+        </div>
+      </section>
+
+      <section class="platform-section platform-daily" aria-labelledby="daily-title">
+        <div class="platform-section-head">
+          <h2 id="daily-title">今日修炼任务</h2>
+          <p>不用一次学完AI，先完成一个10分钟的小任务。</p>
+        </div>
+        <div class="platform-task-grid">
+          ${dailyTasks
+            .map(
+              (task) => `<article class="platform-task-card">
+            <span>${escapeHtml(task.label)}</span>
+            <h3>${escapeHtml(task.title)}</h3>
+            <p>${escapeHtml(task.description)}</p>
+            ${renderButton({ href: task.href, label: "开始任务", variant: "secondary" })}
+          </article>`
+            )
+            .join("")}
+        </div>
+      </section>
+
+      <section class="platform-section platform-route" aria-labelledby="route-title">
+        <div class="platform-section-head">
+          <h2 id="route-title">7天AI入门路线</h2>
+          <p>每天完成一个小任务，从认识AI到做出第一个作品。</p>
+        </div>
+        <div class="platform-route-card">
+          <ol>
+            ${sevenDayRoute
+              .map(
+                (item, index) => `<li>
+              <span>第${index + 1}天</span>
+              <strong>${escapeHtml(item)}</strong>
+            </li>`
+              )
+              .join("")}
+          </ol>
+          ${renderButton({ href: "tutorials/map/", label: "查看完整内容地图", variant: "secondary" })}
         </div>
       </section>
 
@@ -432,7 +483,7 @@ function renderHomePage(articles = []) {
       <section class="platform-section" aria-labelledby="latest-title">
         <div class="platform-section-head">
           <h2 id="latest-title">最新修炼内容</h2>
-          <p>只展示已发布内容。规划中和撰写中的文章不会出现在首页推荐位。</p>
+          <p>从这些内容开始，完成你的第一轮AI修炼。</p>
         </div>
         <div class="platform-latest-grid">
           ${renderHomeLatestCards(articles)}
@@ -442,7 +493,7 @@ function renderHomePage(articles = []) {
       <section class="platform-section platform-founder" aria-labelledby="founder-title">
         <div>
           <h2 id="founder-title">为什么创建凡人修AI？</h2>
-          <p>凡人修AI由一名从百度SEM、创业经历中转型AI实践者发起。<br />我们相信，普通人不需要先成为程序员，也可以借助AI提升效率、完成作品、创造价值。</p>
+          <p>凡人修AI由一名从百度SEM、创业经历中转型AI实践者发起。<br />我们不把AI讲成遥远的技术概念，而是把它拆成普通人能执行的教程、任务和案例。<br />目标是帮助更多普通人真正学会AI、用上AI、做出作品。</p>
         </div>
         ${renderButton({ href: "about/", label: "了解创始故事", variant: "secondary" })}
       </section>
