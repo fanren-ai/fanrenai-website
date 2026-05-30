@@ -13,7 +13,7 @@
     <title>凡人修AI | 普通人的AI学习与实践平台</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="home-v2">
+  <body class="platform-home">
     <header class="site-header" id="top">
       <nav class="nav-shell" aria-label="主导航">
         <a class="brand" href="#top" aria-label="凡人修AI 首页">
@@ -29,41 +29,41 @@
         </div>
       </nav>
     </header>
-    <main><section class="v2-hero">
-        <div class="v2-hero-inner">
-          <div class="v2-hero-copy">
-            <p class="v2-kicker">普通人的AI学习与实践平台</p>
-            <h1>凡人修AI</h1>
-            <p class="v2-hero-subtitle">从AI小白到AI实战者</p>
-            <p class="v2-hero-lead">系统学习AI工具、Prompt工作流、Codex项目实战与AI变现案例。<br />不是收藏工具，而是完成一条可执行的AI成长路径。</p>
-            <div class="v2-hero-actions" aria-label="首页主要操作">
+    <main><section class="platform-hero" aria-labelledby="home-title">
+        <div class="platform-hero-grid">
+          <div class="platform-hero-copy">
+            <p class="platform-kicker">普通人的AI学习与实践平台</p>
+            <h1 id="home-title">凡人修AI</h1>
+            <p class="platform-subtitle">从AI小白到AI实战者</p>
+            <p class="platform-lead">系统学习AI工具、Prompt工作流、Codex项目实战与AI变现案例。<br />不是收藏工具，而是完成一条可执行的AI成长路径。</p>
+            <div class="platform-actions" aria-label="首页主要操作">
               <a class="btn btn-primary" href="tutorials/">开始学习</a>
               <a class="btn btn-secondary" href="tutorials/map/">查看内容地图</a>
               <a class="btn btn-ghost" href="community/">加入社区</a>
             </div>
-            <div class="v2-quick-tags" aria-label="核心内容标签">
+            <div class="platform-tags" aria-label="核心内容标签">
               <span>AI教程</span>
               <span>Codex实战</span>
               <span>Prompt工作流</span>
               <span>AI创业案例</span>
             </div>
           </div>
-          <aside class="v2-learning-card" aria-label="今天从哪里开始">
+          <aside class="platform-hero-panel" aria-label="今天从哪里开始">
             <h2>今天从哪里开始？</h2>
-            <div class="v2-learning-list">
-              <a href="tutorials/map/">
+            <div class="platform-start-list">
+              <a class="platform-start-item" href="tutorials/map/">
                 <span>01</span>
                 <strong>我是AI小白</strong>
                 <p>先认识AI工具，学会基本使用。</p>
-              </a><a href="tutorials/map/">
+              </a><a class="platform-start-item" href="tutorials/map/">
                 <span>02</span>
                 <strong>我想提升效率</strong>
                 <p>学习Prompt、AI办公和工作流。</p>
-              </a><a href="tutorials/category/codex/">
+              </a><a class="platform-start-item" href="tutorials/category/codex/">
                 <span>03</span>
                 <strong>我想做出项目</strong>
                 <p>用Codex、Cursor、Claude Code完成作品。</p>
-              </a><a href="tutorials/map/">
+              </a><a class="platform-start-item" href="tutorials/map/">
                 <span>04</span>
                 <strong>我想探索变现</strong>
                 <p>学习AI副业、AI产品和AI创业案例。</p>
@@ -73,12 +73,34 @@
         </div>
       </section>
 
-      <section class="v2-section v2-system" id="system">
-        <div class="v2-section-heading">
-          <h2>AI修炼体系</h2>
+      <section class="platform-section platform-start-section" aria-labelledby="start-title">
+        <div class="platform-section-head">
+          <h2 id="start-title">今天从哪里开始</h2>
+          <p>按当前目标选择入口，不需要一次学完全部内容。</p>
+        </div>
+        <div class="platform-start-grid">
+          <a class="platform-start-card" href="tutorials/map/">
+            <h3>我是AI小白</h3>
+            <p>先认识AI工具，学会基本使用。</p>
+          </a><a class="platform-start-card" href="tutorials/map/">
+            <h3>我想提升效率</h3>
+            <p>学习Prompt、AI办公和工作流。</p>
+          </a><a class="platform-start-card" href="tutorials/category/codex/">
+            <h3>我想做出项目</h3>
+            <p>用Codex、Cursor、Claude Code完成作品。</p>
+          </a><a class="platform-start-card" href="tutorials/map/">
+            <h3>我想探索变现</h3>
+            <p>学习AI副业、AI产品和AI创业案例。</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="platform-section" id="system" aria-labelledby="system-title">
+        <div class="platform-section-head">
+          <h2 id="system-title">AI修炼体系</h2>
           <p>从认识工具，到完成项目，再到创造价值。</p>
         </div>
-        <div class="v2-system-grid">
+        <div class="platform-stage-grid">
           <article>
             <span>01</span>
             <h3>新手村</h3>
@@ -99,12 +121,12 @@
         </div>
       </section>
 
-      <section class="v2-section v2-columns" id="codex">
-        <div class="v2-section-heading">
-          <h2>你可以在这里修炼什么？</h2>
+      <section class="platform-section" id="codex" aria-labelledby="columns-title">
+        <div class="platform-section-head">
+          <h2 id="columns-title">你可以在这里修炼什么？</h2>
           <p>围绕普通人的学习和实践场景组织内容，不做工具堆砌，也不做空泛口号。</p>
         </div>
-        <div class="v2-columns-grid">
+        <div class="platform-column-grid">
           <a href="tutorials/">
             <h3>AI教程</h3>
             <p>从基础认知到实战方法，建立系统AI能力。</p>
@@ -127,47 +149,45 @@
         </div>
       </section>
 
-      <section class="v2-section v2-latest">
-        <div class="v2-section-heading">
-          <h2>最新修炼内容</h2>
+      <section class="platform-section" aria-labelledby="latest-title">
+        <div class="platform-section-head">
+          <h2 id="latest-title">最新修炼内容</h2>
           <p>只展示已发布内容。规划中和撰写中的文章不会出现在首页推荐位。</p>
         </div>
-        <div class="v2-latest-grid">
-          <a class="v2-latest-card" href="tutorials/ai-basics-quick-start/">
-        <span>新手村 · AI基础认知</span>
+        <div class="platform-latest-grid">
+          <a class="platform-latest-card" href="tutorials/ai-basics-quick-start/">
         <h3>AI小白快速入门：先搞懂这5件事</h3>
+        <span>新手村 · AI基础认知</span>
         <p>面向普通人的AI入门教程，用最少概念理解AI工具、模型、Prompt、工作流和价值创造。</p>
         <strong>阅读全文</strong>
-      </a><a class="v2-latest-card" href="tutorials/ai-case-side-project/">
-        <span>结丹期 · AI副业</span>
+      </a><a class="platform-latest-card" href="tutorials/ai-case-side-project/">
         <h3>AI案例：用AI把一个副业想法拆成可执行计划</h3>
+        <span>结丹期 · AI副业</span>
         <p>通过副业案例展示如何用AI完成定位、用户画像、产品形态、内容计划和落地步骤。</p>
         <strong>阅读全文</strong>
-      </a><a class="v2-latest-card" href="tutorials/ai-tools-starter/">
-        <span>新手村 · AI工具选择</span>
+      </a><a class="platform-latest-card" href="tutorials/ai-tools-starter/">
         <h3>普通人的AI工具箱：先收藏这几类工具</h3>
+        <span>新手村 · AI工具选择</span>
         <p>整理AI入门阶段最常用的工具类型，帮助普通人从写作、搜索、编程和自动化开始建立工具箱。</p>
         <strong>阅读全文</strong>
       </a>
         </div>
       </section>
 
-      <section class="v2-section v2-founder-light">
+      <section class="platform-section platform-founder" aria-labelledby="founder-title">
         <div>
-          <h2>为什么创建凡人修AI？</h2>
+          <h2 id="founder-title">为什么创建凡人修AI？</h2>
           <p>凡人修AI由一名从百度SEM、创业经历中转型AI实践者发起。<br />我们相信，普通人不需要先成为程序员，也可以借助AI提升效率、完成作品、创造价值。</p>
         </div>
         <a class="btn btn-secondary" href="about/">了解创始故事</a>
       </section>
 
-      <section class="v2-section v2-community" id="community">
-        <div class="v2-community-inner">
-          <div>
-            <h2>加入凡人修AI社区</h2>
-            <p>和更多普通人一起学习AI、实践AI、用AI创造价值。</p>
-          </div>
-          <a class="btn btn-primary" href="community/">加入社区</a>
+      <section class="platform-section platform-cta" id="community" aria-labelledby="community-title">
+        <div>
+          <h2 id="community-title">加入凡人修AI社区</h2>
+          <p>和更多普通人一起学习AI、实践AI、用AI创造价值。</p>
         </div>
+        <a class="btn btn-primary" href="community/">加入社区</a>
       </section></main>
     <footer class="site-footer">
       <p>凡人修AI © 2026</p>

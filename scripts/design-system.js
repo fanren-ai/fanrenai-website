@@ -185,14 +185,14 @@ function renderHomeLatestCards(articles = []) {
     .slice(0, 3);
 
   if (!latest.length) {
-    return `<p class="v2-empty">最新内容正在整理中。</p>`;
+    return `<p class="platform-empty">最新内容正在整理中。</p>`;
   }
 
   return latest
     .map(
-      (article) => `<a class="v2-latest-card" href="tutorials/${article.slug}/">
-        <span>${escapeHtml(article.level)} · ${escapeHtml(article.categoryName)}</span>
+      (article) => `<a class="platform-latest-card" href="tutorials/${article.slug}/">
         <h3>${escapeHtml(article.title)}</h3>
+        <span>${escapeHtml(article.level)} · ${escapeHtml(article.categoryName)}</span>
         <p>${escapeHtml(article.description)}</p>
         <strong>阅读全文</strong>
       </a>`
@@ -337,34 +337,34 @@ function renderHomePage(articles = []) {
     title: "凡人修AI | 普通人的AI学习与实践平台",
     description: "凡人修AI，面向普通人的AI学习与实践平台，帮助普通人系统学习AI、实践AI、用AI创造价值。",
     base: "",
-    bodyClass: "home-v2",
+    bodyClass: "platform-home",
     headerVariant: "home",
     canonicalUrl: `${site.origin}/`,
-    body: `<section class="v2-hero">
-        <div class="v2-hero-inner">
-          <div class="v2-hero-copy">
-            <p class="v2-kicker">普通人的AI学习与实践平台</p>
-            <h1>凡人修AI</h1>
-            <p class="v2-hero-subtitle">从AI小白到AI实战者</p>
-            <p class="v2-hero-lead">系统学习AI工具、Prompt工作流、Codex项目实战与AI变现案例。<br />不是收藏工具，而是完成一条可执行的AI成长路径。</p>
-            <div class="v2-hero-actions" aria-label="首页主要操作">
+    body: `<section class="platform-hero" aria-labelledby="home-title">
+        <div class="platform-hero-grid">
+          <div class="platform-hero-copy">
+            <p class="platform-kicker">普通人的AI学习与实践平台</p>
+            <h1 id="home-title">凡人修AI</h1>
+            <p class="platform-subtitle">从AI小白到AI实战者</p>
+            <p class="platform-lead">系统学习AI工具、Prompt工作流、Codex项目实战与AI变现案例。<br />不是收藏工具，而是完成一条可执行的AI成长路径。</p>
+            <div class="platform-actions" aria-label="首页主要操作">
               ${renderButton({ href: "tutorials/", label: "开始学习" })}
               ${renderButton({ href: "tutorials/map/", label: "查看内容地图", variant: "secondary" })}
               ${renderButton({ href: "community/", label: "加入社区", variant: "ghost" })}
             </div>
-            <div class="v2-quick-tags" aria-label="核心内容标签">
+            <div class="platform-tags" aria-label="核心内容标签">
               <span>AI教程</span>
               <span>Codex实战</span>
               <span>Prompt工作流</span>
               <span>AI创业案例</span>
             </div>
           </div>
-          <aside class="v2-learning-card" aria-label="今天从哪里开始">
+          <aside class="platform-hero-panel" aria-label="今天从哪里开始">
             <h2>今天从哪里开始？</h2>
-            <div class="v2-learning-list">
+            <div class="platform-start-list">
               ${startItems
                 .map(
-                  (item, index) => `<a href="${item.href}">
+                  (item, index) => `<a class="platform-start-item" href="${item.href}">
                 <span>${String(index + 1).padStart(2, "0")}</span>
                 <strong>${escapeHtml(item.title)}</strong>
                 <p>${escapeHtml(item.description)}</p>
@@ -376,12 +376,29 @@ function renderHomePage(articles = []) {
         </div>
       </section>
 
-      <section class="v2-section v2-system" id="system">
-        <div class="v2-section-heading">
-          <h2>AI修炼体系</h2>
+      <section class="platform-section platform-start-section" aria-labelledby="start-title">
+        <div class="platform-section-head">
+          <h2 id="start-title">今天从哪里开始</h2>
+          <p>按当前目标选择入口，不需要一次学完全部内容。</p>
+        </div>
+        <div class="platform-start-grid">
+          ${startItems
+            .map(
+              (item) => `<a class="platform-start-card" href="${item.href}">
+            <h3>${escapeHtml(item.title)}</h3>
+            <p>${escapeHtml(item.description)}</p>
+          </a>`
+            )
+            .join("")}
+        </div>
+      </section>
+
+      <section class="platform-section" id="system" aria-labelledby="system-title">
+        <div class="platform-section-head">
+          <h2 id="system-title">AI修炼体系</h2>
           <p>从认识工具，到完成项目，再到创造价值。</p>
         </div>
-        <div class="v2-system-grid">
+        <div class="platform-stage-grid">
           ${Object.entries(cultivationLevels)
             .map(
               ([level, detail]) => `<article>
@@ -394,12 +411,12 @@ function renderHomePage(articles = []) {
         </div>
       </section>
 
-      <section class="v2-section v2-columns" id="codex">
-        <div class="v2-section-heading">
-          <h2>你可以在这里修炼什么？</h2>
+      <section class="platform-section" id="codex" aria-labelledby="columns-title">
+        <div class="platform-section-head">
+          <h2 id="columns-title">你可以在这里修炼什么？</h2>
           <p>围绕普通人的学习和实践场景组织内容，不做工具堆砌，也不做空泛口号。</p>
         </div>
-        <div class="v2-columns-grid">
+        <div class="platform-column-grid">
           ${columns
             .map(
               ([title, description, href]) => `<a href="${href}">
@@ -411,32 +428,30 @@ function renderHomePage(articles = []) {
         </div>
       </section>
 
-      <section class="v2-section v2-latest">
-        <div class="v2-section-heading">
-          <h2>最新修炼内容</h2>
+      <section class="platform-section" aria-labelledby="latest-title">
+        <div class="platform-section-head">
+          <h2 id="latest-title">最新修炼内容</h2>
           <p>只展示已发布内容。规划中和撰写中的文章不会出现在首页推荐位。</p>
         </div>
-        <div class="v2-latest-grid">
+        <div class="platform-latest-grid">
           ${renderHomeLatestCards(articles)}
         </div>
       </section>
 
-      <section class="v2-section v2-founder-light">
+      <section class="platform-section platform-founder" aria-labelledby="founder-title">
         <div>
-          <h2>为什么创建凡人修AI？</h2>
+          <h2 id="founder-title">为什么创建凡人修AI？</h2>
           <p>凡人修AI由一名从百度SEM、创业经历中转型AI实践者发起。<br />我们相信，普通人不需要先成为程序员，也可以借助AI提升效率、完成作品、创造价值。</p>
         </div>
         ${renderButton({ href: "about/", label: "了解创始故事", variant: "secondary" })}
       </section>
 
-      <section class="v2-section v2-community" id="community">
-        <div class="v2-community-inner">
-          <div>
-            <h2>加入凡人修AI社区</h2>
-            <p>和更多普通人一起学习AI、实践AI、用AI创造价值。</p>
-          </div>
-          ${renderButton({ href: "community/", label: "加入社区" })}
+      <section class="platform-section platform-cta" id="community" aria-labelledby="community-title">
+        <div>
+          <h2 id="community-title">加入凡人修AI社区</h2>
+          <p>和更多普通人一起学习AI、实践AI、用AI创造价值。</p>
         </div>
+        ${renderButton({ href: "community/", label: "加入社区" })}
       </section>`
   });
 }
