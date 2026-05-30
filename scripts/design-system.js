@@ -173,6 +173,31 @@ function renderRelatedCards(related) {
     .join("");
 }
 
+function renderHomeLatestCards(articles = []) {
+  const latest = [...articles]
+    .filter((article) => article.status === "published")
+    .sort((a, b) => {
+      const dateCompare = b.date.localeCompare(a.date);
+      if (dateCompare) return dateCompare;
+      return (b.order || 0) - (a.order || 0);
+    })
+    .slice(0, 3);
+
+  if (!latest.length) {
+    return `<p class="v2-empty">最新内容正在整理中。</p>`;
+  }
+
+  return latest
+    .map(
+      (article) => `<a class="v2-latest-card" href="tutorials/${article.slug}/">
+        <span>${escapeHtml(article.level)} · ${escapeHtml(article.categoryName)}</span>
+        <h3>${escapeHtml(article.title)}</h3>
+        <p>${escapeHtml(article.description)}</p>
+      </a>`
+    )
+    .join("");
+}
+
 function renderArticlePage(article, related) {
   const isPublished = article.status === "published";
   const jsonLd = {
@@ -274,10 +299,45 @@ function renderArticlePage(article, related) {
   });
 }
 
-function renderHomePage() {
+function renderHomePage(articles = []) {
+  const startItems = [
+    {
+      title: "AI新手入门",
+      description: "适合刚接触AI的普通用户。",
+      entry: "新手村",
+      href: "tutorials/category/ai-cognition/"
+    },
+    {
+      title: "AI效率提升",
+      description: "学习Prompt、AI办公和工作流。",
+      entry: "炼气期",
+      href: "tutorials/category/prompt-engineering/"
+    },
+    {
+      title: "AI项目实战",
+      description: "使用Codex、Cursor、Claude Code做出作品。",
+      entry: "筑基期",
+      href: "tutorials/category/codex/"
+    },
+    {
+      title: "AI副业创业",
+      description: "学习AI变现、产品和创业案例。",
+      entry: "金丹期",
+      href: "tutorials/category/ai-side-hustle/"
+    }
+  ];
+  const columns = [
+    ["AI教程", "系统学习AI认知、工具使用、Prompt和工作流。", "tutorials/"],
+    ["Codex专区", "从安装配置到项目实战，学习AI编程协作。", "tutorials/category/codex/"],
+    ["AI工具箱", "按使用场景理解工具，而不是盲目收藏工具。", "tutorials/category/ai-tool-choice/"],
+    ["AI案例", "拆解普通人如何用AI解决真实问题。", "tutorials/category/ai-side-hustle/"],
+    ["内容地图", "查看凡人修AI四阶段、十二栏目内容体系。", "tutorials/map/"],
+    ["道友社区", "和更多普通人一起学习、实践和复盘AI。", "community/"]
+  ];
+
   return layout({
-    title: "凡人修AI | 普通人的AI修行之路",
-    description: "凡人修AI，普通人的AI修行之路。围绕修炼体系、成长路径、社群文化和Codex实战，帮助普通人学习AI、使用AI、靠AI创造价值。",
+    title: "凡人修AI | 普通人的AI学习与实践平台",
+    description: "凡人修AI，面向普通人的AI学习与实践平台，帮助普通人系统学习AI、实践AI、用AI创造价值。",
     base: "",
     bodyClass: "home-v2",
     headerVariant: "home",
@@ -285,135 +345,120 @@ function renderHomePage() {
     body: `<section class="v2-hero">
         <div class="v2-hero-inner">
           <div class="v2-hero-copy">
-            <p class="v2-kicker">普通人的AI成长社区</p>
+            <p class="v2-kicker">普通人的AI学习与实践平台</p>
             <h1>凡人修AI</h1>
-            <p class="v2-hero-subtitle">普通人的AI修炼手册</p>
-            <p class="v2-hero-lead">不是工具导航站，也不是企业官网。<br />这里记录普通人如何从不会用AI，<br />到用AI解决问题、做出作品、创造价值。</p>
+            <p class="v2-hero-subtitle">普通人的AI学习与实践平台</p>
+            <p class="v2-hero-lead">从AI认知、工具使用、Prompt工作流，到Codex项目实战和AI创业案例。<br />凡人修AI帮助普通人系统学习AI、实践AI、用AI创造价值。</p>
             <div class="v2-hero-actions" aria-label="首页主要操作">
-              ${renderButton({ href: "#system", label: "开始修炼" })}
-              ${renderButton({ href: "tutorials/", label: "查看AI教程", variant: "secondary" })}
-              ${renderButton({ href: "community/", label: "加入道友群", variant: "ghost" })}
-            </div>
-            <div class="v2-hero-status" aria-label="已上线内容">
-              <span>已上线：</span>
-              <a href="#system">AI修炼体系</a>
-              <a href="#codex">Codex专区</a>
-              <a href="tutorials/map/">内容地图</a>
-              <a href="community/">道友群</a>
+              ${renderButton({ href: "tutorials/", label: "开始学习" })}
+              ${renderButton({ href: "tutorials/map/", label: "查看内容地图", variant: "secondary" })}
+              ${renderButton({ href: "community/", label: "加入社区", variant: "ghost" })}
             </div>
           </div>
-          <aside class="v2-founder-card" aria-label="创始人转型路径">
-            <p class="v2-card-kicker">Founder Story</p>
-            <h2>从百度SEM到AI布道师</h2>
-            <ol>
-              <li><span>2014</span><strong>百度SEM销售</strong></li>
-              <li><span>2016</span><strong>百度M岗位</strong></li>
-              <li><span>2023</span><strong>助贷创业营收600万</strong></li>
-              <li><span>2025</span><strong>接触AI与Codex</strong></li>
-              <li><span>现在</span><strong>创建凡人修AI</strong></li>
-            </ol>
-            ${renderButton({ href: "about/", label: "了解老张的AI转型故事", variant: "secondary" })}
+          <aside class="v2-system-card" aria-label="AI修炼体系">
+            <p class="v2-card-kicker">System</p>
+            <h2>AI修炼体系</h2>
+            <div class="v2-system-steps">
+              <article><span>01</span><strong>新手村</strong><p>认识AI，学会使用工具</p></article>
+              <article><span>02</span><strong>炼气期</strong><p>掌握Prompt和工作流</p></article>
+              <article><span>03</span><strong>筑基期</strong><p>用Codex做出第一个项目</p></article>
+              <article><span>04</span><strong>金丹期</strong><p>用AI做副业、做产品、做公司</p></article>
+            </div>
           </aside>
         </div>
       </section>
 
-      <section class="v2-section v2-system" id="system">
+      <section class="v2-section v2-start" id="path">
         <div class="v2-section-heading">
-          <p class="v2-kicker">Cultivation Path</p>
-          <h2>AI修炼路径</h2>
-          <p>先建立认知，再训练表达和工作流，最后用项目和收入验证能力。</p>
+          <p class="v2-kicker">Start Here</p>
+          <h2>你可以从这里开始</h2>
+          <p>不同基础的人，可以直接进入对应阶段。先完成一个可见成果，再进入下一层修炼。</p>
         </div>
-        <div class="v2-system-grid">
-          <article>
-            <span>01</span>
-            <h3>新手村：认识AI</h3>
-            <p>理解AI能做什么、不能做什么，找到第一个真实使用场景。</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>炼气期：掌握Prompt和工作流</h3>
-            <p>把问题说清楚，把一次提问沉淀成稳定、可复用的流程。</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>筑基期：使用Codex做项目</h3>
-            <p>用AI编程工具把想法做成页面、工具和可展示的作品。</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>金丹期：用AI创造收入</h3>
-            <p>从副业、产品和服务出发，让AI能力变成真实价值。</p>
-          </article>
+        <div class="v2-start-grid">
+          ${startItems
+            .map(
+              (item, index) => `<a href="${item.href}">
+            <span>${String(index + 1).padStart(2, "0")}</span>
+            <h3>${escapeHtml(item.title)}</h3>
+            <p>${escapeHtml(item.description)}</p>
+            <strong>${escapeHtml(item.entry)}</strong>
+          </a>`
+            )
+            .join("")}
         </div>
       </section>
 
-      <section class="v2-section v2-path" id="path">
+      <section class="v2-section v2-system" id="system">
         <div class="v2-section-heading split">
           <div>
-            <p class="v2-kicker">Path</p>
-            <h2>从AI小白到能独立交付</h2>
+            <p class="v2-kicker">Cultivation Path</p>
+            <h2>修炼体系</h2>
           </div>
-          <p>这条路不靠天赋，靠持续练习和一次次可见的成果。每一阶段都对应明确的学习重点和作品目标。</p>
+          <p>凡人修AI把学习过程拆成四个阶段：认知、效率、项目、收入。每一阶段都对应清晰的教程、案例和实践任务。</p>
         </div>
-        <div class="v2-path-list">
+        <div class="v2-system-grid">
           ${Object.entries(cultivationLevels)
             .map(
               ([level, detail]) => `<article>
             <span>${escapeHtml(detail.order)}</span>
-            <div>
-              <h3>${escapeHtml(level)}</h3>
-              <p>${escapeHtml(detail.description)}</p>
-            </div>
+            <h3>${escapeHtml(level)}</h3>
+            <p>${escapeHtml(detail.description)}</p>
           </article>`
             )
             .join("")}
         </div>
       </section>
 
-      <section class="v2-section v2-culture" id="culture">
-        <div class="v2-culture-copy">
-          <p class="v2-kicker">Community</p>
-          <h2>不是围观大神，是一起修行</h2>
-          <p>凡人修AI的社群文化很简单：不迷信神话，不制造焦虑，不把工具收藏当成成长。大家带着自己的工作、生活和副业问题进来，用AI做出真实改进。</p>
-        </div>
-        <div class="v2-culture-principles" aria-label="社群文化">
-          <p>每天一个真实问题</p>
-          <p>每周一次作品复盘</p>
-          <p>每月沉淀一套方法</p>
-        </div>
-      </section>
-
-      <section class="v2-section v2-founder" id="founder">
-        <div class="v2-founder-note">
-          <p class="v2-kicker">Founder Story</p>
-          <h2>从一个普通人的学习笔记开始</h2>
-          <p>凡人修AI的起点不是“我要做一个大平台”，而是一个更朴素的问题：如果一个普通人今天才开始接触AI，他该怎么学，怎么练，怎么把AI真正用到自己的工作和人生里？</p>
-          <p>所以这里保留教程、实战、踩坑、复盘和社群。它更像一份持续更新的修行手册：不替你许诺捷径，只陪你把每一步走扎实。</p>
-        </div>
-      </section>
-
-      <section class="v2-section v2-codex" id="codex">
+      <section class="v2-section v2-columns" id="codex">
         <div class="v2-section-heading split">
           <div>
-            <p class="v2-kicker">Codex</p>
-            <h2>Codex实战专区</h2>
+            <p class="v2-kicker">Columns</p>
+            <h2>核心栏目</h2>
           </div>
-          <p>把AI编程从“看起来很神”拆成普通人能操作的流程：提需求、读结果、改页面、跑检查、沉淀项目。</p>
+          <p>围绕普通人的学习和实践场景组织内容，不做工具堆砌，也不做空泛口号。</p>
         </div>
-        <div class="v2-codex-grid">
-          <a href="tutorials/category/codex/"><span>安装教程</span><strong>从环境准备到第一次运行</strong></a>
-          <a href="tutorials/category/codex/"><span>常见报错</span><strong>把踩坑整理成可查手册</strong></a>
-          <a href="tutorials/category/codex/"><span>项目实战</span><strong>从首页、文章系统到自动化工具</strong></a>
-          <a href="tutorials/category/codex/"><span>AI编程入门</span><strong>不会写代码，也能学会协作</strong></a>
+        <div class="v2-columns-grid">
+          ${columns
+            .map(
+              ([title, description, href]) => `<a href="${href}">
+            <h3>${escapeHtml(title)}</h3>
+            <p>${escapeHtml(description)}</p>
+          </a>`
+            )
+            .join("")}
         </div>
+      </section>
+
+      <section class="v2-section v2-latest">
+        <div class="v2-section-heading split">
+          <div>
+            <p class="v2-kicker">Latest</p>
+            <h2>最新修炼内容</h2>
+          </div>
+          <p>只展示已发布内容。规划中和撰写中的文章不会出现在首页推荐位。</p>
+        </div>
+        <div class="v2-latest-grid">
+          ${renderHomeLatestCards(articles)}
+        </div>
+      </section>
+
+      <section class="v2-section v2-founder-light">
+        <div>
+          <p class="v2-kicker">About</p>
+          <h2>为什么创建凡人修AI</h2>
+          <p>凡人修AI由一名从互联网销售、创业经历中转型AI实践者发起，希望帮助更多普通人系统学习AI。</p>
+        </div>
+        ${renderButton({ href: "about/", label: "了解创始故事", variant: "secondary" })}
       </section>
 
       <section class="v2-section v2-community" id="community">
         <div class="v2-community-inner">
-          <p class="v2-kicker">Join</p>
-          <h2>加入凡人修AI道友群</h2>
-          <p>和一群普通人一起学习AI、实战AI、复盘AI，用AI创造看得见的价值。</p>
-          ${renderButton({ href: "community/", label: "立即加入" })}
+          <div>
+            <p class="v2-kicker">Community</p>
+            <h2>加入凡人修AI社区</h2>
+            <p>和更多普通人一起学习AI、实践AI、用AI创造价值。</p>
+          </div>
+          ${renderButton({ href: "community/", label: "加入社区" })}
         </div>
       </section>`
   });

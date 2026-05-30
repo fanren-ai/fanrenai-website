@@ -422,8 +422,8 @@ function writeSearchIndex(articles) {
   fs.writeFileSync(path.join(outputDir, "search-index.json"), JSON.stringify(index, null, 2));
 }
 
-function writeRootPages() {
-  fs.writeFileSync(path.join(root, "index.html"), renderHomePage());
+function writeRootPages(publicArticles) {
+  fs.writeFileSync(path.join(root, "index.html"), renderHomePage(publicArticles));
   fs.writeFileSync(path.join(root, "404.html"), render404Page());
 
   const aboutDir = path.join(root, "about");
@@ -438,7 +438,7 @@ function build() {
   const articles = readArticles();
   const publicArticles = articles.filter((article) => article.status === "published");
 
-  writeRootPages();
+  writeRootPages(publicArticles);
   cleanGeneratedDir();
 
   const tutorialPages = paginate(publicArticles);
