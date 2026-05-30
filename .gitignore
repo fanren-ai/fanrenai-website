@@ -28,6 +28,10 @@ Thumbs.db
 tmp/
 temp/
 
+# Build output
+dist/
+build/
+
 # Test and coverage output
 coverage/
 .nyc_output/
