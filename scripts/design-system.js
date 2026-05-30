@@ -4,6 +4,8 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
+const assetVersion = "20260530-platform-home";
+
 const categories = {
   "ai-cognition": "AI基础认知",
   "ai-tool-intro": "AI工具入门",
@@ -115,7 +117,7 @@ function layout({ title, description, base = "", body, extraHead = "", bodyClass
     ${canonical}
     ${extraHead}
     <title>${safeTitle}</title>
-    <link rel="stylesheet" href="${base}styles.css" />
+    <link rel="stylesheet" href="${base}styles.css?v=${assetVersion}" />
   </head>
   <body${bodyClass ? ` class="${escapeHtml(bodyClass)}"` : ""}>
     ${renderHeader({ base, variant: headerVariant })}

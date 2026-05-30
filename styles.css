@@ -2713,7 +2713,7 @@ h3 {
 
 .platform-hero,
 .platform-section {
-  width: min(100% - 48px, var(--platform-max));
+  width: min(calc(100% - 48px), var(--platform-max));
   margin: 0 auto;
 }
 
@@ -3048,7 +3048,7 @@ h3 {
 @media (max-width: 640px) {
   .platform-hero,
   .platform-section {
-    width: min(100% - 28px, var(--platform-max));
+    width: min(calc(100% - 28px), var(--platform-max));
   }
 
   .platform-hero {
