@@ -1058,7 +1058,7 @@ h3 {
 
 .map-level > header {
   grid-column: 1;
-  grid-row: 1 / span 20;
+  grid-row: 1;
   position: sticky;
   top: 96px;
   align-self: start;
