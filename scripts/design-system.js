@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260530-home-retention";
+const assetVersion = "20260531-theme-toggle";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -86,6 +86,12 @@ function renderHeader({ base = "", variant = "default" } = {}) {
         </button>
         <div class="nav-menu" id="site-menu">
           ${items.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}
+          <button class="theme-toggle" type="button" aria-label="切换深色模式" aria-pressed="false" data-theme-toggle>
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-orb"></span>
+            </span>
+            <span class="theme-toggle-text" data-theme-toggle-text>关灯</span>
+          </button>
           <a class="nav-cta" href="${base}community/">加入社区</a>
         </div>
       </nav>
@@ -116,6 +122,20 @@ function layout({ title, description, base = "", body, extraHead = "", bodyClass
     ${canonical}
     ${extraHead}
     <title>${safeTitle}</title>
+    <script>
+      (function () {
+        try {
+          var storedTheme = localStorage.getItem("fanrenai-theme");
+          var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var theme = storedTheme || (prefersDark ? "dark" : "light");
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+        } catch (error) {
+          document.documentElement.dataset.theme = "light";
+          document.documentElement.style.colorScheme = "light";
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="${base}styles.css?v=${assetVersion}" />
   </head>
   <body${bodyClass ? ` class="${escapeHtml(bodyClass)}"` : ""}>
