@@ -72,8 +72,7 @@ function renderHeader({ base = "", variant = "default" } = {}) {
     ["AI教程", `${base}tutorials/`],
     ["内容地图", `${base}tutorials/map/`],
     ["Codex专区", `${base}tutorials/category/codex/`],
-    ["AI工具箱", `${base}tutorials/category/ai-tool-choice/`],
-    ["社区", `${base}community/`]
+    ["AI工具箱", `${base}tutorials/category/ai-tool-choice/`]
   ];
 
   return `<header class="site-header" id="top">
