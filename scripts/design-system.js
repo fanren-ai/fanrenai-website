@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260531-clean-header";
+const assetVersion = "20260531-start-card-links";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -307,22 +307,26 @@ function renderHomePage(articles = []) {
     {
       title: "我是AI小白",
       description: "先认识AI工具，学会基本使用。",
-      href: "tutorials/map/"
+      action: "开始第1天 →",
+      href: "/tutorials/ai-basics-quick-start/"
     },
     {
       title: "我想提升效率",
       description: "学习Prompt、AI办公和工作流。",
-      href: "tutorials/map/"
+      action: "提升效率 →",
+      href: "/tutorials/prompt-workflow-basic/"
     },
     {
       title: "我想做出项目",
       description: "用Codex、Cursor、Claude Code完成作品。",
-      href: "tutorials/category/codex/"
+      action: "做第一个项目 →",
+      href: "/tutorials/codex-first-project/"
     },
     {
       title: "我想探索变现",
       description: "学习AI副业、AI产品和AI创业案例。",
-      href: "tutorials/map/"
+      action: "查看案例 →",
+      href: "/tutorials/ai-case-side-project/"
     }
   ];
   const columns = [
@@ -398,10 +402,12 @@ function renderHomePage(articles = []) {
               ${startItems
                 .map(
                   (item, index) => `<a class="platform-start-item" href="${item.href}">
-                <span>${String(index + 1).padStart(2, "0")}</span>
-                <strong>${escapeHtml(item.title)}</strong>
-                <p>${escapeHtml(item.description)}</p>
-                <em>去开始 →</em>
+                <span class="platform-start-index">${String(index + 1).padStart(2, "0")}</span>
+                <span class="platform-start-content">
+                  <strong class="platform-start-title">${escapeHtml(item.title)}</strong>
+                  <span class="platform-start-desc">${escapeHtml(item.description)}</span>
+                </span>
+                <span class="platform-start-action">${escapeHtml(item.action)}</span>
               </a>`
                 )
                 .join("")}

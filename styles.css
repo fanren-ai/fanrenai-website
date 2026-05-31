@@ -2826,40 +2826,58 @@ h3 {
 
 .platform-start-item {
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr);
-  gap: 5px 14px;
-  padding: 15px 0;
+  grid-template-columns: 38px minmax(0, 1fr) max-content;
+  gap: 14px;
+  align-items: center;
+  min-height: 82px;
+  padding: 15px 12px;
   border-bottom: 1px solid var(--platform-line);
+  border-radius: 8px;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
 }
 
-.platform-start-item span {
-  grid-row: span 2;
+.platform-start-item:hover {
+  background: #f6f8ff;
+  transform: translateX(2px);
+}
+
+.platform-start-index {
   color: var(--platform-blue);
   font-size: 13px;
   font-weight: 900;
 }
 
-.platform-start-item strong {
-  color: #111827;
-  font-size: 16px;
+.platform-start-content {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
 }
 
-.platform-start-item p {
-  margin: 0;
+.platform-start-title {
+  color: #111827;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.platform-start-desc {
   color: var(--platform-muted);
   font-size: 14px;
   line-height: 1.58;
 }
 
-.platform-start-item em {
-  grid-column: 2;
+.platform-start-action {
+  justify-self: end;
   color: var(--platform-blue);
   font-size: 13px;
-  font-style: normal;
   font-weight: 900;
+  line-height: 1.2;
+  text-align: right;
+  white-space: nowrap;
 }
 
-.platform-start-item:hover em {
+.platform-start-item:hover .platform-start-action {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -3232,6 +3250,20 @@ h3 {
 
   .platform-hero-panel {
     padding: 22px 18px;
+  }
+
+  .platform-start-item {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 6px 12px;
+    align-items: start;
+    min-height: auto;
+    padding: 14px 8px;
+  }
+
+  .platform-start-action {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
   }
 
   .platform-actions {
