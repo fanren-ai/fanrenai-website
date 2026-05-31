@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260601-about-layout";
+const assetVersion = "20260601-about-trust";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -532,6 +532,11 @@ function renderAboutPage() {
         <h1>为什么创建凡人修AI？</h1>
         <p class="about-subtitle">一个非技术背景创业者的AI转型记录。</p>
         <p class="about-intro">我不是技术出身，所以更懂普通人第一次面对 AI 时的无力感。看起来到处都是机会，但真正打开工具后，却不知道从哪里开始、该学什么、怎么用到自己的工作和项目里。</p>
+        <div class="about-trust-summary" aria-label="创始人经历摘要">
+          <span><strong>10年+</strong>互联网销售与转化经验</span>
+          <span><strong>600万+</strong>企业金融服务创收经历</span>
+          <span><strong>0技术背景</strong>用AI从零搭建凡人修AI</span>
+        </div>
       </section>
 
       <section class="about-section about-story-card" aria-labelledby="about-origin-title">
@@ -545,14 +550,14 @@ function renderAboutPage() {
       <section class="about-section" aria-labelledby="about-timeline-title">
         <h2 id="about-timeline-title">我的真实经历</h2>
         <div class="about-timeline">
-          <article class="about-timeline-item"><span>2014年</span><div><h3>百度SEM销售</h3><p>毕业后进入百度实习，做电话销售，主要业务是售卖百度SEM。</p></div></article>
-          <article class="about-timeline-item"><span>2016年</span><div><h3>百度M岗位</h3><p>晋升百度M岗位，负责苏州区域SEM转化团队，带领约10人完成客户转化成交和百度SEM购买。</p></div></article>
-          <article class="about-timeline-item"><span>2021年</span><div><h3>企业金融服务</h3><p>离开百度，进入企业金融服务领域，主要帮助企业对接银行贷款。</p></div></article>
-          <article class="about-timeline-item"><span>2022年</span><div><h3>年创收600万左右</h3><p>在企业金融服务方向实现年创收600万左右，也进一步理解获客、转化、交付和风控。</p></div></article>
-          <article class="about-timeline-item"><span>2024年</span><div><h3>创业压力与项目调整</h3><p>因为业务扩张、行业风控和团队管理等因素，公司最终解散，也承担了创业带来的现实压力。</p></div></article>
-          <article class="about-timeline-item"><span>2024年后</span><div><h3>再次试错传统项目</h3><p>尝试过餐饮小吃方向的短期创业项目，但结果并不理想，也进一步意识到传统创业对普通人的风险越来越高。</p></div></article>
-          <article class="about-timeline-item"><span>2025年</span><div><h3>认真接触AI</h3><p>开始认真接触AI，研究和试错了很多AI工具，也加入过AI项目会员，但没有直接推广别人的平台，而是持续观察、学习和实践。</p></div></article>
-          <article class="about-timeline-item"><span>现在</span><div><h3>创建凡人修AI</h3><p>直到 Codex 出现，我看到普通人即使没有技术基础，也有机会借助AI完成网站、内容和项目搭建，于是创建凡人修AI。</p></div></article>
+          <article class="about-timeline-item"><span>2014年</span><div><h3>百度SEM销售</h3><p>毕业后进入百度实习，做电话销售，主要业务是售卖百度SEM。</p><p class="about-insight">这段经历让我理解了流量、客户需求和转化。</p></div></article>
+          <article class="about-timeline-item"><span>2016年</span><div><h3>百度M岗位</h3><p>晋升百度M岗位，负责苏州区域SEM转化团队，带领约10人完成客户转化成交和百度SEM购买。</p><p class="about-insight">这段经历让我开始理解团队管理和成交系统。</p></div></article>
+          <article class="about-timeline-item"><span>2021年</span><div><h3>企业金融服务</h3><p>离开百度，进入企业金融服务领域，主要帮助企业对接银行贷款。</p><p class="about-insight">这段经历让我更接近中小企业真实经营问题。</p></div></article>
+          <article class="about-timeline-item"><span>2022年</span><div><h3>年创收600万左右</h3><p>在企业金融服务方向实现年创收600万左右，也进一步理解获客、转化、交付和风控。</p><p class="about-insight">这段经历让我理解了获客、成交、交付和风控。</p></div></article>
+          <article class="about-timeline-item"><span>2024年</span><div><h3>创业压力与项目调整</h3><p>因为业务扩张、行业风控和团队管理等因素，公司最终解散，也承担了创业带来的现实压力。</p><p class="about-insight">这段经历让我意识到，普通人创业不能只靠蛮力和经验。</p></div></article>
+          <article class="about-timeline-item"><span>2024年后</span><div><h3>再次试错传统项目</h3><p>尝试过餐饮小吃方向的短期创业项目，但结果并不理想，也进一步意识到传统创业对普通人的风险越来越高。</p><p class="about-insight">这段经历让我更重视低成本试错和可复用能力。</p></div></article>
+          <article class="about-timeline-item"><span>2025年</span><div><h3>认真接触AI</h3><p>开始认真接触AI，研究和试错了很多AI工具，也加入过AI项目会员，但没有直接推广别人的平台，而是持续观察、学习和实践。</p><p class="about-insight">这段经历让我开始重新思考普通人的第二增长曲线。</p></div></article>
+          <article class="about-timeline-item"><span>现在</span><div><h3>创建凡人修AI</h3><p>直到 Codex 出现，我看到普通人即使没有技术基础，也有机会借助AI完成网站、内容和项目搭建，于是创建凡人修AI。</p><p class="about-insight">这不是一次简单建站，而是一次用AI重建能力的长期实践。</p></div></article>
         </div>
       </section>
 
@@ -562,6 +567,31 @@ function renderAboutPage() {
         <p>“修”代表持续学习、实践、复盘和成长。</p>
         <p>“AI”不是遥远的技术概念，而是普通人可以拿来提升效率、解决问题、创造价值的新工具。</p>
         <p>凡人修AI想做的，不是把AI讲得高深，而是把AI拆成普通人能执行的教程、任务、案例和路径。</p>
+      </section>
+
+      <section class="about-section about-not-do" aria-labelledby="about-not-do-title">
+        <h2 id="about-not-do-title">凡人修AI不做什么？</h2>
+        <div class="about-not-do-grid">
+          <div>
+            <h3>我们不做</h3>
+            <ul>
+              <li>不做单纯工具导航。</li>
+              <li>不把AI讲成高深概念。</li>
+              <li>不鼓励盲目追热点。</li>
+              <li>不承诺一夜暴富。</li>
+              <li>不让普通人停留在收藏工具。</li>
+            </ul>
+          </div>
+          <div>
+            <h3>我们更关注</h3>
+            <ul>
+              <li>能不能完成任务。</li>
+              <li>能不能做出作品。</li>
+              <li>能不能提升效率。</li>
+              <li>能不能创造真实价值。</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section class="about-section" aria-labelledby="about-help-title">
@@ -589,8 +619,8 @@ function renderAboutPage() {
       <section class="about-quote" aria-labelledby="about-quote-title">
         <h2 id="about-quote-title">给普通人的一句话</h2>
         <p>如果你和我一样，不是技术出身，也曾经对AI感到无从下手，那凡人修AI就是为你准备的。</p>
-        <p>这里不追求炫技，也不把 AI 讲成遥远的概念。</p>
-        <p>我们只关注一件事：让普通人真正学会AI、用上AI、做出自己的作品。</p>
+        <p>这里不追求炫技，也不把AI讲成遥远的概念。</p>
+        <p>我们更关心的是：今天能不能完成一个任务，这一周能不能做出一个作品，未来能不能用AI创造真正的价值。</p>
       </section>
 
       <section class="about-cta" aria-labelledby="about-cta-title">

@@ -1370,6 +1370,32 @@ h3 {
   line-height: 1.86;
 }
 
+.about-trust-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.about-trust-summary span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  border-radius: 999px;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.about-trust-summary strong {
+  margin-right: 6px;
+  color: #111827;
+  font-weight: 900;
+}
+
 .about-section {
   padding: 46px 0;
   border-bottom: 1px solid rgba(20, 24, 33, 0.09);
@@ -1458,6 +1484,51 @@ h3 {
   color: var(--muted);
   font-size: 16px;
   line-height: 1.78;
+}
+
+.about-timeline-item .about-insight {
+  margin-top: 8px;
+  color: #3b4657;
+  font-size: 15px;
+}
+
+.about-insight::before {
+  color: var(--blue);
+  font-weight: 900;
+  content: "认知：";
+}
+
+.about-not-do-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.about-not-do-grid > div {
+  padding: 24px;
+  border: 1px solid rgba(20, 24, 33, 0.09);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.about-not-do-grid h3 {
+  margin-bottom: 14px;
+  color: #111827;
+  font-size: 20px;
+}
+
+.about-not-do-grid ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.about-not-do-grid li {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.65;
 }
 
 .about-belief-grid {
@@ -2392,6 +2463,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .about-not-do-grid {
+    grid-template-columns: 1fr;
+  }
+
   .path-grid,
   .columns-grid,
   .tutorial-list {
@@ -2529,8 +2604,16 @@ h3 {
     padding: 20px 0 20px 22px;
   }
 
+  .about-trust-summary span {
+    width: 100%;
+  }
+
   .about-timeline-item::before {
     top: 27px;
+  }
+
+  .about-not-do-grid > div {
+    padding: 20px;
   }
 
   .about-quote {
