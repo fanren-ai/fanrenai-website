@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260531-start-card-links";
+const assetVersion = "20260531-hero-conversion";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -307,25 +307,25 @@ function renderHomePage(articles = []) {
     {
       title: "我是AI小白",
       description: "先认识AI工具，学会基本使用。",
-      action: "开始第1天 →",
+      action: "开始第1天",
       href: "/tutorials/ai-basics-quick-start/"
     },
     {
       title: "我想提升效率",
       description: "学习Prompt、AI办公和工作流。",
-      action: "提升效率 →",
+      action: "提升效率",
       href: "/tutorials/prompt-workflow-basic/"
     },
     {
       title: "我想做出项目",
       description: "用Codex、Cursor、Claude Code完成作品。",
-      action: "做第一个项目 →",
+      action: "做第一个项目",
       href: "/tutorials/codex-first-project/"
     },
     {
       title: "我想探索变现",
       description: "学习AI副业、AI产品和AI创业案例。",
-      action: "查看案例 →",
+      action: "查看案例",
       href: "/tutorials/ai-case-side-project/"
     }
   ];
@@ -386,8 +386,8 @@ function renderHomePage(articles = []) {
             <p class="platform-lead">系统学习AI工具、Prompt工作流、Codex项目实战与AI变现案例。<br />从第1天开始，每天完成一个小任务，7天完成你的第一轮AI修炼。</p>
             <div class="platform-actions" aria-label="首页主要操作">
               ${renderButton({ href: "/tutorials/ai-basics-quick-start/", label: "开始第1天任务" })}
-              ${renderButton({ href: "tutorials/map/", label: "查看内容地图", variant: "secondary" })}
-              ${renderButton({ href: "community/", label: "加入社区", variant: "ghost" })}
+              ${renderButton({ href: "/tutorials/map/", label: "查看内容地图", variant: "secondary" })}
+              ${renderButton({ href: "/community/", label: "加入社区", variant: "secondary" })}
             </div>
             <div class="platform-tags" aria-label="核心内容标签">
               <span>AI教程</span>
@@ -407,7 +407,7 @@ function renderHomePage(articles = []) {
                   <strong class="platform-start-title">${escapeHtml(item.title)}</strong>
                   <span class="platform-start-desc">${escapeHtml(item.description)}</span>
                 </span>
-                <span class="platform-start-action">${escapeHtml(item.action)}</span>
+                <span class="platform-start-action">${escapeHtml(item.action)}<span class="platform-start-arrow" aria-hidden="true">→</span></span>
               </a>`
                 )
                 .join("")}
