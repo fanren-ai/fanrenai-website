@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260531-hero-conversion";
+const assetVersion = "20260531-trust-pages";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -522,40 +522,154 @@ function renderHomePage(articles = []) {
 
 function renderAboutPage() {
   return layout({
-    title: "关于凡人修AI | 为什么创建凡人修AI",
-    description: "为什么创建凡人修AI：创始人故事、百度经历、创业经历、AI转型经历与凡人修AI使命。",
+    title: "为什么创建凡人修AI？| 一个非技术背景创业者的AI转型记录",
+    description: "为什么创建凡人修AI：一个非技术背景创业者，从百度SEM销售、团队管理、企业金融服务和创业实践，到转型AI实践者的真实记录。",
     base: "../",
     canonicalUrl: `${site.origin}/about/`,
-    body: `<section class="static-page section-pad">
-      <p class="eyebrow">About</p>
-      <h1>为什么创建凡人修AI</h1>
-      <p>凡人修AI是一份面向普通人的AI修行手册。这里会持续记录一个普通人如何学习AI、实战AI、用AI创造价值。</p>
-      <div class="static-page-grid">
-        <article class="ds-card"><span>01</span><h2>创始人故事</h2><p>预留：从普通学习者到AI实践者的真实路径。</p></article>
-        <article class="ds-card"><span>02</span><h2>百度经历</h2><p>预留：在大厂环境中对技术、产品与增长的观察。</p></article>
-        <article class="ds-card"><span>03</span><h2>创业经历</h2><p>预留：从想法、产品、获客到交付的实战复盘。</p></article>
-        <article class="ds-card"><span>04</span><h2>AI转型经历</h2><p>预留：如何把AI从工具变成个人能力系统。</p></article>
-        <article class="ds-card"><span>05</span><h2>凡人修AI使命</h2><p>帮助普通人从AI小白到AI高手，学习AI、使用AI、靠AI创造价值。</p></article>
+    body: `<section class="static-page trust-page about-page section-pad">
+      <p class="eyebrow">创始故事</p>
+      <h1>为什么创建凡人修AI？</h1>
+      <p class="trust-lead">一个非技术背景创业者的AI转型记录。</p>
+
+      <div class="trust-story">
+        <article class="trust-story-main ds-card">
+          <h2>为什么创建凡人修AI？</h2>
+          <p>我不是技术出身，也不是一开始就懂AI的人。</p>
+          <p>过去十多年，我做过百度SEM销售，带过转化团队，也经历过创业增长、行业风控和项目调整。这些经历让我更加意识到：普通人想要在新一轮变化中抓住机会，不能只靠经验和蛮力，而需要掌握新的工具和方法。</p>
+          <p>AI，尤其是Codex这类工具的出现，让我第一次真正看到：没有技术基础的人，也有机会借助AI完成内容、网站和项目搭建。</p>
+          <p>这也是我创建凡人修AI的原因。凡人修AI不是工具导航站，也不是个人履历展示，而是普通人的AI学习与实践平台。</p>
+        </article>
+
+        <aside class="trust-principles ds-card" aria-label="凡人修AI坚持的方向">
+          <h2>我是谁？</h2>
+          <ul>
+            <li>非技术背景，长期做销售、转化、运营和创业实践。</li>
+            <li>经历过大厂一线业务、团队管理、创业增长和行业风险。</li>
+            <li>更关注普通人能不能真正用上AI，而不是只收藏工具。</li>
+          </ul>
+          ${renderButton({ href: "/tutorials/map/", label: "查看AI修炼路径", variant: "secondary" })}
+        </aside>
       </div>
+
+      <div class="trust-timeline" aria-label="创始人经历时间线">
+        <article><span>2014年</span><h2>百度SEM销售</h2><p>毕业后进入百度实习，做电话销售，主要业务是售卖百度SEM。</p></article>
+        <article><span>2016年</span><h2>百度M岗位</h2><p>晋升百度M岗位，负责苏州区域SEM转化团队，带领约10人完成客户转化成交和百度SEM购买。</p></article>
+        <article><span>2021年</span><h2>企业金融服务</h2><p>离开百度，进入企业金融服务领域，主要帮助企业对接银行贷款。</p></article>
+        <article><span>2022年</span><h2>年创收600万左右</h2><p>在企业金融服务方向实现年创收600万左右，也进一步理解获客、转化、交付和风控。</p></article>
+        <article><span>2024年</span><h2>创业压力与项目调整</h2><p>因为业务扩张、行业风控和团队管理等因素，公司最终解散，也承担了创业带来的现实压力。</p></article>
+        <article><span>2024年后</span><h2>餐饮小吃尝试</h2><p>尝试过餐饮小吃方向的短期创业项目，但结果并不理想，也更清楚传统创业对普通人的风险越来越高。</p></article>
+        <article><span>2025年</span><h2>认真接触AI</h2><p>开始认真接触AI，研究和试错了很多AI工具，也加入过AI项目会员，但没有直接推广别人的平台，而是持续观察、学习和实践。</p></article>
+        <article><span>现在</span><h2>创建凡人修AI</h2><p>直到Codex出现，看到普通人即使没有技术基础，也有机会借助AI完成网站、内容和项目搭建。</p></article>
+      </div>
+
+      <section class="trust-mission ds-card" aria-labelledby="brand-title">
+        <h2 id="brand-title">为什么是“凡人修AI”？</h2>
+        <p>“凡人”代表普通人。“修”代表持续学习、实践、复盘和成长。“AI”不是遥远的技术概念，而是普通人可以拿来提升效率、解决问题、创造价值的新工具。</p>
+        <p>凡人修AI想做的，不是把AI讲得高深，而是把AI拆成普通人能执行的教程、任务、案例和路径。</p>
+      </section>
+
+      <section class="trust-mission ds-card" aria-labelledby="help-title">
+        <h2 id="help-title">凡人修AI想帮助谁？</h2>
+        <ul>
+          <li>刚开始接触AI，不知道从哪里学起的人。</li>
+          <li>想用AI提升工作效率的人。</li>
+          <li>想用AI做内容、做项目、做副业的人。</li>
+          <li>没有技术背景，但希望借助AI完成作品的人。</li>
+          <li>正在寻找第二增长曲线的普通创业者和职场人。</li>
+        </ul>
+      </section>
+
+      <section class="trust-mission ds-card" aria-labelledby="belief-title">
+        <h2 id="belief-title">我们相信什么？</h2>
+        <ul>
+          <li>普通人也可以学会AI。</li>
+          <li>学AI不应该只停留在收藏工具。</li>
+          <li>真正重要的是完成任务、做出作品、创造价值。</li>
+          <li>AI学习应该有路径、有任务、有案例、有社区。</li>
+          <li>凡人修AI会持续记录普通人学习AI、实践AI、转型AI的过程。</li>
+        </ul>
+      </section>
+
+      <section class="trust-mission ds-card" aria-labelledby="about-cta-title">
+        <h2 id="about-cta-title">一起开始修AI</h2>
+        <p>从第1天任务开始，完成你的第一轮AI修炼。</p>
+        <div class="hero-actions">
+          ${renderButton({ href: "/tutorials/ai-basics-quick-start/", label: "开始第1天任务" })}
+          ${renderButton({ href: "/tutorials/map/", label: "查看内容地图", variant: "secondary" })}
+          ${renderButton({ href: "/community/", label: "加入社区", variant: "secondary" })}
+        </div>
+      </section>
     </section>`
   });
 }
 
 function renderCommunityPage() {
   return layout({
-    title: "加入道友群 | 凡人修AI",
-    description: "加入凡人修AI道友群，关注微信公众号，参与未来活动，和普通人一起学习AI、实战AI。",
+    title: "加入凡人修AI社区 | 凡人修AI",
+    description: "加入凡人修AI社区，和更多普通人一起学习AI、实践AI、参与共学营、直播分享、项目实战和作品复盘。",
     base: "../",
     canonicalUrl: `${site.origin}/community/`,
-    body: `<section class="static-page section-pad">
-      <p class="eyebrow">Community</p>
-      <h1>加入道友群</h1>
-      <p>这里不是围观大神的地方，而是一群普通人一起学习AI、实战AI、复盘AI的修行场。</p>
-      <div class="static-page-grid">
-        <article class="ds-card"><span>01</span><h2>加入道友群</h2><p>预留：微信群二维码、入群说明、社群规则。</p></article>
-        <article class="ds-card"><span>02</span><h2>微信公众号</h2><p>预留：公众号二维码、更新频率、内容栏目。</p></article>
-        <article class="ds-card"><span>03</span><h2>未来活动</h2><p>预留：共学营、直播分享、项目实战、作品复盘。</p></article>
+    body: `<section class="static-page trust-page community-page section-pad">
+      <p class="eyebrow">社区</p>
+      <h1>加入凡人修AI社区</h1>
+      <p class="trust-lead">这里不是围观大神的地方，而是一群普通人一起学习AI、实践AI、复盘AI的成长社区。</p>
+
+      <div class="community-layout">
+        <article class="community-info ds-card">
+          <h2>适合加入的人</h2>
+          <ul>
+            <li>刚开始接触AI，希望有人带着入门的普通用户。</li>
+            <li>想用AI提升工作效率，但不知道从哪里开始的人。</li>
+            <li>想学习Prompt、Codex、Cursor、Claude Code等AI实践工具的人。</li>
+            <li>想尝试AI副业、AI产品或一人公司模式的人。</li>
+            <li>愿意分享过程、复盘结果、持续行动的人。</li>
+          </ul>
+        </article>
+
+        <article class="community-info ds-card">
+          <h2>入群可以获得什么</h2>
+          <ul>
+            <li>凡人修AI教程更新提醒和学习路线。</li>
+            <li>AI工具、Prompt工作流、Codex项目实战经验。</li>
+            <li>普通人AI应用案例和避坑复盘。</li>
+            <li>阶段性共学任务、作品展示和互相反馈。</li>
+          </ul>
+        </article>
       </div>
+
+      <div class="qr-grid">
+        <article class="qr-card ds-card">
+          <div class="qr-placeholder" aria-label="微信群二维码占位区">微信群二维码占位区</div>
+          <h2>微信群</h2>
+          <p>后续放置凡人修AI微信群二维码。二维码过期时，将通过公众号或页面说明更新入群方式。</p>
+        </article>
+        <article class="qr-card ds-card">
+          <div class="qr-placeholder" aria-label="公众号二维码占位区">公众号二维码占位区</div>
+          <h2>微信公众号</h2>
+          <p>后续放置公众号二维码，用于发布教程更新、活动通知、案例复盘和社群入口。</p>
+        </article>
+      </div>
+
+      <div class="community-rules ds-card">
+        <h2>社群规则</h2>
+        <ol>
+          <li>聚焦AI学习、实践、项目和真实案例，少发无关内容。</li>
+          <li>鼓励提问，但提问时尽量说明背景、目标和你已经尝试过的方法。</li>
+          <li>欢迎分享作品、过程和复盘，不鼓励只转发焦虑型信息。</li>
+          <li>禁止广告刷屏、灰产项目、夸大收益和虚假承诺。</li>
+          <li>尊重每个阶段的学习者，普通人也可以慢慢把AI用起来。</li>
+        </ol>
+      </div>
+
+      <section class="future-events" aria-labelledby="events-title">
+        <h2 id="events-title">未来活动</h2>
+        <div class="future-events-grid">
+          <article class="ds-card"><span>01</span><h3>共学营</h3><p>围绕AI入门、Prompt工作流、Codex实战组织阶段性共学。</p></article>
+          <article class="ds-card"><span>02</span><h3>直播分享</h3><p>分享工具更新、实战案例、踩坑经验和普通人的AI转型路径。</p></article>
+          <article class="ds-card"><span>03</span><h3>项目实战</h3><p>从静态页面、工具站到小产品，带着大家完成可展示的作品。</p></article>
+          <article class="ds-card"><span>04</span><h3>作品复盘</h3><p>复盘成员作品，讨论如何优化需求、页面、内容、转化和交付。</p></article>
+        </div>
+      </section>
     </section>`
   });
 }
