@@ -534,10 +534,11 @@ function renderAboutPage() {
       <div class="trust-story">
         <article class="trust-story-main ds-card">
           <h2>为什么创建凡人修AI？</h2>
-          <p>我不是技术出身，也不是一开始就懂AI的人。</p>
-          <p>过去十多年，我做过百度SEM销售，带过转化团队，也经历过创业增长、行业风控和项目调整。这些经历让我更加意识到：普通人想要在新一轮变化中抓住机会，不能只靠经验和蛮力，而需要掌握新的工具和方法。</p>
+          <p>我不是技术出身，所以更懂普通人第一次面对AI时的无力感。</p>
+          <p>看起来到处都是机会，但真正打开工具后，却不知道从哪里开始、该学什么、怎么用到自己的工作和项目里。</p>
+          <p>过去十多年，我经历过百度SEM销售、团队管理、企业金融服务、创业增长和项目调整。这些经历让我更加相信：普通人不缺努力，缺的是一条能执行的学习路径。</p>
           <p>AI，尤其是Codex这类工具的出现，让我第一次真正看到：没有技术基础的人，也有机会借助AI完成内容、网站和项目搭建。</p>
-          <p>这也是我创建凡人修AI的原因。凡人修AI不是工具导航站，也不是个人履历展示，而是普通人的AI学习与实践平台。</p>
+          <p>凡人修AI，就是想把AI拆成普通人能完成的教程、任务、案例和路径。它不是工具导航站，也不是个人履历展示，而是普通人的AI学习与实践平台。</p>
         </article>
 
         <aside class="trust-principles ds-card" aria-label="凡人修AI坚持的方向">
@@ -557,7 +558,7 @@ function renderAboutPage() {
         <article><span>2021年</span><h2>企业金融服务</h2><p>离开百度，进入企业金融服务领域，主要帮助企业对接银行贷款。</p></article>
         <article><span>2022年</span><h2>年创收600万左右</h2><p>在企业金融服务方向实现年创收600万左右，也进一步理解获客、转化、交付和风控。</p></article>
         <article><span>2024年</span><h2>创业压力与项目调整</h2><p>因为业务扩张、行业风控和团队管理等因素，公司最终解散，也承担了创业带来的现实压力。</p></article>
-        <article><span>2024年后</span><h2>餐饮小吃尝试</h2><p>尝试过餐饮小吃方向的短期创业项目，但结果并不理想，也更清楚传统创业对普通人的风险越来越高。</p></article>
+        <article><span>2024年后</span><h2>再次试错传统项目</h2><p>尝试过餐饮小吃方向的短期创业项目，但结果并不理想，也更清楚传统创业对普通人的风险越来越高。</p></article>
         <article><span>2025年</span><h2>认真接触AI</h2><p>开始认真接触AI，研究和试错了很多AI工具，也加入过AI项目会员，但没有直接推广别人的平台，而是持续观察、学习和实践。</p></article>
         <article><span>现在</span><h2>创建凡人修AI</h2><p>直到Codex出现，看到普通人即使没有技术基础，也有机会借助AI完成网站、内容和项目搭建。</p></article>
       </div>
@@ -588,6 +589,13 @@ function renderAboutPage() {
           <li>AI学习应该有路径、有任务、有案例、有社区。</li>
           <li>凡人修AI会持续记录普通人学习AI、实践AI、转型AI的过程。</li>
         </ul>
+      </section>
+
+      <section class="trust-mission ds-card" aria-labelledby="ordinary-title">
+        <h2 id="ordinary-title">给普通人的一句话</h2>
+        <p>如果你和我一样，不是技术出身，也曾经对AI感到无从下手，那凡人修AI就是为你准备的。</p>
+        <p>这里不追求炫技，也不把AI讲成遥远的概念。</p>
+        <p>我们只关注一件事：让普通人真正学会AI、用上AI、做出自己的作品。</p>
       </section>
 
       <section class="trust-mission ds-card" aria-labelledby="about-cta-title">
