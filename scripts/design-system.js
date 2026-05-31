@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260531-theme-wipe-layer";
+const assetVersion = "20260531-clean-header";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -86,16 +86,6 @@ function renderHeader({ base = "", variant = "default" } = {}) {
         </button>
         <div class="nav-menu" id="site-menu">
           ${items.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}
-          <button class="theme-toggle" type="button" aria-label="切换深色模式" aria-pressed="false" title="切换深色模式" data-theme-toggle>
-            <svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 21h6" />
-              <path d="M10 17h4" />
-              <path d="M8.4 14.7a6 6 0 1 1 7.2 0c-.8.6-1.3 1.3-1.5 2.3H9.9c-.2-1-.7-1.7-1.5-2.3Z" />
-              <path d="M12 2v2" />
-              <path d="M4.9 4.9l1.4 1.4" />
-              <path d="M19.1 4.9l-1.4 1.4" />
-            </svg>
-          </button>
           <a class="nav-cta" href="${base}community/">加入社区</a>
         </div>
       </nav>
@@ -126,20 +116,6 @@ function layout({ title, description, base = "", body, extraHead = "", bodyClass
     ${canonical}
     ${extraHead}
     <title>${safeTitle}</title>
-    <script>
-      (function () {
-        try {
-          var storedTheme = localStorage.getItem("fanrenai-theme");
-          var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-          var theme = storedTheme || (prefersDark ? "dark" : "light");
-          document.documentElement.dataset.theme = theme;
-          document.documentElement.style.colorScheme = theme;
-        } catch (error) {
-          document.documentElement.dataset.theme = "light";
-          document.documentElement.style.colorScheme = "light";
-        }
-      })();
-    </script>
     <link rel="stylesheet" href="${base}styles.css?v=${assetVersion}" />
   </head>
   <body${bodyClass ? ` class="${escapeHtml(bodyClass)}"` : ""}>
