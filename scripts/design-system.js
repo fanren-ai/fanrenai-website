@@ -338,29 +338,32 @@ function renderHomePage(articles = []) {
       label: "AI小白任务",
       title: "让AI帮你写一段自我介绍",
       description: "学会向AI清楚表达身份、目标和场景。",
+      result: "完成后：你会得到一份可直接使用的AI自我介绍。",
       href: "tutorials/ai-basics-quick-start/"
     },
     {
       label: "效率提升任务",
       title: "用Prompt生成一份工作计划",
       description: "把一句模糊需求变成一份可执行计划。",
+      result: "完成后：你会得到一份可执行的工作计划。",
       href: "tutorials/prompt-workflow-basic/"
     },
     {
       label: "项目实战任务",
       title: "用Codex做出第一个静态页面",
       description: "不懂代码，也能尝试让AI帮你完成一个页面。",
+      result: "完成后：你会得到第一个AI生成的静态页面。",
       href: "tutorials/codex-first-project/"
     }
   ];
   const sevenDayRoute = [
-    "认识AI，搞懂AI能帮你做什么",
-    "学会提问，写出第一个Prompt",
-    "用AI完成一份真实工作内容",
-    "整理你的AI工具箱",
-    "学习Codex，理解AI如何帮你做项目",
-    "完成一个小作品",
-    "复盘并加入社区继续修炼"
+    ["认识AI", "知道AI能帮你做什么"],
+    ["学会Prompt", "写出第一个可复用提示词"],
+    ["AI办公", "完成一份真实工作内容"],
+    ["整理工具箱", "建立自己的AI工具清单"],
+    ["认识Codex", "理解AI如何帮你做项目"],
+    ["完成作品", "做出第一个小作品"],
+    ["复盘入群", "进入社区继续修炼"]
   ];
 
   return layout({
@@ -376,9 +379,9 @@ function renderHomePage(articles = []) {
             <p class="platform-kicker">普通人的AI学习与实践平台</p>
             <h1 id="home-title">凡人修AI</h1>
             <p class="platform-subtitle">从AI小白到AI实战者</p>
-            <p class="platform-lead">系统学习AI工具、Prompt工作流、Codex项目实战与AI变现案例。<br />不是收藏工具，而是完成一条可执行的AI成长路径。</p>
+            <p class="platform-lead">系统学习AI工具、Prompt工作流、Codex项目实战与AI变现案例。<br />从第1天开始，每天完成一个小任务，7天完成你的第一轮AI修炼。</p>
             <div class="platform-actions" aria-label="首页主要操作">
-              ${renderButton({ href: "tutorials/", label: "开始学习" })}
+              ${renderButton({ href: "/tutorials/ai-basics-quick-start/", label: "开始第1天任务" })}
               ${renderButton({ href: "tutorials/map/", label: "查看内容地图", variant: "secondary" })}
               ${renderButton({ href: "community/", label: "加入社区", variant: "ghost" })}
             </div>
@@ -398,6 +401,7 @@ function renderHomePage(articles = []) {
                 <span>${String(index + 1).padStart(2, "0")}</span>
                 <strong>${escapeHtml(item.title)}</strong>
                 <p>${escapeHtml(item.description)}</p>
+                <em>去开始 →</em>
               </a>`
                 )
                 .join("")}
@@ -436,6 +440,7 @@ function renderHomePage(articles = []) {
             <span>${escapeHtml(task.label)}</span>
             <h3>${escapeHtml(task.title)}</h3>
             <p>${escapeHtml(task.description)}</p>
+            <p class="platform-task-result">${escapeHtml(task.result)}</p>
             ${renderButton({ href: task.href, label: "开始任务", variant: "secondary" })}
           </article>`
             )
@@ -454,7 +459,8 @@ function renderHomePage(articles = []) {
               .map(
                 (item, index) => `<li>
               <span>第${index + 1}天</span>
-              <strong>${escapeHtml(item)}</strong>
+              <strong>${escapeHtml(item[0])}</strong>
+              <em>成果：${escapeHtml(item[1])}</em>
             </li>`
               )
               .join("")}
