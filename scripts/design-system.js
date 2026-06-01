@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260601-brand-community";
+const assetVersion = "20260601-logo-mark";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -78,7 +78,7 @@ function renderHeader({ base = "", variant = "default" } = {}) {
   return `<header class="site-header" id="top">
       <nav class="nav-shell" aria-label="主导航">
         <a class="brand" href="${isHome ? "#top" : `${base}index.html`}" aria-label="凡人修AI 首页">
-          <img class="brand-logo" src="${base}assets/brand/fanrenai-logo.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+          <img class="brand-logo" src="${base}assets/brand/fanrenai-logo-mark.png" alt="" width="40" height="40" loading="eager" decoding="async" />
           <span>凡人修AI</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
@@ -112,14 +112,14 @@ function layout({ title, description, base = "", body, extraHead = "", bodyClass
     <meta property="og:site_name" content="${site.name}" />
     <meta property="og:title" content="${safeTitle}" />
     <meta property="og:description" content="${safeDescription}" />
-    <meta property="og:image" content="${site.origin}/assets/brand/fanrenai-logo.png" />
+    <meta property="og:image" content="${site.origin}/assets/brand/fanrenai-logo-mark.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="${site.origin}/assets/brand/fanrenai-logo.png" />
+    <meta name="twitter:image" content="${site.origin}/assets/brand/fanrenai-logo-mark.png" />
     ${canonical}
     ${extraHead}
     <title>${safeTitle}</title>
-    <link rel="icon" type="image/png" href="${base}assets/brand/fanrenai-logo.png" />
-    <link rel="apple-touch-icon" href="${base}assets/brand/fanrenai-logo.png" />
+    <link rel="icon" type="image/png" href="${base}assets/brand/fanrenai-logo-mark.png" />
+    <link rel="apple-touch-icon" href="${base}assets/brand/fanrenai-logo-mark.png" />
     <link rel="stylesheet" href="${base}styles.css?v=${assetVersion}" />
   </head>
   <body${bodyClass ? ` class="${escapeHtml(bodyClass)}"` : ""}>

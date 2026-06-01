@@ -100,9 +100,11 @@ img {
   width: 40px;
   height: 40px;
   flex: 0 0 40px;
+  display: block;
   border-radius: 10px;
-  object-fit: cover;
-  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.16);
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
 }
 
 .nav-menu {
@@ -2542,6 +2544,12 @@ h3 {
 
   .section-pad {
     padding: 64px 0;
+  }
+
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
   }
 
   .v2-hero,
