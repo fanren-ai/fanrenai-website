@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260601-about-trust";
+const assetVersion = "20260601-brand-community";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -78,7 +78,7 @@ function renderHeader({ base = "", variant = "default" } = {}) {
   return `<header class="site-header" id="top">
       <nav class="nav-shell" aria-label="主导航">
         <a class="brand" href="${isHome ? "#top" : `${base}index.html`}" aria-label="凡人修AI 首页">
-          <span class="brand-mark">AI</span>
+          <img class="brand-logo" src="${base}assets/brand/fanrenai-logo.png" alt="" width="40" height="40" loading="eager" decoding="async" />
           <span>凡人修AI</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
@@ -112,10 +112,14 @@ function layout({ title, description, base = "", body, extraHead = "", bodyClass
     <meta property="og:site_name" content="${site.name}" />
     <meta property="og:title" content="${safeTitle}" />
     <meta property="og:description" content="${safeDescription}" />
+    <meta property="og:image" content="${site.origin}/assets/brand/fanrenai-logo.png" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="${site.origin}/assets/brand/fanrenai-logo.png" />
     ${canonical}
     ${extraHead}
     <title>${safeTitle}</title>
+    <link rel="icon" type="image/png" href="${base}assets/brand/fanrenai-logo.png" />
+    <link rel="apple-touch-icon" href="${base}assets/brand/fanrenai-logo.png" />
     <link rel="stylesheet" href="${base}styles.css?v=${assetVersion}" />
   </head>
   <body${bodyClass ? ` class="${escapeHtml(bodyClass)}"` : ""}>
@@ -672,14 +676,20 @@ function renderCommunityPage() {
 
       <div class="qr-grid">
         <article class="qr-card ds-card">
-          <div class="qr-placeholder" aria-label="微信群二维码占位区">微信群二维码占位区</div>
-          <h2>微信群</h2>
-          <p>后续放置凡人修AI微信群二维码。二维码过期时，将通过公众号或页面说明更新入群方式。</p>
+          <div class="qr-image-wrap">
+            <img class="qr-image" src="../assets/qrcodes/wechat-group-latest.png" alt="凡人修AI社区二维码" width="280" height="280" loading="lazy" decoding="async" />
+          </div>
+          <h2>扫码加入凡人修AI社区</h2>
+          <p class="qr-meta">群聊：凡人修AI②群</p>
+          <p class="qr-note">扫码加入社区，和一群普通人一起学习AI、实践AI、用AI创造价值。</p>
         </article>
         <article class="qr-card ds-card">
-          <div class="qr-placeholder" aria-label="公众号二维码占位区">公众号二维码占位区</div>
-          <h2>微信公众号</h2>
-          <p>后续放置公众号二维码，用于发布教程更新、活动通知、案例复盘和社群入口。</p>
+          <div class="qr-image-wrap">
+            <img class="qr-image" src="../assets/qrcodes/wechat-official-latest.jpg" alt="凡人修AI公众号二维码" width="280" height="280" loading="lazy" decoding="async" />
+          </div>
+          <h2>关注凡人修AI公众号</h2>
+          <p class="qr-meta">获取AI教程、项目实战、转型记录和社群动态。</p>
+          <p class="qr-note">关注公众号，持续获取凡人修AI最新内容。</p>
         </article>
       </div>
 

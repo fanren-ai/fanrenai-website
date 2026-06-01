@@ -96,6 +96,15 @@ img {
   box-shadow: 0 12px 26px rgba(37, 99, 235, 0.2);
 }
 
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.16);
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -1303,6 +1312,41 @@ h3 {
 
 .qr-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.qr-card {
+  text-align: center;
+}
+
+.qr-image-wrap {
+  display: grid;
+  width: min(100%, 300px);
+  margin: 0 auto 22px;
+  place-items: center;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.qr-image {
+  display: block;
+  width: min(100%, 280px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 14px;
+}
+
+.qr-meta {
+  margin: 4px 0 12px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.qr-note {
+  max-width: 360px;
+  margin: 0 auto;
 }
 
 .qr-placeholder {
