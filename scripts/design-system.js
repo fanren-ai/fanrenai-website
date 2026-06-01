@@ -78,7 +78,7 @@ function renderHeader({ base = "", variant = "default" } = {}) {
   return `<header class="site-header" id="top">
       <nav class="nav-shell" aria-label="主导航">
         <a class="brand" href="${isHome ? "#top" : `${base}index.html`}" aria-label="凡人修AI 首页">
-          <img class="brand-logo" src="${base}assets/brand/fanrenai-logo-mark.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+          <img class="brand-logo" src="${base}assets/brand/fanrenai-logo-mark-256.png" alt="" width="40" height="40" loading="eager" decoding="async" />
           <span>凡人修AI</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
@@ -120,8 +120,8 @@ function layout({ title, description, base = "", body, extraHead = "", bodyClass
     ${canonical}
     ${extraHead}
     <title>${safeTitle}</title>
-    <link rel="icon" type="image/png" href="${base}assets/brand/fanrenai-logo-mark.png" />
-    <link rel="apple-touch-icon" href="${base}assets/brand/fanrenai-logo-mark.png" />
+    <link rel="icon" type="image/png" href="${base}assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="apple-touch-icon" href="${base}assets/brand/fanrenai-logo-mark-256.png" />
     <link rel="stylesheet" href="${base}styles.css?v=${assetVersion}" />
   </head>
   <body${bodyClass ? ` class="${escapeHtml(bodyClass)}"` : ""}>
