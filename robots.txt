@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://fanrenai.cn/sitemap.xml
+Sitemap: https://www.fanrenai.cn/sitemap.xml
