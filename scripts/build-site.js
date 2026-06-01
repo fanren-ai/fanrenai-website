@@ -352,7 +352,7 @@ function renderContentMapPage(articles) {
               ${items
                 .map(
                   (article) => {
-                    const statusLabel = article.status === "published" ? "已发布" : article.status === "writing" ? "撰写中" : "待完善";
+                    const statusLabel = article.status === "published" ? "已发布" : article.status === "writing" ? "撰写中" : "规划中";
                     const inner = `<span>${String(article.order).padStart(2, "0")}</span>
                   <strong>${escapeHtml(article.title)}</strong>
                   <em>${statusLabel}</em>`;
