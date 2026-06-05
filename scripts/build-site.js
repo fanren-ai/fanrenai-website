@@ -71,12 +71,158 @@ function markdownToHtml(markdown) {
   let paragraph = [];
   let list = [];
   let code = [];
+  let codeLanguage = "";
   let inCode = false;
 
   function inline(value) {
     return escapeHtml(value)
+      .replace(/\[([^\]]+?)\]\(([^)\s]+?)\)/g, (_, label, href) => {
+        const safeHref = href.trim();
+        const isExternal = /^https?:\/\//.test(safeHref);
+        const allowedHref = /^(https?:\/\/|mailto:|tel:|#|\/|\.\.?\/)/.test(safeHref) ? safeHref : "#";
+        const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : "";
+        return `<a href="${escapeHtml(allowedHref)}"${target}>${label}</a>`;
+      })
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
       .replace(/`(.+?)`/g, "<code>$1</code>");
+  }
+
+  function getBlockValue(blockLines, key, fallback = "") {
+    const prefix = `${key}:`;
+    const line = blockLines.find((item) => item.startsWith(prefix));
+    return line ? line.slice(prefix.length).trim() : fallback;
+  }
+
+  function getBlockItems(blockLines) {
+    return blockLines.filter((item) => item.trim() && !/^[a-zA-Z]+:/.test(item));
+  }
+
+  function splitCells(line) {
+    return line.split("|").map((item) => item.trim()).filter(Boolean);
+  }
+
+  function renderTutorialBlock(type, blockLines) {
+    const title = getBlockValue(blockLines, "title");
+
+    if (type === "tutorial-flow") {
+      const items = getBlockItems(blockLines);
+      return `<section class="tutorial-visual-card tutorial-flow" aria-label="${escapeHtml(title)}">
+        <header>
+          <span>Flow</span>
+          <h3>${escapeHtml(title || "第1天只做三件事")}</h3>
+        </header>
+        <ol>${items
+          .map((item, index) => {
+            const [name, description = ""] = splitCells(item);
+            return `<li>
+              <span>${String(index + 1).padStart(2, "0")}</span>
+              <strong>${escapeHtml(name)}</strong>
+              <p>${escapeHtml(description)}</p>
+            </li>`;
+          })
+          .join("")}</ol>
+      </section>`;
+    }
+
+    if (type === "tutorial-formula") {
+      const items = getBlockItems(blockLines).flatMap(splitCells);
+      return `<section class="tutorial-visual-card tutorial-formula" aria-label="${escapeHtml(title)}">
+        <header>
+          <span>Formula</span>
+          <h3>${escapeHtml(title || "普通人向AI提问的基础公式")}</h3>
+        </header>
+        <div class="tutorial-formula-row">${items
+          .map((item, index) => `${index ? "<b>+</b>" : ""}<span>${escapeHtml(item)}</span>`)
+          .join("")}</div>
+        <p>把这五项说清楚，AI才更容易给出接近真实需求的结果。</p>
+      </section>`;
+    }
+
+    if (type === "tutorial-task-card") {
+      const target = getBlockValue(blockLines, "target", "让AI帮你写一段自我介绍");
+      const scenes = splitCells(getBlockValue(blockLines, "scenes"));
+      const includes = splitCells(getBlockValue(blockLines, "includes"));
+      const standards = splitCells(getBlockValue(blockLines, "standard"));
+      return `<section class="tutorial-visual-card tutorial-task-card" aria-label="${escapeHtml(title)}">
+        <header>
+          <span>Task</span>
+          <h3>${escapeHtml(title || "今日修炼任务")}</h3>
+        </header>
+        <div class="tutorial-task-grid">
+          <div>
+            <span>任务目标</span>
+            <strong>${escapeHtml(target)}</strong>
+          </div>
+          <div>
+            <span>${includes.length ? "页面包含什么" : "使用场景"}</span>
+            <ul>${(includes.length ? includes : scenes).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          </div>
+          <div>
+            <span>完成标准</span>
+            <ul>${standards.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    if (type === "tutorial-role-split") {
+      const you = splitCells(getBlockValue(blockLines, "you"));
+      const codex = splitCells(getBlockValue(blockLines, "codex"));
+      return `<section class="tutorial-visual-card tutorial-role-split" aria-label="${escapeHtml(title)}">
+        <header>
+          <span>Roles</span>
+          <h3>${escapeHtml(title || "你和 Codex 各自负责什么？")}</h3>
+        </header>
+        <div class="tutorial-role-grid">
+          <div>
+            <strong>你负责：</strong>
+            <ul>${you.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          </div>
+          <div>
+            <strong>Codex 负责：</strong>
+            <ul>${codex.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+          </div>
+        </div>
+      </section>`;
+    }
+
+    if (type === "tutorial-compare-table") {
+      const items = getBlockItems(blockLines);
+      return `<section class="tutorial-visual-card tutorial-compare-table" aria-label="${escapeHtml(title)}">
+        <header>
+          <span>Compare</span>
+          <h3>${escapeHtml(title || "常见错误对照表")}</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody>${items
+            .map((item) => {
+              const [wrong, better = ""] = splitCells(item);
+              return `<tr><td>${escapeHtml(wrong)}</td><td>${escapeHtml(better)}</td></tr>`;
+            })
+            .join("")}</tbody>
+        </table>
+      </section>`;
+    }
+
+    if (type === "tutorial-next-actions") {
+      const items = getBlockItems(blockLines);
+      return `<section class="tutorial-next-actions" aria-label="${escapeHtml(title || "下一步行动")}">
+        ${title ? `<h3>${escapeHtml(title)}</h3>` : ""}
+        <div>${items
+          .map((item) => {
+            const [label, href = "#", description = ""] = splitCells(item);
+            const allowedHref = /^(https?:\/\/|#|\/|\.\.?\/)/.test(href) ? href : "#";
+            return `<a class="tutorial-next-card" href="${escapeHtml(allowedHref)}">
+              <strong>${escapeHtml(label)}</strong>
+              <span>${escapeHtml(description)}</span>
+            </a>`;
+          })
+          .join("")}</div>
+      </section>`;
+    }
+
+    return "";
   }
 
   function flushParagraph() {
@@ -92,32 +238,71 @@ function markdownToHtml(markdown) {
   }
 
   function flushCode() {
-    html.push(`<pre><code>${escapeHtml(code.join("\n"))}</code></pre>`);
+    const className = codeLanguage ? ` class="language-${escapeHtml(codeLanguage)}"` : "";
+    const label = codeLanguage === "prompt" ? "可复制提示词" : "可复制内容";
+    html.push(`<div class="copy-block">
+      <div class="copy-block-header">
+        <span>${label}</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code${className}>${escapeHtml(code.join("\n"))}</code></pre>
+    </div>`);
     code = [];
+    codeLanguage = "";
   }
 
-  lines.forEach((line) => {
-    if (line.startsWith("```")) {
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    const fence = line.match(/^```(\w+)?/);
+    if (fence) {
       if (inCode) {
         flushCode();
         inCode = false;
       } else {
         flushParagraph();
         flushList();
+        codeLanguage = fence[1] || "";
         inCode = true;
       }
-      return;
+      continue;
     }
 
     if (inCode) {
       code.push(line);
-      return;
+      continue;
+    }
+
+    const tutorialBlock = line.match(/^:::(tutorial-[a-z-]+)$/);
+    if (tutorialBlock) {
+      flushParagraph();
+      flushList();
+      const blockLines = [];
+      index += 1;
+      while (index < lines.length && lines[index].trim() !== ":::") {
+        blockLines.push(lines[index].trim());
+        index += 1;
+      }
+      const rendered = renderTutorialBlock(tutorialBlock[1], blockLines);
+      if (rendered) html.push(rendered);
+      continue;
+    }
+
+    const image = line.match(/^!\[([^\]]*)\]\((\S+)(?:\s+"([^"]+)")?\)$/);
+    if (image) {
+      flushParagraph();
+      flushList();
+      const [, alt, src, caption] = image;
+      html.push(`<figure class="article-figure">
+        <img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" />
+        ${caption ? `<figcaption>${inline(caption)}</figcaption>` : ""}
+      </figure>`);
+      continue;
     }
 
     if (!line.trim()) {
       flushParagraph();
       flushList();
-      return;
+      continue;
     }
 
     const heading = line.match(/^(#{1,3})\s+(.+)$/);
@@ -126,7 +311,7 @@ function markdownToHtml(markdown) {
       flushList();
       const level = heading[1].length;
       html.push(`<h${level}>${inline(heading[2])}</h${level}>`);
-      return;
+      continue;
     }
 
     const quote = line.match(/^>\s+(.+)$/);
@@ -134,25 +319,25 @@ function markdownToHtml(markdown) {
       flushParagraph();
       flushList();
       html.push(`<blockquote><p>${inline(quote[1])}</p></blockquote>`);
-      return;
+      continue;
     }
 
     const bullet = line.match(/^-\s+(.+)$/);
     if (bullet) {
       flushParagraph();
       list.push(bullet[1]);
-      return;
+      continue;
     }
 
     const ordered = line.match(/^\d+\.\s+(.+)$/);
     if (ordered) {
       flushParagraph();
       list.push(ordered[1]);
-      return;
+      continue;
     }
 
     paragraph.push(line.trim());
-  });
+  }
 
   flushParagraph();
   flushList();
@@ -238,6 +423,7 @@ function pagination(current, total, hrefForPage) {
 
 function renderTutorialIndex(articles, current = 1, total = 1, baseRoot = "../") {
   const cards = articles.map((article) => renderArticleCard(article, baseRoot)).join("\n");
+  const listContent = cards || "<p>内容正在按照新标准重写中</p>";
   const chips = renderCategoryChips(baseRoot);
   return layout({
     title: "AI教程 | 凡人修AI",
@@ -246,7 +432,7 @@ function renderTutorialIndex(articles, current = 1, total = 1, baseRoot = "../")
     body: `<section class="tutorial-hero section-pad">
       <p class="eyebrow">Tutorials</p>
       <h1>AI教程</h1>
-      <p>用本地Markdown管理内容，按分类沉淀普通人的AI修炼手册。</p>
+      <p>从认识 AI、学会工具，到完成项目，一步步走完普通人的 AI 修炼路径。</p>
       <div class="tutorial-hero-actions">
         ${renderButton({ href: `${baseRoot}tutorials/map/`, label: "查看内容地图" })}
       </div>
@@ -258,7 +444,7 @@ function renderTutorialIndex(articles, current = 1, total = 1, baseRoot = "../")
         <nav>${chips}</nav>
       </aside>
       <div>
-        <div class="tutorial-list">${cards}</div>
+        <div class="tutorial-list">${listContent}</div>
         ${pagination(current, total, (page) => (page === 1 ? `${baseRoot}tutorials/` : `${baseRoot}tutorials/page/${page}/`))}
       </div>
     </section>`
@@ -319,11 +505,23 @@ function getRelatedArticles(article, articles) {
   return related;
 }
 
+const contentMapLevels = [
+  { level: "新手村", sections: ["AI基础认知", "AI工具入门", "AI工具选择"] },
+  { level: "炼气期", sections: ["Prompt工程", "AI办公", "AI工作流"] },
+  { level: "筑基期", sections: ["Codex专区", "Cursor专区", "Claude Code专区"] },
+  { level: "结丹期", sections: ["AI副业", "AI产品", "AI创业"] }
+];
+
+function getContentMapLevel(article) {
+  const matched = contentMapLevels.find((group) => group.sections.includes(article.section));
+  return matched ? matched.level : article.level;
+}
+
 function renderContentMapPage(articles) {
-  const levels = ["新手村", "炼气期", "筑基期", "结丹期"];
+  const levels = contentMapLevels.map((group) => group.level);
   const grouped = levels
     .map((level) => {
-      const levelArticles = articles.filter((article) => article.level === level && article.order);
+      const levelArticles = articles.filter((article) => getContentMapLevel(article) === level && article.order);
       const sections = [...new Set(levelArticles.map((article) => article.section))];
       return { level, sections, articles: levelArticles };
     })
@@ -357,7 +555,7 @@ function renderContentMapPage(articles) {
                   <strong>${escapeHtml(article.title)}</strong>
                   <em>${statusLabel}</em>`;
                     return article.status === "published"
-                      ? `<li><a href="../${article.slug}/">${inner}</a></li>`
+                      ? `<li><a href="../${article.slug}/index.html">${inner}</a></li>`
                       : `<li><div class="map-disabled">${inner}</div></li>`;
                   }
                 )
@@ -422,6 +620,37 @@ function writeSearchIndex(articles) {
   fs.writeFileSync(path.join(outputDir, "search-index.json"), JSON.stringify(index, null, 2));
 }
 
+function visibleTextFromHtml(html) {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/g, " ")
+    .replace(/<style[\s\S]*?<\/style>/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function validatePublishedArticles(articles) {
+  const forbiddenVisible = [/D:\//, /\/Users\//, /\/var\/www\//, /\/tutorials\/[\w-]+\//, /\/community\//, /占位图/, /待完善/, /图片待生成/];
+
+  articles
+    .filter((article) => article.status === "published")
+    .forEach((article) => {
+      const screenshotCount = (article.html.match(/<figure class="article-figure">/g) || []).length;
+      const visualModuleCount = (article.html.match(/<section class="tutorial-visual-card/g) || []).length;
+      const copyBlockCount = (article.html.match(/<div class="copy-block">/g) || []).length;
+      const structuredBlockCount = screenshotCount + visualModuleCount + copyBlockCount;
+      if (structuredBlockCount < 3) {
+        throw new Error(`Published article "${article.slug}" must include at least 3 CSS visual modules, copy blocks, or necessary screenshots. Found ${structuredBlockCount}.`);
+      }
+
+      const visibleText = visibleTextFromHtml(article.html);
+      const matched = forbiddenVisible.find((pattern) => pattern.test(visibleText));
+      if (matched) {
+        throw new Error(`Published article "${article.slug}" contains forbidden visible text matching ${matched}.`);
+      }
+    });
+}
+
 function writeRootPages(publicArticles) {
   fs.writeFileSync(path.join(root, "index.html"), renderHomePage(publicArticles));
   fs.writeFileSync(path.join(root, "404.html"), render404Page());
@@ -437,6 +666,7 @@ function writeRootPages(publicArticles) {
 function build() {
   const articles = readArticles();
   const publicArticles = articles.filter((article) => article.status === "published");
+  validatePublishedArticles(articles);
 
   writeRootPages(publicArticles);
   cleanGeneratedDir();

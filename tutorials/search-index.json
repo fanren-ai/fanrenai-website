@@ -1,77 +1,198 @@
 [
   {
-    "title": "AI小白快速入门：先搞懂这5件事",
-    "description": "面向普通人的AI入门教程，用最少概念理解AI工具、模型、Prompt、工作流和价值创造。",
+    "title": "什么是AI：第一次打开AI工具，别只问“帮我写一下”",
+    "description": "面向完全不懂AI的普通人，解释第一次使用AI工具时该怎么提问、AI能帮自己做什么，以及为什么结果看起来很顺却不能直接用。",
     "category": "AI基础认知",
     "level": "新手村",
     "section": "AI基础认知",
-    "order": 0,
+    "order": 1,
     "status": "published",
     "tags": [
-      "AI入门",
-      "普通人",
-      "Prompt"
+      "新手村",
+      "AI基础认知",
+      "什么是AI",
+      "普通人学AI"
     ],
-    "url": "/tutorials/ai-basics-quick-start/"
+    "url": "/tutorials/001-what-is-ai/"
   },
   {
-    "title": "AI案例：用AI把一个副业想法拆成可执行计划",
-    "description": "通过副业案例展示如何用AI完成定位、用户画像、产品形态、内容计划和落地步骤。",
-    "category": "AI副业",
-    "level": "结丹期",
-    "section": "AI副业",
-    "order": 0,
-    "status": "published",
-    "tags": [
-      "AI案例",
-      "副业",
-      "产品"
-    ],
-    "url": "/tutorials/ai-case-side-project/"
-  },
-  {
-    "title": "普通人的AI工具箱：先收藏这几类工具",
-    "description": "整理AI入门阶段最常用的工具类型，帮助普通人从写作、搜索、编程和自动化开始建立工具箱。",
-    "category": "AI工具选择",
+    "title": "AI的发展历史：它不是突然火了，而是终于轮到普通人使用了",
+    "description": "面向刚开始关注AI的普通人，用真实生活场景解释AI为什么不是短期热点，以及为什么现在普通人开始真正需要学习AI。",
+    "category": "AI基础认知",
     "level": "新手村",
-    "section": "AI工具选择",
-    "order": 0,
+    "section": "AI基础认知",
+    "order": 2,
     "status": "published",
     "tags": [
-      "AI工具",
-      "效率工具",
-      "工具箱"
+      "新手村",
+      "AI基础认知",
+      "AI发展历史",
+      "普通人学AI"
     ],
-    "url": "/tutorials/ai-tools-starter/"
+    "url": "/tutorials/002-ai-history/"
   },
   {
-    "title": "Codex入门：用AI从零搭一个静态网站",
-    "description": "适合AI编程新手的Codex实战入门，理解需求、生成代码、检查页面并逐步迭代。",
-    "category": "Codex专区",
-    "level": "筑基期",
-    "section": "Codex专区",
-    "order": 0,
+    "title": "AI会取代人类工作吗：先别急着焦虑，把你的工作拆开看",
+    "description": "面向担心工作被AI影响的普通人，用岗位任务拆解的方法判断哪些工作会被AI辅助，哪些能力仍然需要自己负责。",
+    "category": "AI基础认知",
+    "level": "新手村",
+    "section": "AI基础认知",
+    "order": 3,
     "status": "published",
     "tags": [
-      "Codex",
-      "AI编程",
-      "项目实战"
+      "新手村",
+      "AI基础认知",
+      "AI影响工作",
+      "普通人学AI"
     ],
-    "url": "/tutorials/codex-first-project/"
+    "url": "/tutorials/003-will-ai-replace-jobs/"
   },
   {
-    "title": "Prompt和工作流：从一句话提问到稳定产出",
-    "description": "学会用目标、上下文、约束和检查清单设计Prompt，并把Prompt组合成可复用工作流。",
-    "category": "Prompt工程",
+    "title": "普通人为什么必须学习AI：不是追热点，而是工作方式已经变了",
+    "description": "面向刚开始接触AI的普通人，解释为什么学习AI不是为了成为技术专家，而是为了把AI放进真实工作和学习任务里，逐步改变自己的做事方式。",
+    "category": "AI基础认知",
+    "level": "新手村",
+    "section": "AI基础认知",
+    "order": 4,
+    "status": "published",
+    "tags": [
+      "新手村",
+      "AI基础认知",
+      "普通人学AI",
+      "AI入门计划"
+    ],
+    "url": "/tutorials/004-why-ordinary-people-need-ai/"
+  },
+  {
+    "title": "AI时代最大的机会是什么：普通人的机会，藏在“AI + 自己原来的经验”里",
+    "description": "面向刚开始学习AI的普通人，解释AI时代的机会不一定是从零做工具，而是把自己的行业经验、技能、客户理解和AI重新组合，先做出一个小作品。",
+    "category": "AI基础认知",
+    "level": "新手村",
+    "section": "AI基础认知",
+    "order": 5,
+    "status": "published",
+    "tags": [
+      "新手村",
+      "AI基础认知",
+      "AI机会",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/005-biggest-ai-opportunities/"
+  },
+  {
+    "title": "ChatGPT入门指南：第一次打开，先别急着研究功能",
+    "description": "面向第一次使用 ChatGPT 的普通人，讲清第一句话怎么问、结果不好怎么追问、哪些信息不要直接发，并带用户完成一份本周工作计划或学习计划。",
+    "category": "AI工具入门",
+    "level": "工具入门",
+    "section": "AI工具入门",
+    "order": 6,
+    "status": "published",
+    "tags": [
+      "AI工具入门",
+      "ChatGPT",
+      "普通人学AI",
+      "本周计划"
+    ],
+    "url": "/tutorials/006-chatgpt-beginner-guide/"
+  },
+  {
+    "title": "DeepSeek入门指南：别只问“帮我查一下”，先学会拆问题",
+    "description": "面向第一次使用 DeepSeek 的普通人，讲清如何查资料、拆问题、做对比、核实关键信息，并完成一次真实问题分析。",
+    "category": "AI工具入门",
+    "level": "工具入门",
+    "section": "AI工具入门",
+    "order": 7,
+    "status": "published",
+    "tags": [
+      "AI工具入门",
+      "DeepSeek",
+      "资料分析",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/007-deepseek-beginner-guide/"
+  },
+  {
+    "title": "Claude入门指南：别只问“帮我总结一下”，先学会整理长内容",
+    "description": "面向第一次使用 Claude 的普通人，讲清如何阅读长内容、提炼重点、整理结构、优化表达，并区分原文信息和 AI 补充建议。",
+    "category": "AI工具入门",
+    "level": "工具入门",
+    "section": "AI工具入门",
+    "order": 8,
+    "status": "published",
+    "tags": [
+      "AI工具入门",
+      "Claude",
+      "长内容整理",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/008-claude-beginner-guide/"
+  },
+  {
+    "title": "Kimi入门指南：资料太多看不完，先整理成自己的笔记",
+    "description": "面向第一次使用 Kimi 的普通人，讲清如何阅读资料、围绕文档继续追问、提炼重点，并整理成可复习的学习笔记。",
+    "category": "AI工具入门",
+    "level": "工具入门",
+    "section": "AI工具入门",
+    "order": 9,
+    "status": "published",
+    "tags": [
+      "AI工具入门",
+      "Kimi",
+      "资料阅读",
+      "学习笔记",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/009-kimi-beginner-guide/"
+  },
+  {
+    "title": "豆包入门指南：一句话说不清，先改成 3 种表达",
+    "description": "面向第一次使用豆包的普通人，讲清如何把一个模糊想法改成自然、正式、适合发布的不同表达版本，并学会按场景继续修改。",
+    "category": "AI工具入门",
+    "level": "工具入门",
+    "section": "AI工具入门",
+    "order": 10,
+    "status": "published",
+    "tags": [
+      "AI工具入门",
+      "豆包",
+      "中文表达",
+      "语气改写",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/010-doubao-beginner-guide/"
+  },
+  {
+    "title": "Prompt工作流入门：别再找万能提示词，先把任务拆成步骤",
+    "description": "面向刚开始学习 Prompt 的普通人，讲清为什么万能提示词很难稳定解决问题，以及如何把一个真实任务拆成可连续推进的 Prompt 工作流。",
+    "category": "Prompt与工作流",
     "level": "炼气期",
-    "section": "Prompt工程",
-    "order": 0,
+    "section": "Prompt与工作流",
+    "order": 11,
     "status": "published",
     "tags": [
       "Prompt",
       "工作流",
-      "效率"
+      "任务拆解",
+      "普通人学AI",
+      "AI提问方法"
     ],
-    "url": "/tutorials/prompt-workflow-basic/"
+    "url": "/tutorials/011-prompt-workflow-basic/"
+  },
+  {
+    "title": "高质量Prompt案例：不要只复制，先看懂它为什么有效",
+    "description": "面向刚开始练习 Prompt 的普通人，通过客户跟进消息案例，讲清好 Prompt 为什么更稳定，以及如何把别人的案例改成自己的真实任务。",
+    "category": "Prompt与工作流",
+    "level": "炼气期",
+    "section": "Prompt与工作流",
+    "order": 12,
+    "status": "published",
+    "tags": [
+      "Prompt",
+      "高质量Prompt",
+      "案例拆解",
+      "普通人学AI",
+      "AI提问方法"
+    ],
+    "url": "/tutorials/012-good-prompt-examples/"
   }
 ]

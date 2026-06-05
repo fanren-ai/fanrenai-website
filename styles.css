@@ -771,6 +771,17 @@ h3 {
   color: #394457;
 }
 
+.article-content a {
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.28);
+}
+
+.article-content a:hover {
+  border-bottom-color: var(--blue);
+}
+
 .article-content ul {
   padding-left: 22px;
 }
@@ -793,6 +804,349 @@ h3 {
   padding: 0;
   color: #eef4ff;
   background: transparent;
+}
+
+.copy-block,
+.copy-code-block {
+  margin: 28px 0;
+  overflow: hidden;
+  border: 1px solid rgba(17, 24, 39, 0.16);
+  border-radius: 8px;
+  background: #111827;
+  box-shadow: 0 16px 38px rgba(16, 24, 40, 0.12);
+}
+
+.copy-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(238, 244, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.copy-block-header span {
+  color: #eef4ff;
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.copy-button,
+.copy-code-block .copy-code-button {
+  min-width: 64px;
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(238, 244, 255, 0.22);
+  border-radius: 8px;
+  color: #eef4ff;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+  font-weight: 850;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.copy-button:hover,
+.copy-code-block .copy-code-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.copy-button:disabled,
+.copy-code-block .copy-code-button:disabled {
+  cursor: default;
+  opacity: 0.82;
+  transform: none;
+}
+
+.article-content .copy-block pre,
+.article-content .copy-code-block pre {
+  margin: 0;
+  padding: 18px 20px 20px;
+  border-radius: 0;
+  background: transparent;
+}
+
+.tutorial-visual-card {
+  margin: 34px 0;
+  padding: 24px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 38px rgba(16, 24, 40, 0.08);
+}
+
+.tutorial-visual-card > header {
+  margin-bottom: 20px;
+}
+
+.tutorial-visual-card > header span,
+.tutorial-task-grid span,
+.tutorial-next-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.tutorial-visual-card h3,
+.tutorial-next-actions h3 {
+  margin: 0;
+  color: #111827;
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.tutorial-flow ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tutorial-flow li {
+  padding: 20px;
+  background: #f9fafb;
+}
+
+.tutorial-flow li + li {
+  border-left: 1px solid rgba(17, 24, 39, 0.1);
+}
+
+.tutorial-flow li span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #2563eb;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.tutorial-flow li strong,
+.tutorial-task-grid strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #111827;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.tutorial-flow li p,
+.tutorial-formula p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.tutorial-formula-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.tutorial-formula-row span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+  border-radius: 8px;
+  color: #1f2937;
+  background: #f8fbff;
+  font-size: 16px;
+  font-weight: 850;
+}
+
+.tutorial-formula-row b {
+  color: #6b7280;
+  font-size: 18px;
+}
+
+.tutorial-task-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 0;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tutorial-task-grid > div {
+  padding: 20px;
+  background: #f9fafb;
+}
+
+.tutorial-task-grid > div + div {
+  border-left: 1px solid rgba(17, 24, 39, 0.1);
+}
+
+.tutorial-task-grid ul {
+  display: grid;
+  gap: 8px;
+  padding-left: 18px;
+  margin: 0;
+}
+
+.tutorial-task-grid li {
+  color: #394457;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.tutorial-role-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tutorial-role-grid > div {
+  padding: 22px;
+  background: #f9fafb;
+}
+
+.tutorial-role-grid > div + div {
+  border-left: 1px solid rgba(17, 24, 39, 0.1);
+}
+
+.tutorial-role-grid strong {
+  display: block;
+  margin-bottom: 12px;
+  color: #111827;
+  font-size: 18px;
+}
+
+.tutorial-role-grid ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 18px;
+  margin: 0;
+}
+
+.tutorial-role-grid li {
+  color: #394457;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.tutorial-compare-table {
+  overflow-x: auto;
+}
+
+.tutorial-compare-table table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tutorial-compare-table th,
+.tutorial-compare-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+  text-align: left;
+  vertical-align: top;
+}
+
+.tutorial-compare-table th {
+  color: #111827;
+  background: #f3f6fb;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.tutorial-compare-table td {
+  color: #394457;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.tutorial-compare-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.tutorial-next-actions {
+  margin: 34px 0;
+}
+
+.tutorial-next-actions > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.tutorial-next-card {
+  display: block;
+  min-height: 126px;
+  padding: 18px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.tutorial-next-card:hover {
+  border-color: rgba(37, 99, 235, 0.42);
+  box-shadow: 0 12px 30px rgba(16, 24, 40, 0.1);
+  transform: translateY(-2px);
+}
+
+.tutorial-next-card strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #111827;
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.tutorial-next-card span {
+  margin: 0;
+  color: #5f6b7f;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.article-figure {
+  margin: 34px 0;
+  overflow: hidden;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  border-radius: 8px;
+  background: #f8fbff;
+}
+
+.article-figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.article-figure figcaption {
+  padding: 12px 16px 14px;
+  color: #5f6b7f;
+  font-size: 14px;
+  line-height: 1.65;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
 }
 
 .article-content blockquote {
@@ -2475,6 +2829,20 @@ h3 {
     border-left: 0;
   }
 
+  .tutorial-flow ol,
+  .tutorial-task-grid,
+  .tutorial-role-grid,
+  .tutorial-next-actions > div {
+    grid-template-columns: 1fr;
+  }
+
+  .tutorial-flow li + li,
+  .tutorial-task-grid > div + div,
+  .tutorial-role-grid > div + div {
+    border-top: 1px solid rgba(17, 24, 39, 0.1);
+    border-left: 0;
+  }
+
   .map-level {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -2800,6 +3168,28 @@ h3 {
 
   .lesson-join .btn {
     width: 100%;
+  }
+
+  .tutorial-visual-card {
+    padding: 18px;
+  }
+
+  .tutorial-formula-row {
+    align-items: stretch;
+  }
+
+  .tutorial-formula-row span {
+    flex: 1 1 44%;
+    justify-content: center;
+  }
+
+  .tutorial-formula-row b {
+    display: none;
+  }
+
+  .copy-block-header {
+    position: sticky;
+    left: 0;
   }
 
   .content-map-shell {

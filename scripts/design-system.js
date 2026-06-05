@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260602-final-domain-brand";
+const assetVersion = "20260602-article-copy-visuals";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -69,10 +69,10 @@ function renderHeader({ base = "", variant = "default" } = {}) {
   const isHome = variant === "home";
   const items = [
     ["首页", isHome ? "#top" : `${base}index.html`],
-    ["AI教程", `${base}tutorials/`],
-    ["内容地图", `${base}tutorials/map/`],
-    ["Codex专区", `${base}tutorials/category/codex/`],
-    ["AI工具箱", `${base}tutorials/category/ai-tool-choice/`]
+    ["AI教程", `${base}tutorials/index.html`],
+    ["内容地图", `${base}tutorials/map/index.html`],
+    ["Codex专区", `${base}tutorials/category/codex/index.html`],
+    ["AI工具箱", `${base}tutorials/category/ai-tool-choice/index.html`]
   ];
 
   return `<header class="site-header" id="top">
@@ -86,7 +86,7 @@ function renderHeader({ base = "", variant = "default" } = {}) {
         </button>
         <div class="nav-menu" id="site-menu">
           ${items.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}
-          <a class="nav-cta" href="${base}community/">加入社区</a>
+          <a class="nav-cta" href="${base}community/index.html">加入社区</a>
         </div>
       </nav>
     </header>`;
@@ -128,7 +128,7 @@ function layout({ title, description, base = "", body, extraHead = "", bodyClass
     ${renderHeader({ base, variant: headerVariant })}
     <main>${body}</main>
     ${renderFooter(base)}
-    <script src="${base}script.js"></script>
+    <script src="${base}script.js?v=${assetVersion}"></script>
   </body>
 </html>`;
 }
@@ -141,7 +141,7 @@ function renderCategoryChips(base) {
 
 function renderArticleCard(article, base = "../") {
   return `<article class="tutorial-card ds-card">
-    <a href="${base}tutorials/${article.slug}/">
+    <a href="${base}tutorials/${article.slug}/index.html">
       <div class="tutorial-card-top">
         <span class="tutorial-category">${escapeHtml(article.categoryName)}</span>
         ${renderLevelBadge(article.level)}
@@ -172,7 +172,7 @@ function renderPracticeTasks(article) {
 function renderRelatedCards(related) {
   return related
     .map(
-      (item) => `<a class="lesson-related-card" href="../${item.slug}/">
+      (item) => `<a class="lesson-related-card" href="../${item.slug}/index.html">
         <span>${escapeHtml(item.categoryName)}</span>
         <strong>${escapeHtml(item.title)}</strong>
         <p>${escapeHtml(item.description)}</p>
@@ -192,12 +192,12 @@ function renderHomeLatestCards(articles = []) {
     .slice(0, 3);
 
   if (!latest.length) {
-    return `<p class="platform-empty">最新内容正在整理中。</p>`;
+    return `<p class="platform-empty">新内容正在重新整理中</p>`;
   }
 
   return latest
     .map(
-      (article) => `<a class="platform-latest-card" href="tutorials/${article.slug}/">
+      (article) => `<a class="platform-latest-card" href="tutorials/${article.slug}/index.html">
         <h3>${escapeHtml(article.title)}</h3>
         <span>${escapeHtml(article.level)} · ${escapeHtml(article.categoryName)}</span>
         <p>${escapeHtml(article.description)}</p>
@@ -314,25 +314,25 @@ function renderHomePage(articles = []) {
       title: "我是AI小白",
       description: "先认识AI工具，学会基本使用。",
       action: "开始第1天",
-      href: "/tutorials/ai-basics-quick-start/"
+      href: "/tutorials/"
     },
     {
       title: "我想提升效率",
       description: "学习Prompt、AI办公和工作流。",
       action: "提升效率",
-      href: "/tutorials/prompt-workflow-basic/"
+      href: "/tutorials/map/"
     },
     {
       title: "我想做出项目",
       description: "用Codex、Cursor、Claude Code完成作品。",
       action: "做第一个项目",
-      href: "/tutorials/codex-first-project/"
+      href: "/tutorials/map/"
     },
     {
       title: "我想探索变现",
       description: "学习AI副业、AI产品和AI创业案例。",
       action: "查看案例",
-      href: "/tutorials/ai-case-side-project/"
+      href: "/tutorials/map/"
     }
   ];
   const columns = [
@@ -349,21 +349,21 @@ function renderHomePage(articles = []) {
       title: "让AI帮你写一段自我介绍",
       description: "学会向AI清楚表达身份、目标和场景。",
       result: "完成后：你会得到一份可直接使用的AI自我介绍。",
-      href: "tutorials/ai-basics-quick-start/"
+      href: "tutorials/"
     },
     {
       label: "效率提升任务",
       title: "用Prompt生成一份工作计划",
       description: "把一句模糊需求变成一份可执行计划。",
       result: "完成后：你会得到一份可执行的工作计划。",
-      href: "tutorials/prompt-workflow-basic/"
+      href: "tutorials/map/"
     },
     {
       label: "项目实战任务",
       title: "用Codex做出第一个静态页面",
       description: "不懂代码，也能尝试让AI帮你完成一个页面。",
       result: "完成后：你会得到第一个AI生成的静态页面。",
-      href: "tutorials/codex-first-project/"
+      href: "tutorials/map/"
     }
   ];
   const sevenDayRoute = [
@@ -391,7 +391,7 @@ function renderHomePage(articles = []) {
             <p class="platform-subtitle">从AI小白到AI实战者</p>
             <p class="platform-lead">系统学习AI工具、Prompt工作流、Codex项目实战与AI变现案例。<br />从第1天开始，每天完成一个小任务，7天完成你的第一轮AI修炼。</p>
             <div class="platform-actions" aria-label="首页主要操作">
-              ${renderButton({ href: "/tutorials/ai-basics-quick-start/", label: "开始第1天任务" })}
+              ${renderButton({ href: "/tutorials/", label: "查看教程列表" })}
               ${renderButton({ href: "/tutorials/map/", label: "查看内容地图", variant: "secondary" })}
               ${renderButton({ href: "/community/", label: "加入社区", variant: "secondary" })}
             </div>
@@ -633,7 +633,7 @@ function renderAboutPage() {
         <h2 id="about-cta-title">一起开始修AI</h2>
         <p>从第1天任务开始，完成你的第一轮AI修炼。</p>
         <div class="hero-actions">
-          ${renderButton({ href: "/tutorials/ai-basics-quick-start/", label: "开始第1天任务" })}
+          ${renderButton({ href: "/tutorials/", label: "查看教程列表" })}
           ${renderButton({ href: "/tutorials/map/", label: "查看内容地图", variant: "secondary" })}
           ${renderButton({ href: "/community/", label: "加入社区", variant: "secondary" })}
         </div>
@@ -724,7 +724,15 @@ function render404Page() {
     title: "此处灵气不足 | 凡人修AI",
     description: "你访问的页面可能已经失传。",
     base: "",
-    extraHead: '<meta name="robots" content="noindex" />',
+    extraHead: `<meta name="robots" content="noindex" />
+    <script>
+      (function () {
+        var match = window.location.pathname.match(/^\\/(\\d{3}-[a-z0-9-]+)\\/?$/);
+        if (match) {
+          window.location.replace("/tutorials/" + match[1] + "/");
+        }
+      })();
+    </script>`,
     body: `<section class="not-found section-pad">
       <p class="eyebrow">404</p>
       <h1>此处灵气不足</h1>
