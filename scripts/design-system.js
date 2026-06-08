@@ -74,7 +74,7 @@ function renderHeader({ base = "", variant = "default" } = {}) {
     ["AI教程", `${base}tutorials/index.html`],
     ["内容地图", `${base}tutorials/map/index.html`],
     ["Codex专区", `${base}tutorials/category/codex/index.html`],
-    ["AI工具箱", `${base}tutorials/category/ai-tool-choice/index.html`]
+    ["AI工具箱", "https://tools.fanrenai.cn/"]
   ];
 
   return `<header class="site-header" id="top">
