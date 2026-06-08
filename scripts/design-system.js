@@ -13,6 +13,8 @@ const categories = {
   "prompt-engineering": "Prompt工程",
   "ai-office": "AI办公",
   "ai-workflow": "AI工作流",
+  "ai-project-practice": "AI项目实战",
+  "ai-writing-content": "AI写作与内容创作",
   codex: "Codex专区",
   cursor: "Cursor专区",
   "claude-code": "Claude Code专区",

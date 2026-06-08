@@ -507,8 +507,8 @@ function getRelatedArticles(article, articles) {
 
 const contentMapLevels = [
   { level: "新手村", sections: ["AI基础认知", "AI工具入门", "AI工具选择"] },
-  { level: "炼气期", sections: ["Prompt工程", "AI办公", "AI工作流"] },
-  { level: "筑基期", sections: ["Codex专区", "Cursor专区", "Claude Code专区"] },
+  { level: "炼气期", sections: ["Prompt与工作流", "Prompt工程", "AI办公", "AI工作流", "AI写作与内容创作"] },
+  { level: "筑基期", sections: ["AI项目实战", "Codex专区", "Cursor专区", "Claude Code专区"] },
   { level: "结丹期", sections: ["AI副业", "AI产品", "AI创业"] }
 ];
 

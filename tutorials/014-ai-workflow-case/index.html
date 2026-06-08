@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="面向想把 AI 用到日常工作的普通人，用一份周报案例讲清如何从零散素材开始，按步骤整理、归类、生成初稿并检查真实性。" />
+    <meta property="og:site_name" content="凡人修AI" />
+    <meta property="og:title" content="AI工作流案例：用 AI 把零散工作记录整理成一份周报 | 凡人修AI" />
+    <meta property="og:description" content="面向想把 AI 用到日常工作的普通人，用一份周报案例讲清如何从零散素材开始，按步骤整理、归类、生成初稿并检查真实性。" />
+    <meta property="og:url" content="https://www.fanrenai.cn/tutorials/014-ai-workflow-case/" />
+    <meta property="og:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <link rel="canonical" href="https://www.fanrenai.cn/tutorials/014-ai-workflow-case/" />
+    <meta property="article:published_time" content="2026-06-06" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI工作流案例：用 AI 把零散工作记录整理成一份周报","description":"面向想把 AI 用到日常工作的普通人，用一份周报案例讲清如何从零散素材开始，按步骤整理、归类、生成初稿并检查真实性。","author":{"@type":"Organization","name":"凡人修AI"},"datePublished":"2026-06-06","mainEntityOfPage":"https://www.fanrenai.cn/tutorials/014-ai-workflow-case/"}</script>
+    <title>AI工作流案例：用 AI 把零散工作记录整理成一份周报 | 凡人修AI</title>
+    <link rel="icon" type="image/png" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="apple-touch-icon" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="stylesheet" href="../../styles.css?v=20260602-article-copy-visuals" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="../../index.html" aria-label="凡人修AI 首页">
+          <img class="brand-logo" src="../../assets/brand/fanrenai-logo-mark-256.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+          <span>凡人修AI</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="site-menu">
+          <a href="../../index.html">首页</a><a href="../../tutorials/index.html">AI教程</a><a href="../../tutorials/map/index.html">内容地图</a><a href="../../tutorials/category/codex/index.html">Codex专区</a><a href="../../tutorials/category/ai-tool-choice/index.html">AI工具箱</a>
+          <a class="nav-cta" href="../../community/index.html">加入社区</a>
+        </div>
+      </nav>
+    </header>
+    <main><article class="lesson-shell">
+      <header class="lesson-hero section-pad">
+        <a class="back-link" href="../">返回修炼手册</a>
+        <div class="lesson-hero-grid">
+          <div>
+            <p class="eyebrow">Prompt与工作流</p>
+            <h1>AI工作流案例：用 AI 把零散工作记录整理成一份周报</h1>
+            <p>面向想把 AI 用到日常工作的普通人，用一份周报案例讲清如何从零散素材开始，按步骤整理、归类、生成初稿并检查真实性。</p>
+          </div>
+          <aside class="lesson-rank-card" aria-label="本篇修炼信息">
+            <span>修炼等级</span>
+            <strong>炼气期</strong>
+            <p>学会用 AI 把零散工作记录整理成一份真实、清楚、能继续修改的周报初稿。</p>
+          </aside>
+        </div>
+        <div class="lesson-meta-grid">
+          <div>
+            <span>修炼等级</span>
+            <strong>炼气期</strong>
+          </div>
+          <div>
+            <span>修炼目标</span>
+            <strong>学会用 AI 把零散工作记录整理成一份真实、清楚、能继续修改的周报初稿。</strong>
+          </div>
+          <div>
+            <span>修炼时长</span>
+            <strong>26分钟</strong>
+          </div>
+        </div>
+      </header>
+
+      <div class="lesson-body section-pad">
+        <aside class="lesson-sidebar" aria-label="修炼摘要">
+          <div>
+            <span>本篇目标</span>
+            <p>学会用 AI 把零散工作记录整理成一份真实、清楚、能继续修改的周报初稿。</p>
+          </div>
+          <div>
+            <span>建议节奏</span>
+            <p>26分钟读完，立刻完成文末实战任务。</p>
+          </div>
+          <div>
+            <span>所属路径</span>
+            <p>Prompt与工作流 · 炼气期</p>
+          </div>
+        </aside>
+        <div class="article-content"><h2>周报难写，往往不是因为没做事</h2>
+<p>周五下午，最让人头疼的往往不是没做事，而是不知道怎么把这一周做过的事情说清楚。</p>
+<p>这一周你可能开过会、改过方案、回复过客户、推进过项目，也处理过一些临时问题。</p>
+<p>但真正打开周报文档时，内容散在很多地方。</p>
+<p>聊天记录里有几条客户反馈。待办清单里有几个完成事项。会议纪要里有下一步安排。脑子里还有一些临时处理过的小问题。</p>
+<p>这些事情都是真的，可它们没有自动变成一份清楚的周报。</p>
+<p>如果这时候直接让 AI 写一份周报，它多半能写出一份结构完整的内容，但不够真实。因为 AI 不知道哪些事情真的重要，也不知道哪些结果已经确认。</p>
+<p>所以这一篇不讲理论，直接用周报跑一遍小工作流。</p>
+<p>先整理素材，再归类进展，再提炼重点，再生成初稿，最后检查是否真实、清楚、能交付。</p>
+<h2>直接让 AI 写周报，为什么容易空？</h2>
+<p>很多人用 AI 写周报，会直接说：</p>
+<p>帮我写一份本周周报。</p>
+<p>AI 通常能写出一份看起来像样的内容，有标题，有条目，也有下周计划。</p>
+<p>问题是，它不知道你这一周真实做了什么，不知道哪些事项已经完成，不知道哪些结果还没确认，也不知道哪些内容不能写。</p>
+<p>它更不知道你的上级真正关心什么。</p>
+<p>所以直接生成最终版，很容易得到一份“像周报”的文字，但不是一份真正能交的周报。</p>
+<p>更稳的做法是：先整理素材，再归类进展，再提炼重点，再生成初稿，最后由人检查。</p>
+<section class="tutorial-visual-card tutorial-compare-table" aria-label="零散素材 vs 周报工作流">
+        <header>
+          <span>Compare</span>
+          <h3>零散素材 vs 周报工作流</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody><tr><td>聊天记录、待办、会议纪要、客户反馈、临时问题</td><td>分类、重点、初稿、检查、提交</td></tr><tr><td>材料散在不同地方，靠临时回忆容易漏事</td><td>先把材料集中，再交给 AI 做归类</td></tr><tr><td>直接写最终版，容易顺但空</td><td>先做结构整理，再生成可检查的初稿</td></tr></tbody>
+        </table>
+      </section>
+<p>周报这种任务，很适合拿来练工作流。它不大，但足够真实；不复杂，但需要判断。</p>
+<h2>先把这一周的素材倒出来</h2>
+<p>第一步不是写漂亮句子，而是把素材倒出来。</p>
+<p>素材可以来自很多地方。</p>
+<p>聊天记录里可能有客户反馈、同事确认、领导临时安排。</p>
+<p>待办事项里有已经完成的任务、拖延中的任务、还没开始的任务。</p>
+<p>会议记录里有会议结论、负责人、截止时间和下一步安排。</p>
+<p>客户反馈里有对方提出的问题、顾虑、需求变化。</p>
+<p>还有一些临时问题，比如临时处理过的故障、沟通、修改、救火事项。</p>
+<p>这一阶段不要追求整齐。</p>
+<p>你可以先把素材写得很散，甚至像流水账一样。比如：周一改了活动方案，周二和客户确认报价，周三补了一份数据表，周四处理了一个售后问题，周五整理了下周会议议题。</p>
+<p>AI 在第一步的作用，是帮你把散乱内容变成可整理的材料，而不是直接替你写成最终周报。</p>
+<h2>用 AI 把素材分成进展、问题和计划</h2>
+<p>素材倒出来以后，可以让 AI 先做分类。</p>
+<p>建议先分成五类：</p>
+<ul><li>已完成事项</li><li>进行中事项</li><li>遇到的问题</li><li>需要协助的事项</li><li>下周计划</li></ul>
+<p>这一轮不要急着润色。</p>
+<p>重点是先看清楚：哪些事情已经完成，哪些事情还在推进，哪些问题需要暴露，哪些地方需要别人支持，下周应该继续做什么。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="周报工作流 5 步卡">
+        <header>
+          <span>Flow</span>
+          <h3>周报工作流 5 步卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>收集素材</strong>
+              <p>把聊天记录、待办、会议结论、客户反馈和临时问题先列出来。</p>
+            </li><li>
+              <span>02</span>
+              <strong>粗分分类</strong>
+              <p>分成已完成、进行中、问题、协助需求和下周计划。</p>
+            </li><li>
+              <span>03</span>
+              <strong>提炼重点</strong>
+              <p>从流水账里找出真正影响项目推进的事项。</p>
+            </li><li>
+              <span>04</span>
+              <strong>生成初稿</strong>
+              <p>按固定结构生成一份可继续修改的周报。</p>
+            </li><li>
+              <span>05</span>
+              <strong>人工检查</strong>
+              <p>确认事实、语气、数据和是否适合提交。</p>
+            </li></ol>
+      </section>
+<p>这一步做完，你会发现周报已经不再是一页空白文档，而是一堆可以被整理的真实材料。</p>
+<h2>提炼重点：不要把周报写成流水账</h2>
+<p>很多周报读起来像流水账，是因为它只记录“做了什么”，没有说明“哪些事情重要”。</p>
+<p>比如：</p>
+<p>本周沟通客户 12 个。整理资料 3 份。参加会议 2 次。修改方案 1 版。</p>
+<p>这些都是真实工作，但还不够像周报重点。</p>
+<p>可以让 AI 继续帮你提炼：哪些事项对项目推进最重要，哪些问题影响了进度，哪些反馈值得下周继续跟进，哪些结果需要补充数据，哪些内容只是日常执行，可以简写。</p>
+<p>但最终判断重点的人还是你。</p>
+<p>AI 可以先提炼，人要确认哪些才是真正重要的工作进展。比如客户反馈是不是代表普遍问题，某个项目节点是否真的完成，某个数据变化是否值得写进周报，这些都不能只交给 AI 判断。</p>
+<h2>人负责补事实，AI 负责整理表达</h2>
+<p>到了这一步，要把分工说清楚。</p>
+<p>AI 能帮你处理材料，但不能替你承担周报的真实性和提交后果。</p>
+<section class="tutorial-visual-card tutorial-compare-table" aria-label="AI 负责 / 人负责">
+        <header>
+          <span>Compare</span>
+          <h3>AI 负责 / 人负责</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody><tr><td>AI：整理零散内容</td><td>人：判断哪些事情重要</td></tr><tr><td>AI：归类工作事项</td><td>人：补充真实结果</td></tr><tr><td>AI：提炼初步重点</td><td>人：删除不该写的内容</td></tr><tr><td>AI：生成周报初稿</td><td>人：确认数据和事实</td></tr><tr><td>AI：检查表达是否清楚</td><td>人：决定最终怎么提交</td></tr></tbody>
+        </table>
+      </section>
+<p>比如，客户反馈是不是代表普遍问题，要你判断。项目进度是否真的完成，要你确认。数据结果是否准确，要你核对。某些内部信息能不能写，要你决定。</p>
+<p>这一步不用想复杂。</p>
+<p>你可以把 AI 当成整理材料和生成初稿的助手，但不要把它当成替你背书的人。</p>
+<h2>哪些内容必须自己检查</h2>
+<p>AI 可以帮你整理周报，但不能替你确认工作事实。</p>
+<p>尤其涉及这些内容时，必须自己检查：项目进度、客户反馈、数据结果、责任归属、对外承诺、绩效表达、敏感信息、公司内部信息。</p>
+<p>周报是要交给真实人的，不是只要文字顺就行。</p>
+<p>AI 写得再完整，也要确认每一项是不是事实、能不能写、该不该写。</p>
+<p>如果某个结果还没有确认，就不要让 AI 写成已经完成。如果某条客户反馈只是个别意见，也不要写成普遍结论。如果某个数据还没有复核，就先标记为需要补充。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="周报检查卡">
+        <header>
+          <span>Flow</span>
+          <h3>周报检查卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>真实</strong>
+              <p>每一项都确实发生过，不能靠 AI 补故事。</p>
+            </li><li>
+              <span>02</span>
+              <strong>具体</strong>
+              <p>重要事项最好有结果、对象、时间或下一步。</p>
+            </li><li>
+              <span>03</span>
+              <strong>不夸大</strong>
+              <p>不要把未确认进展写成已经完成。</p>
+            </li><li>
+              <span>04</span>
+              <strong>不泄露</strong>
+              <p>客户信息、内部安排和敏感数据要先过滤。</p>
+            </li><li>
+              <span>05</span>
+              <strong>可提交</strong>
+              <p>最终版本要适合发给真实领导、客户或团队成员。</p>
+            </li></ol>
+      </section>
+<p>这一步看起来慢，但很重要。它决定你的周报是“顺口的文字”，还是“能交付的工作材料”。</p>
+<h2>我现在更相信的一件事</h2>
+<p>AI 工作流最适合从小而真实的任务开始。</p>
+<p>周报看起来简单，其实很适合练习。</p>
+<p>先收集素材，再分类整理，再找重点和问题，再生成初稿，最后由人检查真实性和表达。</p>
+<p>不要让 AI 一步替你写完。</p>
+<p>更稳的做法，是让 AI 参与每一个小步骤。</p>
+<p>AI 负责整理、归类、生成初稿和提醒遗漏。</p>
+<p>人负责补充事实、判断重点、确认结果和决定最终怎么写。</p>
+<p>这样得到的不是一份“看起来像周报”的文字，而是一份更接近真实工作情况的汇报材料。</p>
+<h2>今天用 AI 跑一遍周报工作流</h2>
+<p>今天先用 AI 整理一份自己的本周周报。</p>
+<p>任务目标不是让 AI 直接替你写完，而是体验一次完整工作流。</p>
+<p>你可以按这个顺序做：</p>
+<ul><li>先把本周零散事项列出来。</li><li>让 AI 分成完成事项、进行中事项、问题、协助需求、下周计划。</li><li>让 AI 提炼 3 个重点。</li><li>让 AI 生成周报初稿。</li><li>自己检查事实、语气和是否能提交。</li></ul>
+<section class="tutorial-visual-card tutorial-flow" aria-label="周报任务卡">
+        <header>
+          <span>Flow</span>
+          <h3>周报任务卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>零散记录</strong>
+              <p>先把真实做过的事情列出来，不要求整齐。</p>
+            </li><li>
+              <span>02</span>
+              <strong>分类</strong>
+              <p>让 AI 分成本周完成、进行中、问题、协助需求和下周计划。</p>
+            </li><li>
+              <span>03</span>
+              <strong>三个重点</strong>
+              <p>从流水账里提炼最重要的 3 件事。</p>
+            </li><li>
+              <span>04</span>
+              <strong>初稿</strong>
+              <p>生成一版可以继续修改的周报。</p>
+            </li><li>
+              <span>05</span>
+              <strong>检查修改</strong>
+              <p>自己确认事实、语气、敏感信息和最终提交版本。</p>
+            </li></ol>
+      </section>
+<p>只要你能把原本散在各处的工作记录整理成一份更清楚的周报初稿，并知道哪些内容还要自己补事实，这次练习就有价值。</p>
+<h2>直接复制这段，整理你的本周周报</h2>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">我想用 AI 帮我整理一份本周周报，但不要直接替我编内容。
+
+下面是我这一周的零散记录：
+
+1.
+2.
+3.
+4.
+5.
+
+请你按工作流方式帮我整理：
+
+第一步：
+先把这些记录分成：
+
+* 已完成事项
+* 进行中事项
+* 遇到的问题
+* 需要协助的事项
+* 下周计划
+
+第二步：
+帮我提炼本周最重要的 3 个重点。
+
+第三步：
+根据以上内容生成一份周报初稿，结构包括：
+
+1. 本周完成
+2. 重点进展
+3. 遇到的问题
+4. 下周计划
+5. 需要支持
+
+第四步：
+请检查这份周报：
+
+1. 哪些地方像流水账
+2. 哪些地方需要补充具体结果
+3. 哪些地方可能表达过度
+4. 哪些地方不适合直接提交
+
+要求：
+
+1. 不要编造我没有提供的信息
+2. 如果信息不足，请标注“需要补充”
+3. 语言清楚、真实、适合工作场景
+4. 不要写得像夸大汇报
+5. 输出格式清晰</code></pre>
+    </div>
+<p>如果初稿太长，可以继续追问：</p>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">请把这份周报改得更简洁、更像真实工作汇报。</code></pre>
+    </div>
+<h2>后面继续怎么练</h2>
+<p>如果你今天真的用 AI 跑了一遍周报工作流，就已经完成了一次很实用的练习。</p>
+<p>AI 工作流不是从复杂自动化开始的。</p>
+<p>它可以从一个很小的任务开始：把零散事项变成清楚、真实、能交付的内容。</p>
+<p>以后你也可以把同样的方法用在复盘、日报、项目总结、客户跟进记录里。</p>
+<p>先从这些小任务练起，比一上来设计复杂系统更容易看到效果，也更容易坚持。</p>
+<section class="tutorial-next-actions" aria-label="下一步行动">
+        
+        <div><a class="tutorial-next-card" href="../map/index.html">
+              <strong>查看完整内容地图</strong>
+              <span>按阶段继续学习。</span>
+            </a><a class="tutorial-next-card" href="../../community">
+              <strong>加入凡人修AI社区</strong>
+              <span>和其他正在学习 AI 的人一起交流。</span>
+            </a><a class="tutorial-next-card" href="../../index.html">
+              <strong>回到首页继续了解 AI 修炼路径</strong>
+              <span>查看整体学习路径。</span>
+            </a></div>
+      </section></div>
+      </div>
+
+      <section class="lesson-practice section-pad" aria-labelledby="practice-title">
+        <div>
+          <p class="eyebrow">Practice</p>
+          <h2 id="practice-title">实战任务</h2>
+          <p>修炼不是看完就结束。本篇读完后，请把下面任务变成一次真实输出。</p>
+        </div>
+        <ol><li><span>01</span>收集素材</li><li><span>02</span>分类整理</li><li><span>03</span>提炼重点</li><li><span>04</span>生成初稿</li><li><span>05</span>检查事实</li></ol>
+      </section>
+
+      <section class="lesson-related section-pad" aria-labelledby="related-title">
+        <div class="lesson-section-title">
+          <p class="eyebrow">Next</p>
+          <h2 id="related-title">相关教程</h2>
+        </div>
+        <div class="lesson-related-grid"><a class="lesson-related-card" href="../011-prompt-workflow-basic/index.html">
+        <span>Prompt与工作流</span>
+        <strong>Prompt工作流入门：别再找万能提示词，先把任务拆成步骤</strong>
+        <p>面向刚开始学习 Prompt 的普通人，讲清为什么万能提示词很难稳定解决问题，以及如何把一个真实任务拆成可连续推进的 Prompt 工作流。</p>
+      </a><a class="lesson-related-card" href="../012-good-prompt-examples/index.html">
+        <span>Prompt与工作流</span>
+        <strong>高质量Prompt案例：不要只复制，先看懂它为什么有效</strong>
+        <p>面向刚开始练习 Prompt 的普通人，通过客户跟进消息案例，讲清好 Prompt 为什么更稳定，以及如何把别人的案例改成自己的真实任务。</p>
+      </a><a class="lesson-related-card" href="../013-prompt-rewrite-practice/index.html">
+        <span>Prompt与工作流</span>
+        <strong>Prompt改写练习：一条好提示词，往往是改出来的</strong>
+        <p>面向已经开始练习 Prompt 的普通人，讲清如何把一句模糊需求分三轮改写成更清楚、可执行、能继续追问的任务说明。</p>
+      </a></div>
+      </section>
+
+      <section class="lesson-join section-pad" aria-labelledby="join-title">
+        <div>
+          <p class="eyebrow">Community</p>
+          <h2 id="join-title">加入凡人修AI道友群</h2>
+          <p>把你的实战任务、踩坑记录和作品发出来，和一群普通人一起复盘、迭代、成长。</p>
+        </div>
+        <a class="btn btn-primary" href="../../index.html#community">加入道友群</a>
+      </section>
+    </article></main>
+    <footer class="site-footer">
+      <p>凡人修AI © 2026</p>
+      <p><a href="../../about/">关于</a> · <a href="../../community/">社区</a> · 普通人的AI学习与实践平台</p>
+    </footer>
+    <script src="../../script.js?v=20260602-article-copy-visuals"></script>
+  </body>
+</html>

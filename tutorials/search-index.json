@@ -194,5 +194,345 @@
       "AI提问方法"
     ],
     "url": "/tutorials/012-good-prompt-examples/"
+  },
+  {
+    "title": "Prompt改写练习：一条好提示词，往往是改出来的",
+    "description": "面向已经开始练习 Prompt 的普通人，讲清如何把一句模糊需求分三轮改写成更清楚、可执行、能继续追问的任务说明。",
+    "category": "Prompt与工作流",
+    "level": "炼气期",
+    "section": "Prompt与工作流",
+    "order": 13,
+    "status": "published",
+    "tags": [
+      "Prompt",
+      "Prompt改写",
+      "AI提问方法",
+      "普通人学AI",
+      "提示词练习"
+    ],
+    "url": "/tutorials/013-prompt-rewrite-practice/"
+  },
+  {
+    "title": "AI工作流案例：用 AI 把零散工作记录整理成一份周报",
+    "description": "面向想把 AI 用到日常工作的普通人，用一份周报案例讲清如何从零散素材开始，按步骤整理、归类、生成初稿并检查真实性。",
+    "category": "Prompt与工作流",
+    "level": "炼气期",
+    "section": "Prompt与工作流",
+    "order": 14,
+    "status": "published",
+    "tags": [
+      "AI工作流",
+      "周报",
+      "工作复盘",
+      "普通人学AI",
+      "AI办公"
+    ],
+    "url": "/tutorials/014-ai-workflow-case/"
+  },
+  {
+    "title": "AI日报与复盘：忙了一天，先用 AI 把今天整理清楚",
+    "description": "面向每天工作很碎、晚上说不清真正进展的普通人，讲清如何用 AI 做一次 10 分钟轻量复盘，整理进展、卡点和明天第一步。",
+    "category": "Prompt与工作流",
+    "level": "炼气期",
+    "section": "Prompt与工作流",
+    "order": 15,
+    "status": "published",
+    "tags": [
+      "AI日报",
+      "复盘",
+      "AI工作流",
+      "普通人学AI",
+      "AI办公"
+    ],
+    "url": "/tutorials/015-ai-daily-review/"
+  },
+  {
+    "title": "如何用AI做PPT大纲：先别找模板，先把结构搭顺",
+    "description": "面向需要做 PPT 但不擅长搭结构的普通人，讲清如何用 AI 从一个模糊主题出发，先整理出目标、听众、章节和逐页内容，得到一份可以继续制作的 PPT 大纲。",
+    "category": "AI办公提效",
+    "level": "炼气期",
+    "section": "AI办公提效",
+    "order": 16,
+    "status": "published",
+    "tags": [
+      "AI办公",
+      "PPT大纲",
+      "AI做PPT",
+      "工作汇报",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/016-ai-ppt-outline/"
+  },
+  {
+    "title": "如何用AI写邮件和商务沟通话术：别让一句话卡住工作推进",
+    "description": "面向经常需要写邮件、微信沟通、客户跟进和协作说明的普通人，讲清如何用 AI 把模糊想法改成清楚、得体、自然的商务沟通表达。",
+    "category": "AI办公提效",
+    "level": "炼气期",
+    "section": "AI办公提效",
+    "order": 17,
+    "status": "published",
+    "tags": [
+      "AI办公",
+      "商务沟通",
+      "AI写邮件",
+      "客户跟进",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/017-ai-email-business-communication/"
+  },
+  {
+    "title": "如何用AI整理客户资料：别让客户跟进断在零散记录里",
+    "description": "面向需要跟进客户、用户、合作方或学员的普通人，讲清如何用 AI 把零散聊天记录、表格备注和沟通信息整理成清楚、可跟进、可复盘的客户资料卡。",
+    "category": "AI办公提效",
+    "level": "炼气期",
+    "section": "AI办公提效",
+    "order": 18,
+    "status": "published",
+    "tags": [
+      "AI办公",
+      "客户资料",
+      "客户跟进",
+      "销售运营",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/018-ai-customer-data-organization/"
+  },
+  {
+    "title": "如何用AI做Excel数据分析：先问清问题，再看表格里的结论",
+    "description": "面向需要处理表格但不懂专业数据分析的普通人，讲清如何用 AI 先看懂 Excel 字段、设计分析问题、发现异常并整理出可放进工作汇报的结论。",
+    "category": "AI办公提效",
+    "level": "炼气期",
+    "section": "AI办公提效",
+    "order": 19,
+    "status": "published",
+    "tags": [
+      "AI办公",
+      "Excel数据分析",
+      "表格分析",
+      "工作汇报",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/019-ai-excel-data-analysis/"
+  },
+  {
+    "title": "如何用AI做工作计划：别把待办清单当成可执行计划",
+    "description": "面向每天任务很多但工作节奏混乱的普通人，讲清如何用 AI 把零散待办整理成本周目标、优先级、时间安排、协作事项、风险提醒和今天第一步。",
+    "category": "AI办公提效",
+    "level": "炼气期",
+    "section": "AI办公提效",
+    "order": 20,
+    "status": "published",
+    "tags": [
+      "AI办公",
+      "工作计划",
+      "时间安排",
+      "任务拆解",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/020-ai-work-plan/"
+  },
+  {
+    "title": "如何用AI提升沟通效率：先把信息对齐，再让事情往前走",
+    "description": "面向工作中经常反复确认、反复解释的人，讲清如何用 AI 整理沟通背景、待确认问题、负责人、截止时间和下一步动作，减少无效来回。",
+    "category": "AI办公提效",
+    "level": "炼气期",
+    "section": "AI办公提效",
+    "order": 21,
+    "status": "published",
+    "tags": [
+      "AI办公",
+      "沟通效率",
+      "协作沟通",
+      "确认清单",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/021-ai-communication-efficiency/"
+  },
+  {
+    "title": "如何用AI写一篇公众号文章：先把想法变成结构，再写初稿",
+    "description": "面向想写公众号但容易卡在选题、结构和初稿的人，讲清如何用 AI 把一个真实想法整理成读者、观点、素材、结构和可继续修改的公众号文章初稿。",
+    "category": "AI写作与内容创作",
+    "level": "炼气期",
+    "section": "AI写作与内容创作",
+    "order": 22,
+    "status": "published",
+    "tags": [
+      "AI写作",
+      "公众号文章",
+      "内容创作",
+      "文章结构",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/022-ai-wechat-article-writing/"
+  },
+  {
+    "title": "如何用AI写小红书笔记：把真实经历整理成一篇像真人分享的笔记",
+    "description": "面向想写小红书但不知道怎么下笔的普通人，讲清如何用 AI 把真实体验、方法清单、踩坑经历或工具使用感受整理成自然、具体、可继续修改的小红书笔记初稿。",
+    "category": "AI写作与内容创作",
+    "level": "炼气期",
+    "section": "AI写作与内容创作",
+    "order": 23,
+    "status": "published",
+    "tags": [
+      "AI写作",
+      "小红书笔记",
+      "内容创作",
+      "笔记结构",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/023-ai-xiaohongshu-note-writing/"
+  },
+  {
+    "title": "如何用AI写短视频脚本：把一个选题拆成口播、画面和节奏",
+    "description": "面向想做短视频但不知道怎么写脚本的普通人，讲清如何用 AI 把一个真实选题拆成开场、口播、画面、字幕、节奏和可继续修改的短视频脚本初稿。",
+    "category": "AI写作与内容创作",
+    "level": "炼气期",
+    "section": "AI写作与内容创作",
+    "order": 24,
+    "status": "published",
+    "tags": [
+      "AI写作",
+      "短视频脚本",
+      "内容创作",
+      "口播脚本",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/024-ai-short-video-script-writing/"
+  },
+  {
+    "title": "如何用AI写朋友圈文案：把真实想法写得自然、有分寸",
+    "description": "面向想发朋友圈但担心尴尬、太像广告或过度包装的普通人，讲清如何用 AI 把真实事情整理成自然、克制、有分寸、可继续修改的朋友圈文案。",
+    "category": "AI写作与内容创作",
+    "level": "炼气期",
+    "section": "AI写作与内容创作",
+    "order": 25,
+    "status": "published",
+    "tags": [
+      "AI写作",
+      "朋友圈文案",
+      "内容创作",
+      "表达修改",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/025-ai-moments-copywriting/"
+  },
+  {
+    "title": "如何用AI写产品介绍：先把“给谁用、解决什么、有什么边界”说清楚",
+    "description": "面向需要介绍产品、服务、资料包、模板包、课程、活动或解决方案的普通人，讲清如何用 AI 把产品信息整理成清楚、克制、有边界、可继续修改的产品介绍。",
+    "category": "AI写作与内容创作",
+    "level": "炼气期",
+    "section": "AI写作与内容创作",
+    "order": 26,
+    "status": "published",
+    "tags": [
+      "AI写作",
+      "产品介绍",
+      "内容创作",
+      "产品表达",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/026-ai-product-description-writing/"
+  },
+  {
+    "title": "如何用AI写销售文案：把用户问题、顾虑和下一步说清楚",
+    "description": "面向需要推广产品、服务、资料包、课程或活动的普通人，讲清如何用 AI 把产品介绍改成克制、清楚、有边界、适合具体销售场景的销售文案初稿。",
+    "category": "AI写作与内容创作",
+    "level": "炼气期",
+    "section": "AI写作与内容创作",
+    "order": 27,
+    "status": "published",
+    "tags": [
+      "AI写作",
+      "销售文案",
+      "内容创作",
+      "产品表达",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/027-ai-sales-copywriting/"
+  },
+  {
+    "title": "如何用AI改写文章：先找出哪里不像真人表达",
+    "description": "面向已经有 AI 初稿、公众号段落、小红书笔记、朋友圈文案、产品介绍或工作说明的普通人，讲清如何用 AI 先诊断不自然的问题，再改成更清楚、更像自己、更保留原意的表达。",
+    "category": "AI写作与内容创作",
+    "level": "炼气期",
+    "section": "AI写作与内容创作",
+    "order": 28,
+    "status": "published",
+    "tags": [
+      "AI写作",
+      "文章改写",
+      "表达优化",
+      "内容创作",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/028-ai-natural-rewriting/"
+  },
+  {
+    "title": "AI写作会不会被判定为低质量内容：先看这篇内容有没有真实价值",
+    "description": "面向已经开始用 AI 写公众号、小红书、短视频脚本、朋友圈、产品介绍和销售文案的普通人，讲清 AI 内容为什么可能显得低质，以及如何用 AI 做发布前质量检查、补真实场景、核查事实和保留人工判断。",
+    "category": "AI写作与内容创作",
+    "level": "炼气期",
+    "section": "AI写作与内容创作",
+    "order": 29,
+    "status": "published",
+    "tags": [
+      "AI写作",
+      "内容质量",
+      "内容创作",
+      "发布前检查",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/029-ai-writing-low-quality-content/"
+  },
+  {
+    "title": "普通人如何建立自己的AI写作流程：别每次都从“帮我写一篇”开始",
+    "description": "面向已经尝试过 AI 写公众号、小红书、朋友圈、短视频脚本、产品介绍和销售文案的普通人，讲清如何把选题、素材、读者、观点、结构、初稿、改写和发布前检查串成一套可复用的 AI 写作流程。",
+    "category": "AI写作与内容创作",
+    "level": "炼气期",
+    "section": "AI写作与内容创作",
+    "order": 30,
+    "status": "published",
+    "tags": [
+      "AI写作",
+      "写作流程",
+      "内容创作",
+      "写作模板",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/030-ai-writing-workflow/"
+  },
+  {
+    "title": "AI写作不是复制粘贴：真正有用的是把你的想法问清楚",
+    "description": "面向已经用过 AI 写作、但发现直接复制初稿容易没有自己判断的普通人，讲清如何把 AI 当成提问者、整理者、反驳者和编辑，用来追问想法、拆清观点、补充场景、看见边界，再形成更像自己的表达。",
+    "category": "AI写作与内容创作",
+    "level": "炼气期",
+    "section": "AI写作与内容创作",
+    "order": 31,
+    "status": "published",
+    "tags": [
+      "AI写作",
+      "内容创作",
+      "写作思考",
+      "观点表达",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/031-ai-writing-amplifies-thinking/"
+  },
+  {
+    "title": "普通人如何用AI做自媒体：先别追热点，先找你能持续讲的东西",
+    "description": "面向想做自媒体但还没有清楚方向的普通人，讲清如何用 AI 梳理真实经历、能力、素材、人群、内容形式和轻量更新节奏，先跑通一个可持续的小循环，而不是一开始追热点、追爆款或做过大的账号规划。",
+    "category": "AI自媒体与个人IP",
+    "level": "结丹期",
+    "section": "AI自媒体与个人IP",
+    "order": 32,
+    "status": "published",
+    "tags": [
+      "AI自媒体",
+      "个人IP",
+      "内容创作",
+      "账号起步",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/032-ai-self-media-for-ordinary-people/"
   }
 ]

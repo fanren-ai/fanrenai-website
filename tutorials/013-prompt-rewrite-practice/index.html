@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="面向已经开始练习 Prompt 的普通人，讲清如何把一句模糊需求分三轮改写成更清楚、可执行、能继续追问的任务说明。" />
+    <meta property="og:site_name" content="凡人修AI" />
+    <meta property="og:title" content="Prompt改写练习：一条好提示词，往往是改出来的 | 凡人修AI" />
+    <meta property="og:description" content="面向已经开始练习 Prompt 的普通人，讲清如何把一句模糊需求分三轮改写成更清楚、可执行、能继续追问的任务说明。" />
+    <meta property="og:url" content="https://www.fanrenai.cn/tutorials/013-prompt-rewrite-practice/" />
+    <meta property="og:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <link rel="canonical" href="https://www.fanrenai.cn/tutorials/013-prompt-rewrite-practice/" />
+    <meta property="article:published_time" content="2026-06-05" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Prompt改写练习：一条好提示词，往往是改出来的","description":"面向已经开始练习 Prompt 的普通人，讲清如何把一句模糊需求分三轮改写成更清楚、可执行、能继续追问的任务说明。","author":{"@type":"Organization","name":"凡人修AI"},"datePublished":"2026-06-05","mainEntityOfPage":"https://www.fanrenai.cn/tutorials/013-prompt-rewrite-practice/"}</script>
+    <title>Prompt改写练习：一条好提示词，往往是改出来的 | 凡人修AI</title>
+    <link rel="icon" type="image/png" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="apple-touch-icon" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="stylesheet" href="../../styles.css?v=20260602-article-copy-visuals" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="../../index.html" aria-label="凡人修AI 首页">
+          <img class="brand-logo" src="../../assets/brand/fanrenai-logo-mark-256.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+          <span>凡人修AI</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="site-menu">
+          <a href="../../index.html">首页</a><a href="../../tutorials/index.html">AI教程</a><a href="../../tutorials/map/index.html">内容地图</a><a href="../../tutorials/category/codex/index.html">Codex专区</a><a href="../../tutorials/category/ai-tool-choice/index.html">AI工具箱</a>
+          <a class="nav-cta" href="../../community/index.html">加入社区</a>
+        </div>
+      </nav>
+    </header>
+    <main><article class="lesson-shell">
+      <header class="lesson-hero section-pad">
+        <a class="back-link" href="../">返回修炼手册</a>
+        <div class="lesson-hero-grid">
+          <div>
+            <p class="eyebrow">Prompt与工作流</p>
+            <h1>Prompt改写练习：一条好提示词，往往是改出来的</h1>
+            <p>面向已经开始练习 Prompt 的普通人，讲清如何把一句模糊需求分三轮改写成更清楚、可执行、能继续追问的任务说明。</p>
+          </div>
+          <aside class="lesson-rank-card" aria-label="本篇修炼信息">
+            <span>修炼等级</span>
+            <strong>炼气期</strong>
+            <p>学会把一句模糊 Prompt 分三轮改写成更清楚、可执行、能继续追问的任务说明。</p>
+          </aside>
+        </div>
+        <div class="lesson-meta-grid">
+          <div>
+            <span>修炼等级</span>
+            <strong>炼气期</strong>
+          </div>
+          <div>
+            <span>修炼目标</span>
+            <strong>学会把一句模糊 Prompt 分三轮改写成更清楚、可执行、能继续追问的任务说明。</strong>
+          </div>
+          <div>
+            <span>修炼时长</span>
+            <strong>24分钟</strong>
+          </div>
+        </div>
+      </header>
+
+      <div class="lesson-body section-pad">
+        <aside class="lesson-sidebar" aria-label="修炼摘要">
+          <div>
+            <span>本篇目标</span>
+            <p>学会把一句模糊 Prompt 分三轮改写成更清楚、可执行、能继续追问的任务说明。</p>
+          </div>
+          <div>
+            <span>建议节奏</span>
+            <p>24分钟读完，立刻完成文末实战任务。</p>
+          </div>
+          <div>
+            <span>所属路径</span>
+            <p>Prompt与工作流 · 炼气期</p>
+          </div>
+        </aside>
+        <div class="article-content"><h2>Prompt 不是一次写完的</h2>
+<p>很多人练 Prompt 时，会误以为高手是一上来就能写出完整提示词。</p>
+<p>实际练习时更常见的是，第一版只是一句很普通的话。</p>
+<p>帮我写一篇文章。</p>
+<p>帮我做一份计划。</p>
+<p>帮我写一段客户话术。</p>
+<p>这些句子当然不够清楚，但它们不是没用。</p>
+<p>它们更像第一版草稿。</p>
+<p>下一步不是责怪自己不会写，也不是马上去找更长的模板，而是把这句话一轮一轮改清楚。</p>
+<p>第一轮，先补任务和读者。第二轮，补背景、限制和不要什么。第三轮，再规定输出格式和检查方式。</p>
+<p>这篇不讲更多理论，只练一件事：把一句模糊 Prompt，改成一条能真正开始使用的任务说明。</p>
+<h2>第一版很模糊，也可以继续改</h2>
+<p>很多人看到自己写出“帮我写一篇文章”这种句子，会觉得这条 Prompt 已经失败了。</p>
+<p>其实不用这么想。</p>
+<p>模糊 Prompt 最大的问题不是不能用，而是它让 AI 只能靠猜。</p>
+<p>它不知道写给谁看，不知道文章用在哪里，不知道读者现在是什么水平，也不知道要避免什么语气。它更不知道最后要什么格式，写完后要不要检查。</p>
+<p>所以第一版的作用，不是直接拿来执行，而是拿来继续加工。</p>
+<section class="tutorial-visual-card tutorial-compare-table" aria-label="原始 Prompt vs 三轮改写">
+        <header>
+          <span>Compare</span>
+          <h3>原始 Prompt vs 三轮改写</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody><tr><td>原始：帮我写一篇文章</td><td>只给了一个模糊方向，AI 需要猜读者、场景、语气和格式。</td></tr><tr><td>第一轮：补任务和读者</td><td>先说清写什么、写给谁看。</td></tr><tr><td>第二轮：补背景和限制</td><td>说明读者状态、语气边界和不要出现的方向。</td></tr><tr><td>第三轮：补格式和检查方式</td><td>规定先输出什么、怎么交付、写完后如何自检。</td></tr></tbody>
+        </table>
+      </section>
+<p>你不需要一开始就把所有信息都写完。先让第一版变清楚一点，再继续往下改。</p>
+<h2>第一轮：先把任务和读者说清楚</h2>
+<p>我们先拿这句原始 Prompt 来练：</p>
+<p>帮我写一篇文章。</p>
+<p>第一轮不要急着补很多限制，只解决两个问题：这次到底要做什么，内容是写给谁看的。</p>
+<p>可以先改成这样：</p>
+<p>请帮我写一篇面向 AI 小白的文章，主题是“普通人如何开始使用 AI”。</p>
+<p>这句话还不算完整，但已经比原来清楚很多。</p>
+<p>原来的“写一篇文章”太宽。它可以是公众号文章、朋友圈长文、内部培训稿，也可以是课程开场稿。AI 不知道你要哪一种，就只能按常见套路写。</p>
+<p>改成第一轮以后，AI 至少知道两个关键信息：主题是普通人如何开始使用 AI，读者是 AI 小白。</p>
+<p>这一步不用想复杂。第一轮能把“做什么”和“给谁看”说清，就已经够了。</p>
+<h2>第二轮：补上背景、限制和不要什么</h2>
+<p>第一轮以后，任务和读者有了，但还不够。</p>
+<p>同样是写给 AI 小白，有的人想写成工具介绍，有的人想写成学习路线，有的人想写成焦虑感很强的趋势文章。你不说，AI 还是会猜。</p>
+<p>所以第二轮要继续补背景和限制。</p>
+<p>可以这样改：</p>
+<p>读者是没有技术基础的普通职场人，文章不要写得太技术，也不要制造焦虑，要用真实场景说明。</p>
+<p>这一轮的作用，是减少 AI 乱猜。</p>
+<p>你要告诉它：读者是什么状态，文章要用什么语气，哪些方向不要写，哪些感觉要避免，最好用什么方式讲清楚。</p>
+<p>比如，不要写得太技术，不要制造焦虑，不要像营销文，多用真实场景说明。</p>
+<p>这些限制不是为了束缚 AI，而是为了让结果更贴近你真正想要的方向。</p>
+<h2>第三轮：规定输出格式和检查方式</h2>
+<p>第三轮解决的是输出顺序、输出结构和怎么检查。</p>
+<p>不要只是让 AI “写完”。你可以让它先给结构，再写正文，写完后自检，指出哪里空泛，给出修改建议。</p>
+<p>继续补第三轮：</p>
+<p>请先给我文章结构，再写正文。正文要有真实开头、3 个使用场景、一个可执行小任务。写完后请检查哪里像机器稿，并给出修改建议。</p>
+<p>这样做有两个好处。</p>
+<p>第一，你不用直接面对一整篇成品。AI 先给结构，你可以先判断方向对不对。</p>
+<p>第二，你让 AI 参与检查，而不是只让它交一版内容。它不一定检查得完全准确，但可以帮你先发现一些明显问题，比如太空、太满、太像宣传语。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="三轮改写卡">
+        <header>
+          <span>Flow</span>
+          <h3>三轮改写卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>任务和读者</strong>
+              <p>先说清要做什么、写给谁看。</p>
+            </li><li>
+              <span>02</span>
+              <strong>背景和限制</strong>
+              <p>补充读者状态、使用场景、语气边界和不要出现的方向。</p>
+            </li><li>
+              <span>03</span>
+              <strong>格式和检查</strong>
+              <p>规定输出顺序、交付格式和自检方式。</p>
+            </li></ol>
+      </section>
+<h2>三轮之后，它会变成什么样？</h2>
+<p>三轮改完以后，最终 Prompt 可以变成这样：</p>
+<p>请帮我写一篇面向 AI 小白的文章，主题是“普通人如何开始使用 AI”。</p>
+<p>读者是没有技术基础的普通职场人。文章不要写得太技术，也不要制造焦虑，要用真实场景说明。</p>
+<p>请先给我文章结构，再写正文。正文要有真实开头、3 个使用场景、一个可执行小任务。写完后请检查哪里像机器稿，并给出修改建议。</p>
+<p>它不是变得很高级，而是变得更清楚。</p>
+<p>这条 Prompt 至少说明了任务、读者、背景、限制、输出顺序和检查方式。</p>
+<p>这就是普通人练 Prompt 最应该先掌握的能力：不是把句子写得更神秘，而是把任务说明写得更具体。</p>
+<h2>让 AI 反过来帮你改 Prompt</h2>
+<p>很多时候，你不知道自己的 Prompt 缺什么。</p>
+<p>这时候可以先让 AI 检查 Prompt，而不是直接执行任务。</p>
+<p>你可以这样问：</p>
+<p>请先不要执行我的 Prompt。</p>
+<p>请你先检查它是否清楚，包括：</p>
+<ul><li>任务是否明确</li><li>读者是否清楚</li><li>背景是否足够</li><li>限制是否明确</li><li>输出格式是否清楚</li><li>是否需要先问我补充信息</li></ul>
+<p>如果不完整，请先问我 3 个问题，再帮我改写。</p>
+<p>让 AI 提问，不是你水平不够。</p>
+<p>这是把模糊任务变清楚的一部分。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="AI 反向检查 Prompt 卡">
+        <header>
+          <span>Flow</span>
+          <h3>AI 反向检查 Prompt 卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>任务</strong>
+              <p>这次到底要完成什么，是否说清楚。</p>
+            </li><li>
+              <span>02</span>
+              <strong>读者</strong>
+              <p>结果是给谁看的，是否有具体对象。</p>
+            </li><li>
+              <span>03</span>
+              <strong>背景</strong>
+              <p>为什么要做这件事，当前处在什么状态。</p>
+            </li><li>
+              <span>04</span>
+              <strong>限制</strong>
+              <p>哪些语气、方向、内容不要出现。</p>
+            </li><li>
+              <span>05</span>
+              <strong>输出格式</strong>
+              <p>要表格、清单、多个版本，还是步骤说明。</p>
+            </li><li>
+              <span>06</span>
+              <strong>需要追问</strong>
+              <p>信息不足时，先问问题再继续。</p>
+            </li></ol>
+      </section>
+<p>你不确定哪里缺，就让 AI 先帮你找缺口。这样比反复让它“重新写一遍”更有效。</p>
+<h2>哪些结果不能只看清不清楚</h2>
+<p>Prompt 改得更清楚，可以减少 AI 乱猜，但不代表输出一定正确、一定自然、一定适合发布。</p>
+<p>你仍然需要判断：任务是否真实，背景是否准确，限制是否足够，输出是否空泛，结果是否适合自己的场景。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="结果判断卡">
+        <header>
+          <span>Flow</span>
+          <h3>结果判断卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>任务真实</strong>
+              <p>这件事确实是你要做的，不是为了练习而虚构一个假任务。</p>
+            </li><li>
+              <span>02</span>
+              <strong>背景准确</strong>
+              <p>读者、对象、经历、数据和使用场景不能靠 AI 编。</p>
+            </li><li>
+              <span>03</span>
+              <strong>限制足够</strong>
+              <p>该避免的语气、承诺、夸张表达要提前说清。</p>
+            </li><li>
+              <span>04</span>
+              <strong>输出不空泛</strong>
+              <p>结果不能只有正确废话，要能继续使用或修改。</p>
+            </li><li>
+              <span>05</span>
+              <strong>适合场景</strong>
+              <p>发给客户、领导、朋友或公开平台前，自己能负责。</p>
+            </li></ol>
+      </section>
+<p>Prompt 改写是为了让 AI 少猜一点，不是为了让人完全不用判断。</p>
+<p>尤其涉及客户沟通、公开发布、商业承诺、医疗健康、法律责任、财务收益和隐私信息时，AI 的输出只能作为初稿，最终判断仍然要由人负责。</p>
+<h2>我现在更相信的一件事</h2>
+<p>普通人练 Prompt，不是从背模板开始，而是从修改自己的模糊表达开始。</p>
+<p>一条好 Prompt，往往不是一次写出来的。</p>
+<p>它通常经历几轮改写。</p>
+<p>第一轮：把任务和读者说清楚。</p>
+<p>第二轮：把背景、限制和不想要的内容补上。</p>
+<p>第三轮：把输出格式和检查方式定下来。</p>
+<p>不要把 Prompt 当成一次性写完的标准答案。</p>
+<p>更适合的理解是：它是一份可以反复修改的任务说明。</p>
+<h2>今天改一条自己常用的 Prompt</h2>
+<p>今天先改一条自己常用的 Prompt。</p>
+<p>可以从这些原始句子里选一条：</p>
+<ul><li>帮我写一篇文章</li><li>帮我做一份计划</li><li>帮我写一段客户话术</li><li>帮我总结一份资料</li><li>帮我写一条朋友圈</li></ul>
+<p>任务目标不是得到最终内容，而是得到一条更清楚、可执行、能继续追问的 Prompt。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="Prompt 改写任务卡">
+        <header>
+          <span>Flow</span>
+          <h3>Prompt 改写任务卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>原始 Prompt</strong>
+              <p>先写下自己真的会用的一句话，不要选太复杂的任务。</p>
+            </li><li>
+              <span>02</span>
+              <strong>第一轮</strong>
+              <p>补任务和读者，说清做什么、给谁看。</p>
+            </li><li>
+              <span>03</span>
+              <strong>第二轮</strong>
+              <p>补背景、限制和不要什么，减少 AI 乱猜。</p>
+            </li><li>
+              <span>04</span>
+              <strong>第三轮</strong>
+              <p>补输出格式和检查方式，让结果更容易判断。</p>
+            </li><li>
+              <span>05</span>
+              <strong>最终版本</strong>
+              <p>整理成一条能开始使用、还能继续追问的 Prompt。</p>
+            </li></ol>
+      </section>
+<p>做完以后，不要只看这条 Prompt 变长了没有。你要看它有没有真的更清楚：任务是否明确，读者是否具体，限制是否能帮你避开不想要的方向，输出方式是否方便检查。</p>
+<h2>直接复制这段，让 AI 帮你改 Prompt</h2>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">我写了一条 Prompt，但它可能太模糊了。
+
+我的原始 Prompt 是：
+
+请你先不要执行它，而是帮我做一次改写练习。
+
+请按下面步骤处理：
+
+第一步：
+判断这条 Prompt 缺少哪些信息。
+
+第二步：
+帮我补成三个版本：
+
+1. 第一轮改写：补清楚任务和读者
+2. 第二轮改写：补清楚背景、限制和不要什么
+3. 第三轮改写：补清楚输出格式和检查方式
+
+第三步：
+给出最终可使用版本。
+
+第四步：
+告诉我这条 Prompt 以后还可以怎么继续改。
+
+要求：
+
+1. 不要使用专业术语
+2. 不要直接替我完成任务
+3. 重点是帮我学会如何改 Prompt
+4. 如果信息不足，请先问我 3 个问题
+5. 输出格式用表格</code></pre>
+    </div>
+<p>如果你已经有具体场景，可以继续追问：</p>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">请基于我的真实使用场景，把第三轮版本再改得更具体。</code></pre>
+    </div>
+<h2>后面继续怎么练</h2>
+<p>如果你今天真的把一句“帮我写一下”改成了三轮版本，就已经完成了一次有效练习。</p>
+<p>Prompt 能力不是靠收藏变强的，也不是靠背模板变强的。</p>
+<p>它是在一次次改写里变清楚的。</p>
+<p>以后写任何 Prompt，都可以先问自己三件事。</p>
+<p>任务和读者说清了吗？</p>
+<p>背景和限制补上了吗？</p>
+<p>输出格式和检查方式说明了吗？</p>
+<p>当你能这样检查自己的提问时，就不是在找现成答案，而是在练一种可以迁移到很多任务里的能力。</p>
+<section class="tutorial-next-actions" aria-label="下一步行动">
+        
+        <div><a class="tutorial-next-card" href="../map/index.html">
+              <strong>查看完整内容地图</strong>
+              <span>按阶段继续学习。</span>
+            </a><a class="tutorial-next-card" href="../../community">
+              <strong>加入凡人修AI社区</strong>
+              <span>和其他正在学习 AI 的人一起交流。</span>
+            </a><a class="tutorial-next-card" href="../../index.html">
+              <strong>回到首页继续了解 AI 修炼路径</strong>
+              <span>查看整体学习路径。</span>
+            </a></div>
+      </section></div>
+      </div>
+
+      <section class="lesson-practice section-pad" aria-labelledby="practice-title">
+        <div>
+          <p class="eyebrow">Practice</p>
+          <h2 id="practice-title">实战任务</h2>
+          <p>修炼不是看完就结束。本篇读完后，请把下面任务变成一次真实输出。</p>
+        </div>
+        <ol><li><span>01</span>三轮改写</li><li><span>02</span>补清任务</li><li><span>03</span>补充限制</li><li><span>04</span>规定格式</li><li><span>05</span>反向检查</li></ol>
+      </section>
+
+      <section class="lesson-related section-pad" aria-labelledby="related-title">
+        <div class="lesson-section-title">
+          <p class="eyebrow">Next</p>
+          <h2 id="related-title">相关教程</h2>
+        </div>
+        <div class="lesson-related-grid"><a class="lesson-related-card" href="../011-prompt-workflow-basic/index.html">
+        <span>Prompt与工作流</span>
+        <strong>Prompt工作流入门：别再找万能提示词，先把任务拆成步骤</strong>
+        <p>面向刚开始学习 Prompt 的普通人，讲清为什么万能提示词很难稳定解决问题，以及如何把一个真实任务拆成可连续推进的 Prompt 工作流。</p>
+      </a><a class="lesson-related-card" href="../012-good-prompt-examples/index.html">
+        <span>Prompt与工作流</span>
+        <strong>高质量Prompt案例：不要只复制，先看懂它为什么有效</strong>
+        <p>面向刚开始练习 Prompt 的普通人，通过客户跟进消息案例，讲清好 Prompt 为什么更稳定，以及如何把别人的案例改成自己的真实任务。</p>
+      </a><a class="lesson-related-card" href="../014-ai-workflow-case/index.html">
+        <span>Prompt与工作流</span>
+        <strong>AI工作流案例：用 AI 把零散工作记录整理成一份周报</strong>
+        <p>面向想把 AI 用到日常工作的普通人，用一份周报案例讲清如何从零散素材开始，按步骤整理、归类、生成初稿并检查真实性。</p>
+      </a></div>
+      </section>
+
+      <section class="lesson-join section-pad" aria-labelledby="join-title">
+        <div>
+          <p class="eyebrow">Community</p>
+          <h2 id="join-title">加入凡人修AI道友群</h2>
+          <p>把你的实战任务、踩坑记录和作品发出来，和一群普通人一起复盘、迭代、成长。</p>
+        </div>
+        <a class="btn btn-primary" href="../../index.html#community">加入道友群</a>
+      </section>
+    </article></main>
+    <footer class="site-footer">
+      <p>凡人修AI © 2026</p>
+      <p><a href="../../about/">关于</a> · <a href="../../community/">社区</a> · 普通人的AI学习与实践平台</p>
+    </footer>
+    <script src="../../script.js?v=20260602-article-copy-visuals"></script>
+  </body>
+</html>
