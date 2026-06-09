@@ -31,7 +31,7 @@ status: published
 :::tutorial-compare-table
 title: 赚钱起步框架 vs 副业机会筛选
 能力盘点 / 小交付 / 小试单 / 复盘验证|机会类型 / 适合人群 / 交付难度 / 风险边界
-042 解决“我怎么开始”|043 解决“我先筛哪个方向”
+起步框架|机会类型、交付难度和风险边界
 :::
 
 :::tutorial-compare-table

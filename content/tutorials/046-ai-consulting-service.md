@@ -29,7 +29,7 @@ status: published
 :::tutorial-compare-table
 title: 课程大纲 vs 咨询服务
 学习人群 / 课程模块 / 练习任务 / 作业检查|具体客户 / 问题诊断 / 方案建议 / 跟进复盘
-045 解决“一类人怎么学”|046 解决“一个客户卡在哪里”
+课程式交付|具体客户诊断和轻量方案
 :::
 
 :::tutorial-compare-table

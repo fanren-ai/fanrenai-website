@@ -29,7 +29,7 @@ status: published
 :::tutorial-compare-table
 title: 知识付费起步 vs 课程大纲设计
 学习人群 / 学习结果 / 交付形式 / 小范围测试|课程模块 / 课时目标 / 练习任务 / 作业检查
-044 解决“这个知识产品能不能做”|045 解决“这门课该怎么拆”
+小知识产品判断|模块、课时、练习和检查点
 :::
 
 :::tutorial-compare-table

@@ -29,7 +29,7 @@ status: published
 :::tutorial-compare-table
 title: 副业机会筛选 vs 知识付费起步
 机会方向 / 适合人群 / 交付难度 / 风险边界|学习人群 / 学习结果 / 学习路径 / 交付测试
-043 解决“我适合先做哪个方向”|044 解决“我能不能把经验教成一个小结果”
+机会筛选|学习人群、学习结果和交付测试
 :::
 
 :::tutorial-compare-table
