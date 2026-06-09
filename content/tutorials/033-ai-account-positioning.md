@@ -1,5 +1,5 @@
 ---
-title: 如何用AI定位自己的账号方向：别先写口号，先找到能长期讲的主线
+title: 账号方向怎么定：用AI找到能长期讲的主线
 description: 面向已经准备做自媒体、但账号方向仍然很散的普通人，讲清如何用 AI 梳理真实资产、目标读者、长期问题、内容主线、栏目雏形和 4 周测试方法，先得到一版可以验证的账号方向草案。
 slug: 033-ai-account-positioning
 category: ai-self-media-personal-ip

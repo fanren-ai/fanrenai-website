@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260602-article-copy-visuals";
+const assetVersion = "20260609-copy-protection";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -278,7 +278,9 @@ function renderArticlePage(article, related) {
             <p>${escapeHtml(article.categoryName)} · ${escapeHtml(article.level)}</p>
           </div>
         </aside>
-        <div class="article-content">${article.html}</div>
+        <div class="article-content" data-copy-protected="article">${article.html}
+          <footer class="article-copyright">本文由凡人修AI原创整理，转载请注明来源。</footer>
+        </div>
       </div>
 
       <section class="lesson-practice section-pad" aria-labelledby="practice-title">

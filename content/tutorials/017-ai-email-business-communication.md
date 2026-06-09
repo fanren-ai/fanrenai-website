@@ -1,5 +1,5 @@
 ---
-title: 如何用AI写邮件和商务沟通话术：别让一句话卡住工作推进
+title: 邮件和商务话术卡住时：用AI先把意思说清楚
 description: 面向经常需要写邮件、微信沟通、客户跟进和协作说明的普通人，讲清如何用 AI 把模糊想法改成清楚、得体、自然的商务沟通表达。
 slug: 017-ai-email-business-communication
 category: ai-office

@@ -1,5 +1,5 @@
 ---
-title: 如何用AI整理客户资料：别让客户跟进断在零散记录里
+title: 客户资料太零散：用AI整理出可跟进线索
 description: 面向需要跟进客户、用户、合作方或学员的普通人，讲清如何用 AI 把零散聊天记录、表格备注和沟通信息整理成清楚、可跟进、可复盘的客户资料卡。
 slug: 018-ai-customer-data-organization
 category: ai-office

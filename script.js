@@ -58,3 +58,79 @@ document.addEventListener("click", async (event) => {
     }, 1600);
   }
 });
+
+const copyProtectedArticleSelector = '[data-copy-protected="article"]';
+const copyAllowedSelector = 'code, pre, input, textarea, [data-copy-unlocked="true"], .copy-block, .copy-code-block';
+const copyProtectionMessage = "内容受保护，如需完整模板请关注公众号「凡人修AI」获取。";
+let copyProtectionTipTimer = 0;
+
+function elementFromNode(node) {
+  if (node instanceof Element) return node;
+  return node?.parentElement || null;
+}
+
+function isCopyAllowedElement(element) {
+  return Boolean(element?.closest(copyAllowedSelector));
+}
+
+function getProtectedArticleFromSelection() {
+  const selection = window.getSelection?.();
+  if (!selection || selection.isCollapsed || selection.rangeCount === 0) return null;
+
+  const range = selection.getRangeAt(0);
+  const commonElement = elementFromNode(range.commonAncestorContainer);
+  const anchorElement = elementFromNode(selection.anchorNode);
+  const focusElement = elementFromNode(selection.focusNode);
+  const protectedArticle = commonElement?.closest(copyProtectedArticleSelector);
+
+  if (!protectedArticle) return null;
+  if (isCopyAllowedElement(commonElement) || isCopyAllowedElement(anchorElement) || isCopyAllowedElement(focusElement)) {
+    return null;
+  }
+
+  return protectedArticle;
+}
+
+function shouldProtectCopyEvent(event) {
+  const target = event.target instanceof Element ? event.target : null;
+  const protectedArticle = target?.closest(copyProtectedArticleSelector);
+
+  if (protectedArticle && !isCopyAllowedElement(target)) {
+    return true;
+  }
+
+  return Boolean(getProtectedArticleFromSelection());
+}
+
+function showCopyProtectionTip() {
+  let tip = document.querySelector(".copy-protection-tip");
+
+  if (!tip) {
+    tip = document.createElement("div");
+    tip.className = "copy-protection-tip";
+    tip.setAttribute("role", "status");
+    tip.setAttribute("aria-live", "polite");
+    document.body.appendChild(tip);
+  }
+
+  tip.textContent = copyProtectionMessage;
+  tip.classList.add("is-visible");
+  window.clearTimeout(copyProtectionTipTimer);
+  copyProtectionTipTimer = window.setTimeout(() => {
+    tip.classList.remove("is-visible");
+  }, 2200);
+}
+
+function blockProtectedCopy(event) {
+  if (!shouldProtectCopyEvent(event)) return;
+  event.preventDefault();
+  showCopyProtectionTip();
+}
+
+document.addEventListener("contextmenu", blockProtectedCopy);
+document.addEventListener("copy", blockProtectedCopy);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key.toLowerCase() !== "c" || (!event.metaKey && !event.ctrlKey)) return;
+  blockProtectedCopy(event);
+});

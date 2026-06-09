@@ -1,5 +1,5 @@
 ---
-title: 如何用AI写朋友圈文案：把真实想法写得自然、有分寸
+title: 朋友圈文案怎么写自然：先保留真实想法
 description: 面向想发朋友圈但担心尴尬、太像广告或过度包装的普通人，讲清如何用 AI 把真实事情整理成自然、克制、有分寸、可继续修改的朋友圈文案。
 slug: 025-ai-moments-copywriting
 category: ai-writing-content

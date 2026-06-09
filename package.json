@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node scripts/build-site.js",
     "build:vercel": "npm run build && node scripts/prepare-deploy.js",
-    "seed:content-map": "node scripts/seed-content-map.js"
+    "seed:content-map": "node scripts/seed-content-map.js",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/*.test.mjs"
   }
 }

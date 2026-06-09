@@ -247,7 +247,7 @@
     "url": "/tutorials/015-ai-daily-review/"
   },
   {
-    "title": "如何用AI做PPT大纲：先别找模板，先把结构搭顺",
+    "title": "PPT大纲怎么用AI搭：先把汇报结构理顺",
     "description": "面向需要做 PPT 但不擅长搭结构的普通人，讲清如何用 AI 从一个模糊主题出发，先整理出目标、听众、章节和逐页内容，得到一份可以继续制作的 PPT 大纲。",
     "category": "AI办公提效",
     "level": "炼气期",
@@ -264,7 +264,7 @@
     "url": "/tutorials/016-ai-ppt-outline/"
   },
   {
-    "title": "如何用AI写邮件和商务沟通话术：别让一句话卡住工作推进",
+    "title": "邮件和商务话术卡住时：用AI先把意思说清楚",
     "description": "面向经常需要写邮件、微信沟通、客户跟进和协作说明的普通人，讲清如何用 AI 把模糊想法改成清楚、得体、自然的商务沟通表达。",
     "category": "AI办公提效",
     "level": "炼气期",
@@ -281,7 +281,7 @@
     "url": "/tutorials/017-ai-email-business-communication/"
   },
   {
-    "title": "如何用AI整理客户资料：别让客户跟进断在零散记录里",
+    "title": "客户资料太零散：用AI整理出可跟进线索",
     "description": "面向需要跟进客户、用户、合作方或学员的普通人，讲清如何用 AI 把零散聊天记录、表格备注和沟通信息整理成清楚、可跟进、可复盘的客户资料卡。",
     "category": "AI办公提效",
     "level": "炼气期",
@@ -298,7 +298,7 @@
     "url": "/tutorials/018-ai-customer-data-organization/"
   },
   {
-    "title": "如何用AI做Excel数据分析：先问清问题，再看表格里的结论",
+    "title": "Excel表格不会分析：先让AI帮你问对问题",
     "description": "面向需要处理表格但不懂专业数据分析的普通人，讲清如何用 AI 先看懂 Excel 字段、设计分析问题、发现异常并整理出可放进工作汇报的结论。",
     "category": "AI办公提效",
     "level": "炼气期",
@@ -315,7 +315,7 @@
     "url": "/tutorials/019-ai-excel-data-analysis/"
   },
   {
-    "title": "如何用AI做工作计划：别把待办清单当成可执行计划",
+    "title": "工作计划不是待办清单：用AI拆出可执行步骤",
     "description": "面向每天任务很多但工作节奏混乱的普通人，讲清如何用 AI 把零散待办整理成本周目标、优先级、时间安排、协作事项、风险提醒和今天第一步。",
     "category": "AI办公提效",
     "level": "炼气期",
@@ -332,7 +332,7 @@
     "url": "/tutorials/020-ai-work-plan/"
   },
   {
-    "title": "如何用AI提升沟通效率：先把信息对齐，再让事情往前走",
+    "title": "沟通效率怎么提升：先让AI帮你对齐信息",
     "description": "面向工作中经常反复确认、反复解释的人，讲清如何用 AI 整理沟通背景、待确认问题、负责人、截止时间和下一步动作，减少无效来回。",
     "category": "AI办公提效",
     "level": "炼气期",
@@ -349,7 +349,7 @@
     "url": "/tutorials/021-ai-communication-efficiency/"
   },
   {
-    "title": "如何用AI写一篇公众号文章：先把想法变成结构，再写初稿",
+    "title": "公众号文章写不出来：先把想法搭成结构",
     "description": "面向想写公众号但容易卡在选题、结构和初稿的人，讲清如何用 AI 把一个真实想法整理成读者、观点、素材、结构和可继续修改的公众号文章初稿。",
     "category": "AI写作与内容创作",
     "level": "炼气期",
@@ -366,7 +366,7 @@
     "url": "/tutorials/022-ai-wechat-article-writing/"
   },
   {
-    "title": "如何用AI写小红书笔记：把真实经历整理成一篇像真人分享的笔记",
+    "title": "小红书笔记怎么写：把真实经历整理成真人分享",
     "description": "面向想写小红书但不知道怎么下笔的普通人，讲清如何用 AI 把真实体验、方法清单、踩坑经历或工具使用感受整理成自然、具体、可继续修改的小红书笔记初稿。",
     "category": "AI写作与内容创作",
     "level": "炼气期",
@@ -383,7 +383,7 @@
     "url": "/tutorials/023-ai-xiaohongshu-note-writing/"
   },
   {
-    "title": "如何用AI写短视频脚本：把一个选题拆成口播、画面和节奏",
+    "title": "短视频脚本怎么拆：从一个选题到口播、画面和节奏",
     "description": "面向想做短视频但不知道怎么写脚本的普通人，讲清如何用 AI 把一个真实选题拆成开场、口播、画面、字幕、节奏和可继续修改的短视频脚本初稿。",
     "category": "AI写作与内容创作",
     "level": "炼气期",
@@ -400,7 +400,7 @@
     "url": "/tutorials/024-ai-short-video-script-writing/"
   },
   {
-    "title": "如何用AI写朋友圈文案：把真实想法写得自然、有分寸",
+    "title": "朋友圈文案怎么写自然：先保留真实想法",
     "description": "面向想发朋友圈但担心尴尬、太像广告或过度包装的普通人，讲清如何用 AI 把真实事情整理成自然、克制、有分寸、可继续修改的朋友圈文案。",
     "category": "AI写作与内容创作",
     "level": "炼气期",
@@ -417,7 +417,7 @@
     "url": "/tutorials/025-ai-moments-copywriting/"
   },
   {
-    "title": "如何用AI写产品介绍：先把“给谁用、解决什么、有什么边界”说清楚",
+    "title": "产品介绍写不清：先说清给谁用、解决什么",
     "description": "面向需要介绍产品、服务、资料包、模板包、课程、活动或解决方案的普通人，讲清如何用 AI 把产品信息整理成清楚、克制、有边界、可继续修改的产品介绍。",
     "category": "AI写作与内容创作",
     "level": "炼气期",
@@ -434,7 +434,7 @@
     "url": "/tutorials/026-ai-product-description-writing/"
   },
   {
-    "title": "如何用AI写销售文案：把用户问题、顾虑和下一步说清楚",
+    "title": "销售文案别急着推销：先写清用户顾虑和下一步",
     "description": "面向需要推广产品、服务、资料包、课程或活动的普通人，讲清如何用 AI 把产品介绍改成克制、清楚、有边界、适合具体销售场景的销售文案初稿。",
     "category": "AI写作与内容创作",
     "level": "炼气期",
@@ -451,7 +451,7 @@
     "url": "/tutorials/027-ai-sales-copywriting/"
   },
   {
-    "title": "如何用AI改写文章：先找出哪里不像真人表达",
+    "title": "文章改写不像真人：先找出哪里太像模板",
     "description": "面向已经有 AI 初稿、公众号段落、小红书笔记、朋友圈文案、产品介绍或工作说明的普通人，讲清如何用 AI 先诊断不自然的问题，再改成更清楚、更像自己、更保留原意的表达。",
     "category": "AI写作与内容创作",
     "level": "炼气期",
@@ -536,7 +536,7 @@
     "url": "/tutorials/032-ai-self-media-for-ordinary-people/"
   },
   {
-    "title": "如何用AI定位自己的账号方向：别先写口号，先找到能长期讲的主线",
+    "title": "账号方向怎么定：用AI找到能长期讲的主线",
     "description": "面向已经准备做自媒体、但账号方向仍然很散的普通人，讲清如何用 AI 梳理真实资产、目标读者、长期问题、内容主线、栏目雏形和 4 周测试方法，先得到一版可以验证的账号方向草案。",
     "category": "AI自媒体与个人IP",
     "level": "结丹期",
@@ -553,7 +553,7 @@
     "url": "/tutorials/033-ai-account-positioning/"
   },
   {
-    "title": "如何用AI找到选题：别让AI生成一堆标题，先围绕主线找本周能写的题",
+    "title": "选题从哪里来：用AI围绕账号主线筛出本周能写的题",
     "description": "面向已经有初步账号方向、但不知道持续写什么的普通人，讲清如何用 AI 从账号主线、读者问题、真实素材、栏目方向和反馈里生成选题池，并筛出本周最适合写的 3 个选题。",
     "category": "AI自媒体与个人IP",
     "level": "结丹期",
@@ -568,5 +568,209 @@
       "普通人学AI"
     ],
     "url": "/tutorials/034-ai-topic-ideas/"
+  },
+  {
+    "title": "内容大纲批量生成：把选题变成一篇篇能写下去的结构",
+    "description": "面向已经有选题池、但真正动笔前仍然卡住的普通人，讲清如何用 AI 把多个选题批量拆成可写大纲，并提前标出开头场景、正文结构、素材缺口、风险边界和本周优先顺序。",
+    "category": "AI自媒体与个人IP",
+    "level": "结丹期",
+    "section": "AI自媒体与个人IP",
+    "order": 35,
+    "status": "published",
+    "tags": [
+      "AI自媒体",
+      "内容大纲",
+      "个人IP",
+      "内容创作",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/035-ai-content-outline-batch/"
+  },
+  {
+    "title": "个人IP不是包装人设：用AI把真实能力持续表达出来",
+    "description": "面向已经开始做内容、但还没有形成清晰长期印象的普通人，讲清如何用 AI 梳理真实经历、可持续标签、服务对象、信任内容和 4 周测试计划，避免把个人 IP 做成夸大包装。",
+    "category": "AI自媒体与个人IP",
+    "level": "结丹期",
+    "section": "AI自媒体与个人IP",
+    "order": 36,
+    "status": "published",
+    "tags": [
+      "AI自媒体",
+      "个人IP",
+      "内容创作",
+      "普通人学AI",
+      "信任内容"
+    ],
+    "url": "/tutorials/036-ai-personal-ip/"
+  },
+  {
+    "title": "公众号还值得做吗：适合沉淀长内容的人更该认真看",
+    "description": "面向已经有账号方向、选题和个人 IP 草案，但纠结是否还要做公众号的普通人，讲清公众号在 AI 时代更适合沉淀长内容、方法论、案例复盘和信任资产，并用 AI 设计一套轻量测试方案。",
+    "category": "AI自媒体与个人IP",
+    "level": "结丹期",
+    "section": "AI自媒体与个人IP",
+    "order": 37,
+    "status": "published",
+    "tags": [
+      "AI自媒体",
+      "公众号",
+      "个人IP",
+      "长内容",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/037-ai-wechat-official-account/"
+  },
+  {
+    "title": "小红书还适合普通人吗：用真实场景测试轻内容",
+    "description": "面向已经有账号方向和真实素材，但纠结是否适合做小红书的普通人，讲清小红书在 AI 时代更适合做轻内容测试、真实场景表达和搜索型问题验证，并用 AI 设计一套 4 周轻量测试方案。",
+    "category": "AI自媒体与个人IP",
+    "level": "结丹期",
+    "section": "AI自媒体与个人IP",
+    "order": 38,
+    "status": "published",
+    "tags": [
+      "AI自媒体",
+      "小红书",
+      "个人IP",
+      "轻内容",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/038-ai-xiaohongshu/"
+  },
+  {
+    "title": "短视频还有机会吗：普通人先把真实经验讲清楚",
+    "description": "面向已经有账号方向、真实素材和图文内容想法，但纠结是否要做短视频的普通人，讲清短视频在 AI 时代更适合做直接表达测试、真实经验呈现和轻量脚本验证，并用 AI 设计一套 4 周短视频测试方案。",
+    "category": "AI自媒体与个人IP",
+    "level": "结丹期",
+    "section": "AI自媒体与个人IP",
+    "order": 39,
+    "status": "published",
+    "tags": [
+      "AI自媒体",
+      "短视频",
+      "个人IP",
+      "口播表达",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/039-ai-short-video-opportunity/"
+  },
+  {
+    "title": "内容更新效率怎么提升：用AI把素材、选题、改写和复盘串起来",
+    "description": "面向已经有账号方向、内容选题和平台判断，但更新时仍然素材分散、节奏混乱的普通人，讲清如何用 AI 搭建素材入口、选题池、大纲模板、多平台轻改写、发布节奏和复盘流程。",
+    "category": "AI自媒体与个人IP",
+    "level": "结丹期",
+    "section": "AI自媒体与个人IP",
+    "order": 40,
+    "status": "published",
+    "tags": [
+      "AI自媒体",
+      "内容效率",
+      "个人IP",
+      "内容复用",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/040-ai-content-update-efficiency/"
+  },
+  {
+    "title": "一个人如何借助AI完成一个小团队的工作：不是一个人硬扛，而是让AI帮你拆分角色和流程",
+    "description": "面向正在一个人做自媒体或个人项目的普通人，讲清如何用 AI 把策划、素材、写作、编辑、视觉协作、运营和复盘拆成清晰角色，让一个人也能更有秩序地推进一轮内容项目。",
+    "category": "AI自媒体与个人IP",
+    "level": "结丹期",
+    "section": "AI自媒体与个人IP",
+    "order": 41,
+    "status": "published",
+    "tags": [
+      "AI自媒体",
+      "个人IP",
+      "小团队工作流",
+      "内容项目",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/041-ai-one-person-small-team/"
+  },
+  {
+    "title": "普通人如何靠AI赚钱：别先想暴富，先找到你能交付的小价值",
+    "description": "面向已经学过 AI 工具、办公提效、内容创作和个人 IP 的普通人，讲清靠 AI 赚钱不是寻找热门项目，而是用 AI 放大已有能力，找到真实需求，设计小交付，并用小额试单验证能否稳定交付。",
+    "category": "AI商业与变现",
+    "level": "结丹期",
+    "section": "AI商业与变现",
+    "order": 42,
+    "status": "published",
+    "tags": [
+      "AI商业",
+      "AI变现",
+      "小额试单",
+      "普通人学AI",
+      "AI赚钱"
+    ],
+    "url": "/tutorials/042-ai-make-money-for-ordinary-people/"
+  },
+  {
+    "title": "AI副业有哪些真实机会：别追风口，先看你能不能稳定交付",
+    "description": "面向已经知道不能盲目追热门项目的普通人，梳理相对真实、可测试的 AI 副业方向，并用能力匹配、真实需求、清楚交付、AI 降本、风险可控和小试单验证六个维度判断自己适合先做什么。",
+    "category": "AI商业与变现",
+    "level": "结丹期",
+    "section": "AI商业与变现",
+    "order": 43,
+    "status": "published",
+    "tags": [
+      "AI副业",
+      "AI商业",
+      "小试单",
+      "普通人学AI",
+      "AI变现"
+    ],
+    "url": "/tutorials/043-real-ai-side-hustles/"
+  },
+  {
+    "title": "知识付费怎么起步：把真实经验整理成可交付路径",
+    "description": "面向有真实工作经验、内容经验或 AI 使用经验的普通人，讲清如何用 AI 把经验整理成小而真实的知识产品，并设计学习结果、练习任务、交付形式和风险边界。",
+    "category": "AI商业与变现",
+    "level": "结丹期",
+    "section": "AI商业与变现",
+    "order": 44,
+    "status": "published",
+    "tags": [
+      "AI知识付费",
+      "AI商业",
+      "小知识产品",
+      "学习路径",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/044-ai-knowledge-monetization/"
+  },
+  {
+    "title": "课程大纲怎么做：让每一课都有目标、练习和检查点",
+    "description": "面向已经确定小知识产品方向的普通人，讲清如何用 AI 把学习结果拆成课程模块、课时目标、练习任务、作业检查和风险边界。",
+    "category": "AI商业与变现",
+    "level": "结丹期",
+    "section": "AI商业与变现",
+    "order": 45,
+    "status": "published",
+    "tags": [
+      "AI课程大纲",
+      "AI商业",
+      "知识付费",
+      "学习路径",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/045-ai-course-outline/"
+  },
+  {
+    "title": "咨询服务怎么起步：从客户问题诊断到轻量方案",
+    "description": "面向已经有真实经验、AI 使用经验或轻量服务能力的普通人，讲清如何用 AI 辅助咨询服务，从客户问题诊断、访谈提纲、方案结构、交付文档到风险边界。",
+    "category": "AI商业与变现",
+    "level": "结丹期",
+    "section": "AI商业与变现",
+    "order": 46,
+    "status": "published",
+    "tags": [
+      "AI咨询服务",
+      "AI商业",
+      "问题诊断",
+      "轻量方案",
+      "普通人学AI"
+    ],
+    "url": "/tutorials/046-ai-consulting-service/"
   }
 ]

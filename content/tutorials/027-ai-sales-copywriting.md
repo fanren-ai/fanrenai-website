@@ -1,5 +1,5 @@
 ---
-title: 如何用AI写销售文案：把用户问题、顾虑和下一步说清楚
+title: 销售文案别急着推销：先写清用户顾虑和下一步
 description: 面向需要推广产品、服务、资料包、课程或活动的普通人，讲清如何用 AI 把产品介绍改成克制、清楚、有边界、适合具体销售场景的销售文案初稿。
 slug: 027-ai-sales-copywriting
 category: ai-writing-content

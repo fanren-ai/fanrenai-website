@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="面向已经有选题池、但真正动笔前仍然卡住的普通人，讲清如何用 AI 把多个选题批量拆成可写大纲，并提前标出开头场景、正文结构、素材缺口、风险边界和本周优先顺序。" />
+    <meta property="og:site_name" content="凡人修AI" />
+    <meta property="og:title" content="内容大纲批量生成：把选题变成一篇篇能写下去的结构 | 凡人修AI" />
+    <meta property="og:description" content="面向已经有选题池、但真正动笔前仍然卡住的普通人，讲清如何用 AI 把多个选题批量拆成可写大纲，并提前标出开头场景、正文结构、素材缺口、风险边界和本周优先顺序。" />
+    <meta property="og:url" content="https://www.fanrenai.cn/tutorials/035-ai-content-outline-batch/" />
+    <meta property="og:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <link rel="canonical" href="https://www.fanrenai.cn/tutorials/035-ai-content-outline-batch/" />
+    <meta property="article:published_time" content="2026-06-08" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"内容大纲批量生成：把选题变成一篇篇能写下去的结构","description":"面向已经有选题池、但真正动笔前仍然卡住的普通人，讲清如何用 AI 把多个选题批量拆成可写大纲，并提前标出开头场景、正文结构、素材缺口、风险边界和本周优先顺序。","author":{"@type":"Organization","name":"凡人修AI"},"datePublished":"2026-06-08","mainEntityOfPage":"https://www.fanrenai.cn/tutorials/035-ai-content-outline-batch/"}</script>
+    <title>内容大纲批量生成：把选题变成一篇篇能写下去的结构 | 凡人修AI</title>
+    <link rel="icon" type="image/png" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="apple-touch-icon" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="stylesheet" href="../../styles.css?v=20260609-copy-protection" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="../../index.html" aria-label="凡人修AI 首页">
+          <img class="brand-logo" src="../../assets/brand/fanrenai-logo-mark-256.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+          <span>凡人修AI</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="site-menu">
+          <a href="../../index.html">首页</a><a href="../../tutorials/index.html">AI教程</a><a href="../../tutorials/map/index.html">内容地图</a><a href="../../tutorials/category/codex/index.html">Codex专区</a><a href="https://tools.fanrenai.cn/">AI工具箱</a>
+          <a class="nav-cta" href="../../community/index.html">加入社区</a>
+        </div>
+      </nav>
+    </header>
+    <main><article class="lesson-shell">
+      <header class="lesson-hero section-pad">
+        <a class="back-link" href="../">返回修炼手册</a>
+        <div class="lesson-hero-grid">
+          <div>
+            <p class="eyebrow">AI自媒体与个人IP</p>
+            <h1>内容大纲批量生成：把选题变成一篇篇能写下去的结构</h1>
+            <p>面向已经有选题池、但真正动笔前仍然卡住的普通人，讲清如何用 AI 把多个选题批量拆成可写大纲，并提前标出开头场景、正文结构、素材缺口、风险边界和本周优先顺序。</p>
+          </div>
+          <aside class="lesson-rank-card" aria-label="本篇修炼信息">
+            <span>修炼等级</span>
+            <strong>结丹期</strong>
+            <p>学会用 AI 把 3 个选题拆成可写大纲，并判断哪个最适合本周先写。</p>
+          </aside>
+        </div>
+        <div class="lesson-meta-grid">
+          <div>
+            <span>修炼等级</span>
+            <strong>结丹期</strong>
+          </div>
+          <div>
+            <span>修炼目标</span>
+            <strong>学会用 AI 把 3 个选题拆成可写大纲，并判断哪个最适合本周先写。</strong>
+          </div>
+          <div>
+            <span>修炼时长</span>
+            <strong>35分钟</strong>
+          </div>
+        </div>
+      </header>
+
+      <div class="lesson-body section-pad">
+        <aside class="lesson-sidebar" aria-label="修炼摘要">
+          <div>
+            <span>本篇目标</span>
+            <p>学会用 AI 把 3 个选题拆成可写大纲，并判断哪个最适合本周先写。</p>
+          </div>
+          <div>
+            <span>建议节奏</span>
+            <p>35分钟读完，立刻完成文末实战任务。</p>
+          </div>
+          <div>
+            <span>所属路径</span>
+            <p>AI自媒体与个人IP · 结丹期</p>
+          </div>
+        </aside>
+        <div class="article-content" data-copy-protected="article"><h2>有了选题，不等于已经知道怎么写</h2>
+<p>你已经用 AI 找到了一批选题，也筛出了本周想写的 3 个。可准备动笔时，又卡住了：每个题到底怎么开头？先讲问题还是先讲案例？中间分几段？哪里放自己的经历？哪里提醒边界？</p>
+<p>AI 给了标题，却没有给你一条能写下去的路。</p>
+<p>这时候不要急着让 AI 写正文。更稳的做法，是先让 AI 把选题拆成大纲，并在大纲里标出：哪里需要你补真实素材，哪里不能让 AI 编，哪一篇最适合本周先写。</p>
+<h2>这一步不是找选题，而是把选题变成结构</h2>
+<p>上一篇解决的是找选题：写什么，哪些先写，哪些暂时不写。这一篇解决的是做大纲：一个选题怎么展开，怎么组织，怎么写得下去。</p>
+<p>大纲也不是标题下面随便列几段。它要帮你提前判断：这篇内容有没有读者场景，有没有真实素材，有没有清楚观点，有没有边界提醒。</p>
+<section class="tutorial-visual-card tutorial-compare-table" aria-label="找选题 vs 做大纲">
+        <header>
+          <span>Compare</span>
+          <h3>找选题 vs 做大纲</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody><tr><td>写什么 / 选题池 / 本周优先 / 暂不适合</td><td>怎么展开 / 开头场景 / 正文结构 / 素材缺口</td></tr><tr><td>先决定哪些题值得写</td><td>再判断每个题能不能写下去</td></tr></tbody>
+        </table>
+      </section>
+<h2>先别急着生成正文，先让 AI 帮你搭大纲</h2>
+<p>标题列表会让人误以为自己已经准备好了。真正动笔时才发现：没有开头，没有案例，没有自己的判断，也不知道哪里该提醒风险。</p>
+<p>好大纲的作用，是把这些问题提前暴露出来。它不替你写完内容，而是告诉你：这篇内容从哪里进，分几步讲，哪里需要补素材，哪里不能编。</p>
+<section class="tutorial-visual-card tutorial-compare-table" aria-label="标题列表 vs 可写大纲">
+        <header>
+          <span>Compare</span>
+          <h3>标题列表 vs 可写大纲</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody><tr><td>只有题目 / 看着能写 / 动笔卡住 / 缺案例</td><td>场景 / 痛点 / 观点 / 结构 / 案例 / 边界</td></tr><tr><td>标题只告诉你写什么</td><td>大纲告诉你怎么写得下去</td></tr></tbody>
+        </table>
+      </section>
+<h2>用 AI 批量生成大纲，可以先拆这 6 件事</h2>
+<p>第一，输入选题和账号方向。AI 能判断这个选题属于哪个主线、哪个栏目、写给谁看；人要决定它是否仍然符合账号方向。没有方向，大纲容易变成通用模板。</p>
+<p>第二，判断选题是否能写。AI 能检查题目是否太大、缺素材、偏离主线；人要判断自己手里是否真的有经历、观察或数据。不能写的题，要在大纲阶段先暴露。</p>
+<p>第三，设计开头场景。AI 能给出几个读者可能共鸣的开头；人要判断哪个场景自己真的经历过，哪个更像读者的问题。开头不是讲道理，而是让读者进入处境。</p>
+<p>第四，拆正文结构。AI 能把内容拆成问题、原因、方法、案例、边界、行动建议；人要判断结构是否符合自己的表达习惯，哪些部分需要删减。</p>
+<p>第五，标出素材缺口。AI 能指出哪里需要补真实经历、数据、案例、截图、反馈或观察；人要判断哪些能公开，哪些要脱敏，哪些暂时没有。</p>
+<p>第六，批量对比和排序。AI 能比较多个大纲，判断哪个容易写、哪个适合本周先发、哪个暂时放下；人要结合时间、素材完整度和发布节奏做取舍。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="批量生成大纲 6 步卡">
+        <header>
+          <span>Flow</span>
+          <h3>批量生成大纲 6 步卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>选题方向</strong>
+              <p>确认主线、栏目和读者。</p>
+            </li><li>
+              <span>02</span>
+              <strong>能否写</strong>
+              <p>检查是否太大、缺素材。</p>
+            </li><li>
+              <span>03</span>
+              <strong>开头场景</strong>
+              <p>找到真实进入点。</p>
+            </li><li>
+              <span>04</span>
+              <strong>正文结构</strong>
+              <p>拆问题、方法、案例和边界。</p>
+            </li><li>
+              <span>05</span>
+              <strong>素材缺口</strong>
+              <p>标出必须补的真实材料。</p>
+            </li><li>
+              <span>06</span>
+              <strong>排序优先</strong>
+              <p>选出本周先写的一篇。</p>
+            </li></ol>
+      </section>
+<h2>三个 AI 办公选题大纲示例</h2>
+<p>沿用上一篇的账号：面向普通职场人的 AI 办公实战记录。账号方向是记录一个销售转运营的人，如何把 AI 用进真实办公场景，帮普通职场人少一点混乱，多一点清楚。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="三个 AI 办公选题大纲示例卡">
+        <header>
+          <span>Flow</span>
+          <h3>三个 AI 办公选题大纲示例卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>3 个选题</strong>
+              <p>周计划、客户问题、汇报稿。</p>
+            </li><li>
+              <span>02</span>
+              <strong>3 份大纲</strong>
+              <p>分别拆开头、结构和边界。</p>
+            </li><li>
+              <span>03</span>
+              <strong>素材缺口</strong>
+              <p>标出需要补的真实材料。</p>
+            </li><li>
+              <span>04</span>
+              <strong>优先级判断</strong>
+              <p>决定本周先写哪一篇。</p>
+            </li></ol>
+      </section>
+<h3>选题一：用 AI 整理周计划前，我先补了哪些背景</h3>
+<p>适合内容形式：公众号短文、朋友圈长文、小红书图文。</p>
+<p>读者痛点：很多人让 AI 做计划时，只给一句目标，最后得到一份看起来完整但不贴合自己的计划。</p>
+<p>开头场景：周一早上任务很多，直接让 AI 做计划，结果每一项都很像模板。</p>
+<p>核心观点：计划不是让 AI 猜，而是先补背景。</p>
+<p>正文结构：先写为什么空，再写 AI 缺少岗位、目标、时间、限制和当前进度，接着拆出身份、目标、已完成、卡点、可投入时间 5 个字段，最后给一个轻量练习。</p>
+<p>案例或素材位置：放一段自己整理周计划前补背景的过程。</p>
+<p>需要补充的真实素材：一次真实周计划、自己补过的背景字段、AI 输出前后的差异。</p>
+<p>不能让 AI 编的内容：具体公司任务、客户信息、未发生的工作成果。</p>
+<p>风险边界：不要把公司内部任务、客户信息和敏感数据原样发给 AI。</p>
+<p>结尾行动：让读者先补 5 个背景字段，再让 AI 做计划。</p>
+<h3>选题二：客户问题很多时，AI 可以先帮我分哪几类</h3>
+<p>适合内容形式：小红书图文、社群分享、短视频脚本。</p>
+<p>读者痛点：聊天记录、备注和反馈很多，但不知道先看哪些问题，也不知道如何分类。</p>
+<p>开头场景：客户问题散在聊天记录里，翻来翻去还是没有结论。</p>
+<p>核心观点：AI 可以先整理信息，但业务判断仍然由人完成。</p>
+<p>正文结构：先写信息很散的状态，再讲为什么缺分类维度，然后给出产品、价格、交付、售后、复购、投诉几类，最后说明分类后人要继续判断优先级。</p>
+<p>案例或素材位置：放一段脱敏后的客户问题分类过程。</p>
+<p>需要补充的真实素材：脱敏客户反馈、实际分类维度、分类后自己做出的判断。</p>
+<p>不能让 AI 编的内容：客户原话、业务数据、投诉细节和处理结果。</p>
+<p>风险边界：客户原话、手机号、订单号和公司内部信息不能公开。</p>
+<p>结尾行动：先拿 10 条脱敏反馈，让 AI 分 5 类，再由人判断是否合理。</p>
+<h3>选题三：AI 给的汇报稿为什么不能直接交</h3>
+<p>适合内容形式：公众号短文、朋友圈长文、社群分享。</p>
+<p>读者痛点：AI 写出来的汇报稿很顺，但里面缺事实、缺取舍，也不像自己的真实表达。</p>
+<p>开头场景：AI 很快写出一份汇报稿，但看完不敢直接发。</p>
+<p>核心观点：AI 能帮你组织表达，但不能替你承担汇报结果。</p>
+<p>正文结构：先写“顺不等于真实”，再拆事实、数据、语气、结论四项检查，接着放一段修改前后对比，最后提醒哪些内容必须自己确认。</p>
+<p>案例或素材位置：放一段自己修改 AI 汇报稿的前后对比。</p>
+<p>需要补充的真实素材：真实汇报改写过程、修改前后差异、自己删掉或保留的理由。</p>
+<p>不能让 AI 编的内容：业绩数据、客户评价、项目成果和领导反馈。</p>
+<p>风险边界：不要让 AI 编数据、编成果、编客户反馈。</p>
+<p>结尾行动：交稿前至少检查事实、数据、语气和责任边界。</p>
+<h2>3 个大纲的优先级怎么判断</h2>
+<p>最适合本周先写的是“用 AI 整理周计划前，我先补了哪些背景”。它素材最容易获得，场景轻，读者能马上照着练，不需要暴露客户信息，也不会提前进入复杂业务判断。</p>
+<p>第二优先是“AI 给的汇报稿为什么不能直接交”。它边界清楚，能体现人的判断价值，但需要准备一段真实改写对比。</p>
+<p>需要准备素材后再写的是“客户问题很多时，AI 可以先帮我分哪几类”。它读者共鸣强，但需要脱敏素材。如果没有准备好，很容易泄露信息，或者写得太泛。</p>
+<h2>哪些大纲不能完全交给 AI</h2>
+<p>AI 可以帮你生成大纲，但不能替你补真实内容。</p>
+<p>尤其涉及真实经历、客户案例、数据来源、工具功能、平台规则、专业建议、收益表达、他人隐私、未公开信息、内容版权、热点事件、标题夸大和发布责任时，需要自己判断。</p>
+<p>如果大纲里写着“举一个客户案例”，但你没有真实案例，不能让 AI 编一个。如果大纲里写着“用数据证明”，但你没有来源，不能让 AI 硬造。如果大纲涉及客户、公司、截图、项目细节，要脱敏或不公开。</p>
+<section class="tutorial-visual-card tutorial-compare-table" aria-label="好大纲 vs 空大纲">
+        <header>
+          <span>Compare</span>
+          <h3>好大纲 vs 空大纲</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody><tr><td>段落套话 / 没有场景 / 没有素材 / 没有边界</td><td>读者清楚 / 场景具体 / 有素材位 / 有行动建议</td></tr><tr><td>看起来完整，但写不深</td><td>提前暴露素材缺口，也更可写</td></tr></tbody>
+        </table>
+      </section>
+<section class="tutorial-visual-card tutorial-flow" aria-label="大纲边界提醒卡">
+        <header>
+          <span>Flow</span>
+          <h3>大纲边界提醒卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>真实经历</strong>
+              <p>不能编。</p>
+            </li><li>
+              <span>02</span>
+              <strong>客户案例</strong>
+              <p>要脱敏。</p>
+            </li><li>
+              <span>03</span>
+              <strong>数据来源</strong>
+              <p>要核查。</p>
+            </li><li>
+              <span>04</span>
+              <strong>工具功能</strong>
+              <p>要确认。</p>
+            </li><li>
+              <span>05</span>
+              <strong>隐私版权</strong>
+              <p>不能忽略。</p>
+            </li><li>
+              <span>06</span>
+              <strong>标题夸大</strong>
+              <p>不承诺流量、涨粉或收益。</p>
+            </li><li>
+              <span>07</span>
+              <strong>发布责任</strong>
+              <p>由人承担。</p>
+            </li></ol>
+      </section>
+<h2>我现在更相信的一件事</h2>
+<p>普通人用 AI 做内容大纲，最重要的不是一次生成很多结构。</p>
+<p>更重要的是让每个选题都先经过一次“能不能写出来”的检查。</p>
+<p>可以让 AI 帮你看清：这个选题写给谁看，读者为什么需要看，第一段从什么真实场景进入，中间解决哪几个问题，哪些地方需要真实经历或案例，哪些地方不能让 AI 编，写完以后读者应该带走什么。</p>
+<p>AI 可以帮你批量生成大纲、对比结构、标出素材缺口。但真实经历、案例细节、事实核查、观点取舍和最终表达仍然需要人完成。</p>
+<h2>今天用 AI 把 3 个选题变成 3 份大纲</h2>
+<p>今天先拿 3 个选题做练习。输入账号方向、选题、栏目、已有素材和不能公开的信息，让 AI 输出 3 份大纲。</p>
+<p>目标不是得到正文，而是得到：每个选题是否适合写，每份大纲的开头场景、读者痛点、核心观点、正文结构、素材位置、风险边界和结尾行动，以及每份大纲的素材缺口。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="大纲写作前检查卡">
+        <header>
+          <span>Flow</span>
+          <h3>大纲写作前检查卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>能开头</strong>
+              <p>有真实进入点。</p>
+            </li><li>
+              <span>02</span>
+              <strong>有结构</strong>
+              <p>不是松散段落。</p>
+            </li><li>
+              <span>03</span>
+              <strong>有素材</strong>
+              <p>知道补什么。</p>
+            </li><li>
+              <span>04</span>
+              <strong>不编造</strong>
+              <p>缺的先标出来。</p>
+            </li><li>
+              <span>05</span>
+              <strong>有边界</strong>
+              <p>不夸大不泄露。</p>
+            </li><li>
+              <span>06</span>
+              <strong>能写完</strong>
+              <p>本周时间够。</p>
+            </li><li>
+              <span>07</span>
+              <strong>适合本周</strong>
+              <p>优先级清楚。</p>
+            </li></ol>
+      </section>
+<h2>直接复制这段，生成你的内容大纲</h2>
+<p>先填 4 个：账号方向、这批选题、已有真实素材、不能公开的信息。</p>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">我想用 AI 帮我把一组选题变成可写的大纲，但不要直接写正文，也不要编造我的经历和案例。
+
+我的账号方向是：
+这批选题分别是：
+每个选题对应的栏目是：
+主要写给谁看：
+我已有的真实素材包括：
+我不能公开的信息包括：
+我希望内容形式是：
+我不希望写成的感觉是：
+
+请你按下面结构帮我整理：
+
+1. 先判断每个选题是否适合写
+2. 给每个选题生成一份大纲
+3. 每份大纲包含：
+   - 开头场景
+   - 读者痛点
+   - 核心观点
+   - 正文结构
+   - 案例或素材位置
+   - 风险边界
+   - 结尾行动
+4. 标出每份大纲需要我补充的真实素材
+5. 标出哪些内容不能编
+6. 对 3 个大纲排序，推荐本周先写哪一个
+7. 给出暂时不适合写的理由
+
+要求：
+1. 不要直接写正文
+2. 不要编造我的经历和案例
+3. 不要生成夸张标题
+4. 不要承诺流量、涨粉或收益
+5. 如果信息不足，请标注“需要补充”
+6. 大纲要具体、可写、有边界</code></pre>
+    </div>
+<p>如果已经得到 3 份大纲，可以继续追问：</p>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">请把第 1 个大纲继续细化成适合公众号、小红书、朋友圈的三个版本，但仍然不要写完整正文。</code></pre>
+    </div>
+<h2>后面继续怎么练</h2>
+<p>如果你今天把 3 个选题变成了 3 份大纲，就已经从“知道写什么”走到了“知道怎么展开”。</p>
+<p>后面不要急着把所有大纲都写完。先选素材最完整、风险最低、最适合本周的一篇，把缺口补齐，再进入正文写作。</p>
+<section class="tutorial-next-actions" aria-label="下一步行动">
+        
+        <div><a class="tutorial-next-card" href="../map/index.html">
+              <strong>查看完整内容地图</strong>
+              <span>学习。</span>
+            </a><a class="tutorial-next-card" href="../../community">
+              <strong>加入凡人修AI社区</strong>
+              <span>社区。</span>
+            </a><a class="tutorial-next-card" href="../../index.html">
+              <strong>回到首页继续了解 AI 修炼路径</strong>
+              <span>路径。</span>
+            </a></div>
+      </section>
+          <footer class="article-copyright">本文由凡人修AI原创整理，转载请注明来源。</footer>
+        </div>
+      </div>
+
+      <section class="lesson-practice section-pad" aria-labelledby="practice-title">
+        <div>
+          <p class="eyebrow">Practice</p>
+          <h2 id="practice-title">实战任务</h2>
+          <p>修炼不是看完就结束。本篇读完后，请把下面任务变成一次真实输出。</p>
+        </div>
+        <ol><li><span>01</span>选题方向</li><li><span>02</span>开头场景</li><li><span>03</span>正文结构</li><li><span>04</span>素材缺口</li><li><span>05</span>风险边界</li><li><span>06</span>优先排序</li></ol>
+      </section>
+
+      <section class="lesson-related section-pad" aria-labelledby="related-title">
+        <div class="lesson-section-title">
+          <p class="eyebrow">Next</p>
+          <h2 id="related-title">相关教程</h2>
+        </div>
+        <div class="lesson-related-grid"><a class="lesson-related-card" href="../032-ai-self-media-for-ordinary-people/index.html">
+        <span>AI自媒体与个人IP</span>
+        <strong>普通人如何用AI做自媒体：先别追热点，先找你能持续讲的东西</strong>
+        <p>面向想做自媒体但还没有清楚方向的普通人，讲清如何用 AI 梳理真实经历、能力、素材、人群、内容形式和轻量更新节奏，先跑通一个可持续的小循环，而不是一开始追热点、追爆款或做过大的账号规划。</p>
+      </a><a class="lesson-related-card" href="../033-ai-account-positioning/index.html">
+        <span>AI自媒体与个人IP</span>
+        <strong>账号方向怎么定：用AI找到能长期讲的主线</strong>
+        <p>面向已经准备做自媒体、但账号方向仍然很散的普通人，讲清如何用 AI 梳理真实资产、目标读者、长期问题、内容主线、栏目雏形和 4 周测试方法，先得到一版可以验证的账号方向草案。</p>
+      </a><a class="lesson-related-card" href="../034-ai-topic-ideas/index.html">
+        <span>AI自媒体与个人IP</span>
+        <strong>选题从哪里来：用AI围绕账号主线筛出本周能写的题</strong>
+        <p>面向已经有初步账号方向、但不知道持续写什么的普通人，讲清如何用 AI 从账号主线、读者问题、真实素材、栏目方向和反馈里生成选题池，并筛出本周最适合写的 3 个选题。</p>
+      </a></div>
+      </section>
+
+      <section class="lesson-join section-pad" aria-labelledby="join-title">
+        <div>
+          <p class="eyebrow">Community</p>
+          <h2 id="join-title">加入凡人修AI道友群</h2>
+          <p>把你的实战任务、踩坑记录和作品发出来，和一群普通人一起复盘、迭代、成长。</p>
+        </div>
+        <a class="btn btn-primary" href="../../index.html#community">加入道友群</a>
+      </section>
+    </article></main>
+    <footer class="site-footer">
+      <p>凡人修AI © 2026</p>
+      <p><a href="../../about/">关于</a> · <a href="../../community/">社区</a> · 普通人的AI学习与实践平台</p>
+    </footer>
+    <script src="../../script.js?v=20260609-copy-protection"></script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 ---
-title: 如何用AI写短视频脚本：把一个选题拆成口播、画面和节奏
+title: 短视频脚本怎么拆：从一个选题到口播、画面和节奏
 description: 面向想做短视频但不知道怎么写脚本的普通人，讲清如何用 AI 把一个真实选题拆成开场、口播、画面、字幕、节奏和可继续修改的短视频脚本初稿。
 slug: 024-ai-short-video-script-writing
 category: ai-writing-content

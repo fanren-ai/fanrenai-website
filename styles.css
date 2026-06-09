@@ -752,6 +752,22 @@ h3 {
   line-height: 1.9;
 }
 
+.article-content[data-copy-protected="article"] {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.article-content[data-copy-protected="article"] code,
+.article-content[data-copy-protected="article"] pre,
+.article-content[data-copy-protected="article"] input,
+.article-content[data-copy-protected="article"] textarea,
+.article-content[data-copy-protected="article"] .copy-block,
+.article-content[data-copy-protected="article"] .copy-code-block,
+.article-content[data-copy-protected="article"] [data-copy-unlocked="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
 .article-content h1 {
   display: none;
 }
@@ -866,6 +882,40 @@ h3 {
   padding: 18px 20px 20px;
   border-radius: 0;
   background: transparent;
+}
+
+.article-copyright {
+  margin-top: 42px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(17, 24, 39, 0.12);
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.copy-protection-tip {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 80;
+  max-width: min(360px, calc(100vw - 48px));
+  padding: 12px 14px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 8px;
+  color: #253044;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 16px 38px rgba(16, 24, 40, 0.14);
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.copy-protection-tip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .tutorial-visual-card {

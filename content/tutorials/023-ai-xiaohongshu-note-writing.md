@@ -1,5 +1,5 @@
 ---
-title: 如何用AI写小红书笔记：把真实经历整理成一篇像真人分享的笔记
+title: 小红书笔记怎么写：把真实经历整理成真人分享
 description: 面向想写小红书但不知道怎么下笔的普通人，讲清如何用 AI 把真实体验、方法清单、踩坑经历或工具使用感受整理成自然、具体、可继续修改的小红书笔记初稿。
 slug: 023-ai-xiaohongshu-note-writing
 category: ai-writing-content

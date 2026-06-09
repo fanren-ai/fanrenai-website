@@ -1,5 +1,5 @@
 ---
-title: 如何用AI写产品介绍：先把“给谁用、解决什么、有什么边界”说清楚
+title: 产品介绍写不清：先说清给谁用、解决什么
 description: 面向需要介绍产品、服务、资料包、模板包、课程、活动或解决方案的普通人，讲清如何用 AI 把产品信息整理成清楚、克制、有边界、可继续修改的产品介绍。
 slug: 026-ai-product-description-writing
 category: ai-writing-content

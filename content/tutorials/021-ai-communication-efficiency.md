@@ -1,5 +1,5 @@
 ---
-title: 如何用AI提升沟通效率：先把信息对齐，再让事情往前走
+title: 沟通效率怎么提升：先让AI帮你对齐信息
 description: 面向工作中经常反复确认、反复解释的人，讲清如何用 AI 整理沟通背景、待确认问题、负责人、截止时间和下一步动作，减少无效来回。
 slug: 021-ai-communication-efficiency
 category: ai-office

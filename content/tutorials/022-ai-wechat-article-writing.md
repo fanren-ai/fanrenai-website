@@ -1,5 +1,5 @@
 ---
-title: 如何用AI写一篇公众号文章：先把想法变成结构，再写初稿
+title: 公众号文章写不出来：先把想法搭成结构
 description: 面向想写公众号但容易卡在选题、结构和初稿的人，讲清如何用 AI 把一个真实想法整理成读者、观点、素材、结构和可继续修改的公众号文章初稿。
 slug: 022-ai-wechat-article-writing
 category: ai-writing-content

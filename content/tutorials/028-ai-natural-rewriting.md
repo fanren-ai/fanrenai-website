@@ -1,5 +1,5 @@
 ---
-title: 如何用AI改写文章：先找出哪里不像真人表达
+title: 文章改写不像真人：先找出哪里太像模板
 description: 面向已经有 AI 初稿、公众号段落、小红书笔记、朋友圈文案、产品介绍或工作说明的普通人，讲清如何用 AI 先诊断不自然的问题，再改成更清楚、更像自己、更保留原意的表达。
 slug: 028-ai-natural-rewriting
 category: ai-writing-content

@@ -1,5 +1,5 @@
 ---
-title: 如何用AI做PPT大纲：先别找模板，先把结构搭顺
+title: PPT大纲怎么用AI搭：先把汇报结构理顺
 description: 面向需要做 PPT 但不擅长搭结构的普通人，讲清如何用 AI 从一个模糊主题出发，先整理出目标、听众、章节和逐页内容，得到一份可以继续制作的 PPT 大纲。
 slug: 016-ai-ppt-outline
 category: ai-office

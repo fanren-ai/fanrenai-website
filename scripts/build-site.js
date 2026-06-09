@@ -21,6 +21,28 @@ const contentDir = path.join(root, "content", "tutorials");
 const outputDir = path.join(root, "tutorials");
 const pageSize = 12;
 const validStatuses = new Set(["planned", "writing", "published"]);
+const protectedRobotPaths = ["/api/", "/admin/", "/private/", "/_next/"];
+const allowedSearchCrawlers = ["Googlebot", "Bingbot", "Baiduspider", "Sogou", "360Spider"];
+const blockedRobotsCrawlers = [
+  "GPTBot",
+  "ClaudeBot",
+  "CCBot",
+  "Bytespider",
+  "PerplexityBot",
+  "Amazonbot",
+  "AhrefsBot",
+  "SemrushBot",
+  "MJ12bot",
+  "DotBot",
+  "DataForSeoBot",
+  "PetalBot",
+  "BLEXBot",
+  "Barkrowler",
+  "MegaIndex",
+  "SeekportBot",
+  "serpstatbot",
+  "Screaming Frog SEO Spider"
+];
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -594,12 +616,19 @@ ${urls.map((url) => `  <url><loc>${url}</loc></url>`).join("\n")}
 }
 
 function writeRobots() {
+  const allowSections = allowedSearchCrawlers.map((crawler) =>
+    [`User-agent: ${crawler}`, "Allow: /", ...protectedRobotPaths.map((item) => `Disallow: ${item}`)].join("\n")
+  );
+  const blockSections = blockedRobotsCrawlers.map((crawler) => [`User-agent: ${crawler}`, "Disallow: /"].join("\n"));
+  const defaultSection = [
+    "User-agent: *",
+    "Allow: /",
+    ...protectedRobotPaths.map((item) => `Disallow: ${item}`)
+  ].join("\n");
+
   fs.writeFileSync(
     path.join(root, "robots.txt"),
-    `User-agent: *
-Allow: /
-Sitemap: ${site.origin}/sitemap.xml
-`
+    `${[...allowSections, ...blockSections, defaultSection].join("\n\n")}\n\nSitemap: ${site.origin}/sitemap.xml\n`
   );
 }
 

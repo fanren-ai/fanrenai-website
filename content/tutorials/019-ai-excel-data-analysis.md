@@ -1,5 +1,5 @@
 ---
-title: 如何用AI做Excel数据分析：先问清问题，再看表格里的结论
+title: Excel表格不会分析：先让AI帮你问对问题
 description: 面向需要处理表格但不懂专业数据分析的普通人，讲清如何用 AI 先看懂 Excel 字段、设计分析问题、发现异常并整理出可放进工作汇报的结论。
 slug: 019-ai-excel-data-analysis
 category: ai-office

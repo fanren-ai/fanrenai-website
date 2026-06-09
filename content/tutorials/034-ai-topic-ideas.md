@@ -1,5 +1,5 @@
 ---
-title: 如何用AI找到选题：别让AI生成一堆标题，先围绕主线找本周能写的题
+title: 选题从哪里来：用AI围绕账号主线筛出本周能写的题
 description: 面向已经有初步账号方向、但不知道持续写什么的普通人，讲清如何用 AI 从账号主线、读者问题、真实素材、栏目方向和反馈里生成选题池，并筛出本周最适合写的 3 个选题。
 slug: 034-ai-topic-ideas
 category: ai-self-media-personal-ip
