@@ -4,17 +4,19 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260612-article-ui";
+const assetVersion = "20260613-sidebar-sticky";
 
 const categories = {
   "ai-cognition": "AI基础认知",
   "ai-tool-intro": "AI工具入门",
   "ai-tool-choice": "AI工具选择",
-  "prompt-engineering": "Prompt工程",
-  "ai-office": "AI办公",
+  "prompt-engineering": "Prompt与工作流",
+  "ai-office": "AI办公提效",
   "ai-workflow": "AI工作流",
   "ai-project-practice": "AI项目实战",
   "ai-writing-content": "AI写作与内容创作",
+  "ai-self-media-personal-ip": "AI自媒体与个人IP",
+  "ai-business-monetization": "AI商业与变现",
   codex: "Codex专区",
   cursor: "Cursor专区",
   "claude-code": "Claude Code专区",
@@ -22,6 +24,16 @@ const categories = {
   "ai-product": "AI产品",
   "ai-startup": "AI创业"
 };
+
+const tutorialEntryCategorySlugs = [
+  "ai-cognition",
+  "ai-tool-intro",
+  "prompt-engineering",
+  "ai-office",
+  "ai-writing-content",
+  "ai-self-media-personal-ip",
+  "ai-business-monetization"
+];
 
 const cultivationLevels = {
   新手村: {
@@ -136,7 +148,9 @@ function layout({ title, description, base = "", body, extraHead = "", bodyClass
 }
 
 function renderCategoryChips(base) {
-  return Object.entries(categories)
+  return tutorialEntryCategorySlugs
+    .map((slug) => [slug, categories[slug]])
+    .filter(([, name]) => name)
     .map(([slug, name]) => `<a href="${base}tutorials/category/${slug}/">${escapeHtml(name)}</a>`)
     .join("");
 }
@@ -232,7 +246,8 @@ function renderArticlePage(article, related) {
     base: "../../",
     canonicalUrl: isPublished ? `${site.origin}/tutorials/${article.slug}/` : "",
     extraHead: seoHead,
-    body: `<article class="lesson-shell">
+    body: `<div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="lesson-shell">
       <header class="lesson-hero section-pad">
         <div class="lesson-hero-inner">
           <a class="back-link" href="../">返回修炼手册</a>

@@ -13,6 +13,98 @@ navMenu?.addEventListener("click", (event) => {
   }
 });
 
+const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+
+function setupRevealMotion() {
+  const revealSelectors = [
+    ".platform-hero-copy",
+    ".platform-hero-panel",
+    ".platform-start-item",
+    ".platform-stage-grid article",
+    ".platform-task-card",
+    ".platform-route-card",
+    ".platform-column-grid a",
+    ".platform-latest-card",
+    ".platform-founder",
+    ".platform-cta",
+    ".tutorial-card",
+    ".map-level"
+  ];
+  const items = Array.from(document.querySelectorAll(revealSelectors.join(",")));
+  if (!items.length) return;
+
+  items.forEach((item, index) => {
+    item.classList.add("motion-reveal");
+    item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+  });
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    items.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+  );
+
+  items.forEach((item) => observer.observe(item));
+}
+
+function setupReadingProgress() {
+  const bar = document.querySelector(".reading-progress span");
+  const article = document.querySelector(".article-content");
+  if (!(bar instanceof HTMLElement) || !(article instanceof HTMLElement)) return;
+
+  let ticking = false;
+  const update = () => {
+    const rect = article.getBoundingClientRect();
+    const total = Math.max(article.offsetHeight - window.innerHeight * 0.72, 1);
+    const read = Math.min(Math.max(-rect.top, 0), total);
+    const progress = read / total;
+    bar.style.transform = `scaleX(${progress})`;
+    ticking = false;
+  };
+
+  const requestUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(update);
+  };
+
+  update();
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate);
+}
+
+function normalizeHeadingId(value, index) {
+  const slug = String(value)
+    .trim()
+    .toLowerCase()
+    .replace(/[^\w\u4e00-\u9fa5]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 42);
+  return `section-${index + 1}${slug ? `-${slug}` : ""}`;
+}
+
+function setupArticleHeadingIds() {
+  const content = document.querySelector(".article-content");
+  if (!(content instanceof HTMLElement)) return;
+
+  const headings = Array.from(content.querySelectorAll("h2, h3")).filter((heading) => heading.textContent?.trim());
+  if (!headings.length) return;
+
+  headings.forEach((heading, index) => {
+    if (!heading.id) heading.id = normalizeHeadingId(heading.textContent || "", index);
+  });
+}
+
 async function copyText(text) {
   if (navigator.clipboard?.writeText) {
     try {
@@ -49,12 +141,14 @@ document.addEventListener("click", async (event) => {
   try {
     await copyText(text);
     button.textContent = "已复制";
+    button.classList.add("is-copied");
   } catch {
-    button.textContent = "复制失败";
+    button.textContent = "请手动复制";
   } finally {
     window.setTimeout(() => {
       button.textContent = originalLabel;
       button.disabled = false;
+      button.classList.remove("is-copied");
     }, 1600);
   }
 });
@@ -134,3 +228,7 @@ document.addEventListener("keydown", (event) => {
   if (event.key.toLowerCase() !== "c" || (!event.metaKey && !event.ctrlKey)) return;
   blockProtectedCopy(event);
 });
+
+setupRevealMotion();
+setupReadingProgress();
+setupArticleHeadingIds();

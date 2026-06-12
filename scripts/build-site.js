@@ -443,7 +443,7 @@ function pagination(current, total, hrefForPage) {
   return `<nav class="pagination" aria-label="文章分页">${links}</nav>`;
 }
 
-function renderTutorialIndex(articles, current = 1, total = 1, baseRoot = "../") {
+function renderTutorialIndex(articles, current = 1, total = 1, baseRoot = "../", totalArticles = articles.length) {
   const cards = articles.map((article) => renderArticleCard(article, baseRoot)).join("\n");
   const listContent = cards || "<p>内容正在按照新标准重写中</p>";
   const chips = renderCategoryChips(baseRoot);
@@ -451,14 +451,12 @@ function renderTutorialIndex(articles, current = 1, total = 1, baseRoot = "../")
     title: "AI教程 | 凡人修AI",
     description: "凡人修AI教程系统，覆盖AI入门、Prompt工作流、Codex实战、AI工具箱和AI案例。",
     base: baseRoot,
-    body: `<section class="tutorial-hero section-pad">
-      <p class="eyebrow">Tutorials</p>
-      <h1>AI教程</h1>
-      <p>从认识 AI、学会工具，到完成项目，一步步走完普通人的 AI 修炼路径。</p>
-      <div class="tutorial-hero-actions">
-        ${renderButton({ href: `${baseRoot}tutorials/map/`, label: "查看内容地图" })}
+    body: `<section class="tutorial-hero page-hero page-hero--learning section-pad">
+      <div class="page-hero-main">
+        <p class="page-hero-eyebrow">AI Tutorials</p>
+        <h1 class="page-hero-title">凡人修AI教程</h1>
+        <p class="page-hero-description">从看懂 AI、学会工具，到把 AI 放进真实工作和内容创作里，一步一步修炼。</p>
       </div>
-      <div class="category-chips">${chips}</div>
     </section>
     <section class="tutorial-layout section-pad">
       <aside class="tutorial-sidebar">
@@ -528,10 +526,15 @@ function getRelatedArticles(article, articles) {
 }
 
 const contentMapLevels = [
-  { level: "新手村", sections: ["AI基础认知", "AI工具入门", "AI工具选择"] },
-  { level: "炼气期", sections: ["Prompt与工作流", "Prompt工程", "AI办公", "AI工作流", "AI写作与内容创作"] },
-  { level: "筑基期", sections: ["AI项目实战", "Codex专区", "Cursor专区", "Claude Code专区"] },
-  { level: "结丹期", sections: ["AI副业", "AI产品", "AI创业"] }
+  { level: "新手村", sections: ["AI基础认知", "AI工具入门"] },
+  { level: "炼气期", sections: ["Prompt与工作流", "AI办公提效", "AI写作与内容创作"] },
+  { level: "结丹期", sections: ["AI自媒体与个人IP", "AI商业与变现"] }
+];
+
+const contentMapPathCards = [
+  ["01", "新手村", "建立认知，完成工具入门"],
+  ["02", "炼气期", "练习 Prompt、办公和内容创作"],
+  ["03", "结丹期", "进入个人 IP、商业变现和项目避坑"]
 ];
 
 function getContentMapLevel(article) {
@@ -549,10 +552,25 @@ function renderContentMapPage(articles) {
     })
     .filter((group) => group.articles.length);
 
-  const body = `<section class="content-map-hero section-pad">
-      <p class="eyebrow">Content Map V1.0</p>
-      <h1>凡人修AI内容地图</h1>
-      <p>四个修炼阶段，十二个内容栏目，六十篇核心教程。先搭骨架，再逐篇打磨成普通人的AI修行手册。</p>
+  const body = `<section class="content-map-hero page-hero page-hero--learning section-pad">
+      <div class="page-hero-main">
+        <p class="page-hero-eyebrow">Content Map</p>
+        <h1 class="page-hero-title">凡人修AI内容地图</h1>
+        <p class="page-hero-description">从新手村到结丹期，按路径看懂 AI、练会工具、用进真实任务。</p>
+      </div>
+    </section>
+    <section class="map-path-band section-pad" aria-label="修炼路径概览">
+      <div class="map-path-overview">
+        ${contentMapPathCards
+          .map(
+            ([order, title, description]) => `<div>
+          <span>${order}</span>
+          <strong>${title}</strong>
+          <p>${description}</p>
+        </div>`
+          )
+          .join("")}
+      </div>
     </section>
     <section class="content-map-shell section-pad">
       ${grouped
@@ -593,7 +611,7 @@ function renderContentMapPage(articles) {
 
   return layout({
     title: "内容地图 V1.0 | 凡人修AI",
-    description: "凡人修AI内容地图 V1.0，覆盖新手村、炼气期、筑基期、结丹期四个AI修炼阶段。",
+    description: "凡人修AI内容地图 V1.0，覆盖新手村、炼气期、结丹期三段AI修炼路径。",
     base: "../../",
     canonicalUrl: `${site.origin}/tutorials/map/`,
     body
@@ -706,7 +724,7 @@ function build() {
     const dir = page === 1 ? outputDir : path.join(outputDir, "page", String(page));
     ensureDir(dir);
     const baseRoot = page === 1 ? "../" : "../../../";
-    fs.writeFileSync(path.join(dir, "index.html"), renderTutorialIndex(pageArticles, page, tutorialPages.length, baseRoot));
+    fs.writeFileSync(path.join(dir, "index.html"), renderTutorialIndex(pageArticles, page, tutorialPages.length, baseRoot, publicArticles.length));
   });
 
   Object.keys(categories).forEach((slug) => {
