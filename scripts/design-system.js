@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260609-copy-protection";
+const assetVersion = "20260612-article-ui";
 
 const categories = {
   "ai-cognition": "AI基础认知",
@@ -234,31 +234,18 @@ function renderArticlePage(article, related) {
     extraHead: seoHead,
     body: `<article class="lesson-shell">
       <header class="lesson-hero section-pad">
-        <a class="back-link" href="../">返回修炼手册</a>
-        <div class="lesson-hero-grid">
-          <div>
-            <p class="eyebrow">${escapeHtml(article.categoryName)}</p>
-            <h1>${escapeHtml(article.title)}</h1>
-            <p>${escapeHtml(article.description)}</p>
+        <div class="lesson-hero-inner">
+          <a class="back-link" href="../">返回修炼手册</a>
+          <div class="lesson-meta-pills" aria-label="文章信息">
+            <span class="lesson-pill">${escapeHtml(article.categoryName)}</span>
+            <span class="lesson-pill">${escapeHtml(article.level)}</span>
+            <span class="lesson-pill">${escapeHtml(duration)}</span>
           </div>
-          <aside class="lesson-rank-card" aria-label="本篇修炼信息">
-            <span>修炼等级</span>
-            <strong>${escapeHtml(article.level)}</strong>
-            <p>${escapeHtml(article.goal)}</p>
-          </aside>
-        </div>
-        <div class="lesson-meta-grid">
-          <div>
-            <span>修炼等级</span>
-            <strong>${escapeHtml(article.level)}</strong>
-          </div>
-          <div>
-            <span>修炼目标</span>
+          <h1>${escapeHtml(article.title)}</h1>
+          <p class="lesson-description">${escapeHtml(article.description)}</p>
+          <div class="lesson-goal-strip">
+            <span>本篇目标</span>
             <strong>${escapeHtml(article.goal)}</strong>
-          </div>
-          <div>
-            <span>修炼时长</span>
-            <strong>${escapeHtml(duration)}</strong>
           </div>
         </div>
       </header>
@@ -316,27 +303,27 @@ function renderHomePage(articles = []) {
   const startItems = [
     {
       title: "我是AI小白",
-      description: "先认识AI工具，学会基本使用。",
-      action: "开始第1天",
-      href: "/tutorials/"
+      description: "从第一篇开始，先看懂AI是什么、普通人该怎么用。",
+      action: "从001开始",
+      href: "/tutorials/001-what-is-ai/"
+    },
+    {
+      title: "我想学会提问",
+      description: "进入Prompt与工作流，练习把任务说清楚。",
+      action: "学习Prompt",
+      href: "/tutorials/011-prompt-workflow-basic/"
     },
     {
       title: "我想提升效率",
-      description: "学习Prompt、AI办公和工作流。",
+      description: "从AI办公开始，把AI用进真实工作任务。",
       action: "提升效率",
-      href: "/tutorials/map/"
-    },
-    {
-      title: "我想做出项目",
-      description: "用Codex、Cursor、Claude Code完成作品。",
-      action: "做第一个项目",
-      href: "/tutorials/map/"
+      href: "/tutorials/016-ai-ppt-outline/"
     },
     {
       title: "我想探索变现",
-      description: "学习AI副业、AI产品和AI创业案例。",
-      action: "查看案例",
-      href: "/tutorials/map/"
+      description: "先看普通人的AI赚钱逻辑，再判断适合自己的方向。",
+      action: "查看变现路径",
+      href: "/tutorials/042-ai-make-money-for-ordinary-people/"
     }
   ];
   const columns = [
