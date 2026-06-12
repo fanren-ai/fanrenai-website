@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="面向想做 AI 项目的普通人，讲清需求验证、最小交付、成本估算、结果边界、隐私版权和止损标准，避免被 AI 热度推着盲目投入。" />
+    <meta property="og:site_name" content="凡人修AI" />
+    <meta property="og:title" content="普通人做AI项目最该避开的坑：需求没验证、成本没算清、边界没守住 | 凡人修AI" />
+    <meta property="og:description" content="面向想做 AI 项目的普通人，讲清需求验证、最小交付、成本估算、结果边界、隐私版权和止损标准，避免被 AI 热度推着盲目投入。" />
+    <meta property="og:url" content="https://www.fanrenai.cn/tutorials/051-ai-project-pitfalls/" />
+    <meta property="og:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <link rel="canonical" href="https://www.fanrenai.cn/tutorials/051-ai-project-pitfalls/" />
+    <meta property="article:published_time" content="2026-06-10" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"普通人做AI项目最该避开的坑：需求没验证、成本没算清、边界没守住","description":"面向想做 AI 项目的普通人，讲清需求验证、最小交付、成本估算、结果边界、隐私版权和止损标准，避免被 AI 热度推着盲目投入。","author":{"@type":"Organization","name":"凡人修AI"},"datePublished":"2026-06-10","mainEntityOfPage":"https://www.fanrenai.cn/tutorials/051-ai-project-pitfalls/"}</script>
+    <title>普通人做AI项目最该避开的坑：需求没验证、成本没算清、边界没守住 | 凡人修AI</title>
+    <link rel="icon" type="image/png" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="apple-touch-icon" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="stylesheet" href="../../styles.css?v=20260609-copy-protection" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="../../index.html" aria-label="凡人修AI 首页">
+          <img class="brand-logo" src="../../assets/brand/fanrenai-logo-mark-256.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+          <span>凡人修AI</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="site-menu">
+          <a href="../../index.html">首页</a><a href="../../tutorials/index.html">AI教程</a><a href="../../tutorials/map/index.html">内容地图</a><a href="../../tutorials/category/codex/index.html">Codex专区</a><a href="https://tools.fanrenai.cn/">AI工具箱</a>
+          <a class="nav-cta" href="../../community/index.html">加入社区</a>
+        </div>
+      </nav>
+    </header>
+    <main><article class="lesson-shell">
+      <header class="lesson-hero section-pad">
+        <a class="back-link" href="../">返回修炼手册</a>
+        <div class="lesson-hero-grid">
+          <div>
+            <p class="eyebrow">AI商业与变现</p>
+            <h1>普通人做AI项目最该避开的坑：需求没验证、成本没算清、边界没守住</h1>
+            <p>面向想做 AI 项目的普通人，讲清需求验证、最小交付、成本估算、结果边界、隐私版权和止损标准，避免被 AI 热度推着盲目投入。</p>
+          </div>
+          <aside class="lesson-rank-card" aria-label="本篇修炼信息">
+            <span>修炼等级</span>
+            <strong>结丹期</strong>
+            <p>学会用 AI 给一个项目想法做避坑检查。</p>
+          </aside>
+        </div>
+        <div class="lesson-meta-grid">
+          <div>
+            <span>修炼等级</span>
+            <strong>结丹期</strong>
+          </div>
+          <div>
+            <span>修炼目标</span>
+            <strong>学会用 AI 给一个项目想法做避坑检查。</strong>
+          </div>
+          <div>
+            <span>修炼时长</span>
+            <strong>45分钟</strong>
+          </div>
+        </div>
+      </header>
+
+      <div class="lesson-body section-pad">
+        <aside class="lesson-sidebar" aria-label="修炼摘要">
+          <div>
+            <span>本篇目标</span>
+            <p>学会用 AI 给一个项目想法做避坑检查。</p>
+          </div>
+          <div>
+            <span>建议节奏</span>
+            <p>45分钟读完，立刻完成文末实战任务。</p>
+          </div>
+          <div>
+            <span>所属路径</span>
+            <p>AI商业与变现 · 结丹期</p>
+          </div>
+        </aside>
+        <div class="article-content" data-copy-protected="article"><h2>普通人做 AI 项目，最容易踩坑的地方往往不在 AI 本身</h2>
+<p>你可能已经看过很多 AI 项目方向：帮人写文案、做资料整理、做知识付费、做咨询服务、帮本地商家做内容和话术、做一个轻量工具页，甚至做一个 AI 工具站。</p>
+<p>每个方向看起来都不难。AI 可以帮你写页面、写文案、写方案、写脚本、写代码初稿，还能帮你做表格、做复盘、做客服话术。</p>
+<p>于是很容易产生一种感觉：我是不是也可以马上做一个 AI 项目？</p>
+<p>但项目真正开始后，坑往往不是出现在“AI 不会写”。更常见的是：没人真的需要，用户不愿意提供资料，交付比想象中耗时，客户想要你承诺结果，工具上线没人用，API 成本和维护超出预期，内容涉及隐私和版权。</p>
+<p>做了几周才发现，自己不是在验证一个项目，而是被 AI 热度推着往前走。这时候最需要的不是再找一个新方向，而是先停下来做一轮避坑检查。</p>
+<section class="tutorial-visual-card tutorial-compare-table" aria-label="AI工具站机会判断 vs AI项目通用避坑">
+        <header>
+          <span>Compare</span>
+          <h3>AI工具站机会判断 vs AI项目通用避坑</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody><tr><td>目标用户 / 核心动作 / 最小工具 / 长期维护</td><td>真实需求 / 成本边界 / 风险清单 / 止损标准</td></tr><tr><td>具体项目形态判断</td><td>通用项目风险检查</td></tr></tbody>
+        </table>
+      </section>
+<h2>第一个大坑：把 AI 热度当成真实需求</h2>
+<p>AI 很火，不等于你的项目有人需要。别人做工具、卖资料、做咨询、做本地商家服务，也不等于你照着做就能成立。</p>
+<p>真实需求至少要有几个信号：有人愿意说出自己的问题，有人愿意提供资料，有人愿意试用，有人愿意反馈，甚至愿意为一个小交付付费。没有这些，只是你觉得这个方向有机会。</p>
+<section class="tutorial-visual-card tutorial-compare-table" aria-label="项目兴奋感 vs 项目避坑检查">
+        <header>
+          <span>Compare</span>
+          <h3>项目兴奋感 vs 项目避坑检查</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody><tr><td>AI很火 / 想法很多 / 快速开做 / 期待结果</td><td>需求验证 / 最小交付 / 成本估算 / 继续或暂停</td></tr><tr><td>先感到兴奋</td><td>再做现实检查</td></tr></tbody>
+        </table>
+      </section>
+<p>可以做 AI 项目，但要小、真、可验证、有边界。小，是先做最小版本；真，是接触真实用户；可验证，是 2-4 周内能拿到反馈；有边界，是知道哪些结果不能承诺，哪些资料不能乱用。</p>
+<h2>AI项目 7 个坑</h2>
+<section class="tutorial-visual-card tutorial-flow" aria-label="AI项目 7 个坑">
+        <header>
+          <span>Flow</span>
+          <h3>AI项目 7 个坑</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>需求没验证</strong>
+              <p>只因为 AI 很火、别人也在做，就觉得有人需要。</p>
+            </li><li>
+              <span>02</span>
+              <strong>交付做太大</strong>
+              <p>一上来就做完整产品、完整课程、完整工具或完整服务。</p>
+            </li><li>
+              <span>03</span>
+              <strong>成本没算清</strong>
+              <p>只算工具费用，不算时间、沟通、修改、维护和机会成本。</p>
+            </li><li>
+              <span>04</span>
+              <strong>流量太乐观</strong>
+              <p>以为上线就有人看，发内容就有人咨询。</p>
+            </li><li>
+              <span>05</span>
+              <strong>承诺过度</strong>
+              <p>承诺获客、成交、收入、涨粉、排名、流量或客户结果。</p>
+            </li><li>
+              <span>06</span>
+              <strong>数据版权</strong>
+              <p>客户聊天记录、图片、案例、内部资料和第三方内容随便用。</p>
+            </li><li>
+              <span>07</span>
+              <strong>没有止损</strong>
+              <p>做了几周还不知道该继续、缩小还是暂停。</p>
+            </li></ol>
+      </section>
+<p>第一个坑是需求没验证。AI 能帮你生成访谈问题、调研清单和需求假设，但人必须真的接触用户。最容易踩的地方，是只在网上看案例，让 AI 分析市场，然后直接开始做。避免方式很简单：先找 3-5 个真实对象聊，再决定是否进入最小交付。</p>
+<p>第二个坑是交付做太大。AI 能帮你把完整项目缩成 MVP，拆出第一版交付物，但人必须决定哪些功能、内容和服务暂时不做。范围越大，越难交付，也越难判断到底哪里有价值。避免方式是只保留一个目标人群、一个问题、一个交付结果。</p>
+<p>第三个坑是成本没算清。AI 能列成本表和维护任务，但人要判断自己是否扛得住。成本不是只有 AI 会员、网站域名或一次制作时间，还包括访谈、整理、修改、售后、维护和机会成本。避免方式是把每周时间、沟通时间、修改时间和反馈时间都写出来。</p>
+<p>第四个坑是流量想得太乐观。AI 能帮你设计分发路径和内容触点，但人要验证真实入口。不要把平台推荐、搜索流量、转介绍和自然咨询想得太容易。避免方式是先明确第一批用户从哪里来，不把不可控流量当作项目成立条件。</p>
+<p>第五个坑是结果承诺过度。AI 能帮你列不能承诺内容，改写服务边界，但人必须守住话术。你可以承诺交付物、流程和服务范围，不能承诺自己控制不了的外部结果。</p>
+<p>第六个坑是数据和版权没处理。AI 能列隐私、授权、脱敏和版权检查清单，但人必须判断哪些资料不能收集，哪些资料必须授权，哪些内容不能展示。客户聊天记录、照片、评价、内部资料和第三方素材，都不能为了做案例就直接拿来用。</p>
+<p>第七个坑是没有复盘和止损标准。AI 能做复盘表，帮你列继续、缩小和暂停条件，但人必须根据真实反馈取舍。项目最危险的状态不是失败，而是一直“再试试”，却没有任何明确判断。</p>
+<h2>销售转运营 AI 项目避坑示例</h2>
+<p>来看一个具体的人：销售转运营的普通职场人，正在学习 AI。他有客户沟通经验，会整理客户问题，会写基础方案和汇报，会用 AI 写大纲、改表达、整理资料，也做过本地商家客户问题整理、内容触达、销售话术辅助和工具页 MVP 设想。</p>
+<p>他的限制也很现实：不懂复杂编程，资金有限，每周只能投入 5-8 小时，不想做灰色方向，不想承诺客户结果。现在他想做一个 AI 项目，但担心踩坑。</p>
+<p>项目想法是：面向本地小商家的「客户问题整理与内容触达基础包」服务，后续可能再做轻量工具页。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="销售转运营 AI 项目避坑示例">
+        <header>
+          <span>Flow</span>
+          <h3>销售转运营 AI 项目避坑示例</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>项目想法</strong>
+              <p>本地小商家客户问题整理与内容触达基础包。</p>
+            </li><li>
+              <span>02</span>
+              <strong>需求验证</strong>
+              <p>先访谈熟悉商家，看是否愿意提供真实客户问题。</p>
+            </li><li>
+              <span>03</span>
+              <strong>最小交付</strong>
+              <p>第一轮只做基础包，不做工具页和代运营。</p>
+            </li><li>
+              <span>04</span>
+              <strong>成本估算</strong>
+              <p>每单控制在 8 小时以内，超过就缩小范围。</p>
+            </li><li>
+              <span>05</span>
+              <strong>风险边界</strong>
+              <p>不承诺获客、成交、收入、涨粉和平台推荐。</p>
+            </li><li>
+              <span>06</span>
+              <strong>止损判断</strong>
+              <p>根据真实资料、使用反馈和试单意愿决定继续、缩小或暂停。</p>
+            </li></ol>
+      </section>
+<p>最小交付版本是“本地小商家客户问题整理与内容触达基础包”。交付物包括：客户问题分类表、高频问题回复话术、门店卖点说明、朋友圈内容 5 条、小红书选题 10 条、一页跟进动作清单、复盘反馈表。</p>
+<p>需求验证要具体。先访谈 3-5 个熟悉商家，问他们是否有客户问题整理、内容触达和回复话术困扰，再看他们是否愿意提供 20 条真实客户问题做测试。如果商家连资料都不愿意给，说明需求还没验证。</p>
+<p>最小交付也要缩小。第一轮只做基础包，不做工具页，不做代运营，不做广告投放，不做复杂私域流程，也不无限扩展交付范围。后续是否做轻量工具页，要等人工交付被真实使用后再判断。</p>
+<p>成本估算不能只写一句“AI 会帮我提效”。每单访谈 1 小时，整理客户问题 1-2 小时，生成和修改话术 1-2 小时，内容选题和跟进清单 1-2 小时，反馈沟通 1 小时。如果总时间超过 8 小时，就要缩小交付范围。</p>
+<p>获客入口先从朋友、熟人、附近门店和过往业务关系开始。先不做大规模内容推广，先观察是否有人愿意提供资料、试单或反馈。</p>
+<p>哪些结果不能承诺，也要提前说清：不承诺获客，不承诺成交，不承诺收入，不承诺销售额，不承诺涨粉，不承诺平台推荐，不承诺客户转化率。</p>
+<p>哪些资料需要授权或脱敏，也要写进交付前检查：客户聊天记录、订单信息、客户姓名、电话、地址、门店照片、客户评价、内部销售数据和未公开业务资料。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="最小交付避坑卡">
+        <header>
+          <span>Flow</span>
+          <h3>最小交付避坑卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>客户问题分类表</strong>
+              <p>只处理客户提供或授权整理的问题。</p>
+            </li><li>
+              <span>02</span>
+              <strong>回复话术</strong>
+              <p>只做基础回复方向，不替商家承诺结果。</p>
+            </li><li>
+              <span>03</span>
+              <strong>门店卖点</strong>
+              <p>基于真实服务和可说明的优势，不夸大。</p>
+            </li><li>
+              <span>04</span>
+              <strong>内容选题</strong>
+              <p>需要真实场景、照片或观察支撑。</p>
+            </li><li>
+              <span>05</span>
+              <strong>跟进清单</strong>
+              <p>只提示下一步动作，不设计强推话术。</p>
+            </li><li>
+              <span>06</span>
+              <strong>复盘反馈</strong>
+              <p>记录商家是否使用、哪里有用、哪里需要删减。</p>
+            </li></ol>
+      </section>
+<p>2-4 周后的判断标准要提前定好。继续：有真实商家愿意提供资料，基础包被使用，反馈指出具体有用部分。缩小：需求存在，但每单超过 8 小时、修改太多、交付范围太散。暂停：商家不愿提供资料，没有人愿意试单，反馈只停留在“看起来不错”。</p>
+<p>这个项目可以小范围继续，但不建议马上开发工具页。先做 1-2 个基础包试单，验证商家是否真的使用。AI 能帮访谈问题、客户问题分类、回复话术初稿、内容选题初稿、成本表、风险清单和复盘反馈表。人必须负责找真实商家、判断需求、处理授权和脱敏、修改话术边界、控制交付范围，以及决定继续、缩小或暂停。</p>
+<h2>哪些 AI 项目方向尤其要谨慎</h2>
+<p>有些方向不是完全不能做，而是一旦判断错，普通人很容易扛不住成本、责任和风险。</p>
+<p>只靠搬运、洗稿、改写、采集的项目，要谨慎。它们缺少真实价值，还容易涉及版权、平台规则和低质内容风险。</p>
+<p>承诺获客、成交、收入、流量和排名的项目，要谨慎。这些结果通常受产品、价格、渠道、服务、平台和客户执行力影响，不适合普通人轻易承诺。</p>
+<p>没有真实用户，只靠自己想象需求的项目，要谨慎。如果没人愿意接受访谈、提供资料或参与测试，项目还不能算验证过。</p>
+<p>一上来就要复杂开发的项目，要谨慎。账号系统、付费系统、后台系统、多角色权限、复杂自动化，一开始都可能让项目过重。</p>
+<p>高度依赖平台规则、搜索流量、第三方工具的项目，要谨慎。平台规则、搜索流量和第三方接口都不是普通人能完全控制的。</p>
+<p>涉及医疗、法律、财务、投资、教育培训、医美、健康等专业责任的项目，要特别谨慎。要处理大量隐私、商业机密、敏感数据的项目，也不要轻易上手。</p>
+<p>交付范围、修改次数、合同付款不清的项目，同样要谨慎。最容易让一个轻量试单变成无边界服务。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="AI项目风险提醒">
+        <header>
+          <span>Flow</span>
+          <h3>AI项目风险提醒</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>收入承诺</strong>
+              <p>不把自己控制不了的外部结果写进服务承诺。</p>
+            </li><li>
+              <span>02</span>
+              <strong>客户结果</strong>
+              <p>不承诺获客、成交、涨粉、排名和学员结果。</p>
+            </li><li>
+              <span>03</span>
+              <strong>客户隐私</strong>
+              <p>聊天记录、图片、评价和内部资料先授权再脱敏。</p>
+            </li><li>
+              <span>04</span>
+              <strong>数据安全</strong>
+              <p>不要随便收集、保存或公开敏感信息。</p>
+            </li><li>
+              <span>05</span>
+              <strong>版权素材</strong>
+              <p>未授权内容、第三方素材和工具截图不能乱用。</p>
+            </li><li>
+              <span>06</span>
+              <strong>合同付款</strong>
+              <p>交付范围、修改次数和付款方式提前说明。</p>
+            </li><li>
+              <span>07</span>
+              <strong>维护成本</strong>
+              <p>不要只算启动成本，也要算后续维护。</p>
+            </li><li>
+              <span>08</span>
+              <strong>交付责任</strong>
+              <p>AI 可以辅助检查，责任仍然由人承担。</p>
+            </li></ol>
+      </section>
+<h2>我现在更相信的一件事</h2>
+<p>普通人做 AI 项目，最应该避开的坑，不是“工具不会用”。</p>
+<p>更大的坑，是把一个还没验证的想法，过早当成项目来投入。</p>
+<p>AI 可以帮你做需求检查、成本清单、风险清单、交付边界、测试计划和复盘表。它能帮你看清这个需求是不是真实，用户愿不愿意提供资料或反馈，最小交付能不能完成，成本有没有算全，哪些结果不能承诺，哪些数据、图片、案例和内容不能乱用。</p>
+<p>但真实用户、真实反馈、最终判断、交付质量、合规风险和项目责任，仍然需要人负责。</p>
+<p>如果一个项目需要你承诺自己控制不了的结果，就要谨慎。如果一个项目还没验证需求，就不要急着开发完整版本。如果客户数据、聊天记录、图片素材和内部资料没有授权，就不能乱用。如果你不知道什么时候继续、什么时候缩小、什么时候暂停，就很容易被项目拖着走。</p>
+<h2>今天用 AI 给你的项目做一次避坑检查</h2>
+<p>今天不要再找新项目了。拿一个你最想做的 AI 项目想法，先做一张避坑检查表。</p>
+<p>你只需要写清：服务谁，解决什么问题，准备交付什么，每周能投入多少时间，第一批用户从哪里来，哪些结果不能承诺，哪些资料不能公开。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="AI项目开做前检查卡">
+        <header>
+          <span>Flow</span>
+          <h3>AI项目开做前检查卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>有人群</strong>
+              <p>是否知道具体服务谁，而不是泛泛服务所有人。</p>
+            </li><li>
+              <span>02</span>
+              <strong>有问题</strong>
+              <p>是否有真实问题，而不是只有项目想象。</p>
+            </li><li>
+              <span>03</span>
+              <strong>有反馈</strong>
+              <p>是否能找到人访谈、试用或提供资料。</p>
+            </li><li>
+              <span>04</span>
+              <strong>有最小交付</strong>
+              <p>是否能先做一个小版本，而不是完整产品。</p>
+            </li><li>
+              <span>05</span>
+              <strong>有成本表</strong>
+              <p>是否算过时间、沟通、修改、维护和机会成本。</p>
+            </li><li>
+              <span>06</span>
+              <strong>有边界</strong>
+              <p>是否写清不能承诺和不能公开的内容。</p>
+            </li><li>
+              <span>07</span>
+              <strong>可暂停</strong>
+              <p>是否知道什么情况下应该缩小或停止。</p>
+            </li></ol>
+      </section>
+<h2>直接复制这段，生成你的 AI 项目避坑检查表</h2>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">请你帮我做一份 AI 项目避坑检查表。
+
+我的 AI 项目想法是：
+我想服务的人群是：
+他们可能遇到的问题是：
+我已有的能力和经验是：
+我会使用的 AI 工具或能力是：
+我现在准备做的交付物是：
+我每周可投入的时间是：
+我可承受的资金投入是：
+我预期的获客方式是：
+我不能承诺的结果是：
+哪些客户信息、素材或数据不能公开：
+
+请你输出：
+
+1. 判断这个项目是否太大，是否需要缩小
+2. 帮我检查 7 个坑：
+   - 需求没验证
+   - 交付做太大
+   - 成本没算清
+   - 流量想得太乐观
+   - 结果承诺过度
+   - 数据和版权没处理
+   - 没有复盘和止损标准
+3. 对每个坑输出：
+   - 当前风险
+   - 需要补充的信息
+   - 可以先做的小验证
+   - 不建议继续做的部分
+4. 帮我设计一个最小交付版本
+5. 帮我估算时间、沟通、修改、维护和机会成本
+6. 帮我列出不能承诺的结果
+7. 帮我列出隐私、版权、数据和合规检查清单
+8. 帮我设计 2-4 周测试计划
+9. 给出继续、缩小、暂停的判断标准
+10. 标出 AI 能帮的环节和人必须负责的环节
+
+要求：
+
+不要承诺收入、订单、客户、获客、成交、流量、排名、增长或项目成功。
+不要写成暴富项目。
+不要建议低质改写、不合规引流或数据造假做法。
+不要把我包装成不具备的专家。
+不要编造客户案例和数据。
+如果信息不足，请标注“需要补充”。
+方案要轻量、真实、可验证。</code></pre>
+    </div>
+<p>追问句：</p>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">请把这套避坑检查压缩成：最高风险的 3 个坑、最小交付版本、2 周测试计划和继续/暂停标准。</code></pre>
+    </div>
+<h2>后面继续怎么练</h2>
+<p>到这里，AI商业与变现这一段已经从赚钱起步、副业机会、知识产品、课程大纲、咨询服务、本地商家、销售成交率、创业判断、工具站机会，走到了项目避坑。</p>
+<p>这一阶段真正要留下的，不是某一个项目名称，而是一套开做前的判断方式：需求有没有验证，交付能不能缩小，成本有没有算全，边界能不能守住，什么时候继续、缩小或暂停。</p>
+<p>后面会进入学习路径阶段。先回到更基础的问题：普通人到底应该怎样持续学习 AI，怎样安排顺序，怎样把能力一点点练出来。</p>
+<section class="tutorial-next-actions" aria-label="下一步行动">
+        
+        <div><a class="tutorial-next-card" href="../map/index.html">
+              <strong>查看完整内容地图</strong>
+              <span>学习。</span>
+            </a><a class="tutorial-next-card" href="../../community">
+              <strong>加入凡人修AI社区</strong>
+              <span>社区。</span>
+            </a><a class="tutorial-next-card" href="../../index.html">
+              <strong>回到首页继续了解 AI 修炼路径</strong>
+              <span>路径。</span>
+            </a></div>
+      </section>
+          <footer class="article-copyright">本文由凡人修AI原创整理，转载请注明来源。</footer>
+        </div>
+      </div>
+
+      <section class="lesson-practice section-pad" aria-labelledby="practice-title">
+        <div>
+          <p class="eyebrow">Practice</p>
+          <h2 id="practice-title">实战任务</h2>
+          <p>修炼不是看完就结束。本篇读完后，请把下面任务变成一次真实输出。</p>
+        </div>
+        <ol><li><span>01</span>AI商业</li><li><span>02</span>AI项目</li><li><span>03</span>需求验证</li><li><span>04</span>成本估算</li><li><span>05</span>风险边界</li><li><span>06</span>止损判断</li></ol>
+      </section>
+
+      <section class="lesson-related section-pad" aria-labelledby="related-title">
+        <div class="lesson-section-title">
+          <p class="eyebrow">Next</p>
+          <h2 id="related-title">相关教程</h2>
+        </div>
+        <div class="lesson-related-grid"><a class="lesson-related-card" href="../042-ai-make-money-for-ordinary-people/index.html">
+        <span>AI商业与变现</span>
+        <strong>普通人如何靠AI赚钱：别先想暴富，先找到你能交付的小价值</strong>
+        <p>面向已经学过 AI 工具、办公提效、内容创作和个人 IP 的普通人，讲清靠 AI 赚钱不是寻找热门项目，而是用 AI 放大已有能力，找到真实需求，设计小交付，并用小额试单验证能否稳定交付。</p>
+      </a><a class="lesson-related-card" href="../043-real-ai-side-hustles/index.html">
+        <span>AI商业与变现</span>
+        <strong>AI副业有哪些真实机会：别追风口，先看你能不能稳定交付</strong>
+        <p>面向已经知道不能盲目追热门项目的普通人，梳理相对真实、可测试的 AI 副业方向，并用能力匹配、真实需求、清楚交付、AI 降本、风险可控和小试单验证六个维度判断自己适合先做什么。</p>
+      </a><a class="lesson-related-card" href="../044-ai-knowledge-monetization/index.html">
+        <span>AI商业与变现</span>
+        <strong>知识付费怎么起步：把真实经验整理成可交付路径</strong>
+        <p>面向有真实工作经验、内容经验或 AI 使用经验的普通人，讲清如何用 AI 把经验整理成小而真实的知识产品，并设计学习结果、练习任务、交付形式和风险边界。</p>
+      </a></div>
+      </section>
+
+      <section class="lesson-join section-pad" aria-labelledby="join-title">
+        <div>
+          <p class="eyebrow">Community</p>
+          <h2 id="join-title">加入凡人修AI道友群</h2>
+          <p>把你的实战任务、踩坑记录和作品发出来，和一群普通人一起复盘、迭代、成长。</p>
+        </div>
+        <a class="btn btn-primary" href="../../index.html#community">加入道友群</a>
+      </section>
+    </article></main>
+    <footer class="site-footer">
+      <p>凡人修AI © 2026</p>
+      <p><a href="../../about/">关于</a> · <a href="../../community/">社区</a> · 普通人的AI学习与实践平台</p>
+    </footer>
+    <script src="../../script.js?v=20260609-copy-protection"></script>
+  </body>
+</html>
