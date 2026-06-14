@@ -443,6 +443,16 @@ function pagination(current, total, hrefForPage) {
   return `<nav class="pagination" aria-label="文章分页">${links}</nav>`;
 }
 
+function renderStaticCopyBlock(label, text) {
+  return `<div class="copy-block">
+    <div class="copy-block-header">
+      <span>${escapeHtml(label)}</span>
+      <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+    </div>
+    <pre><code>${escapeHtml(text.trim())}</code></pre>
+  </div>`;
+}
+
 function renderTutorialIndex(articles, current = 1, total = 1, baseRoot = "../", totalArticles = articles.length) {
   const cards = articles.map((article) => renderArticleCard(article, baseRoot)).join("\n");
   const listContent = cards || "<p>内容正在按照新标准重写中</p>";
@@ -471,7 +481,184 @@ function renderTutorialIndex(articles, current = 1, total = 1, baseRoot = "../",
   });
 }
 
+function renderCodexZonePage(baseRoot = "../../../") {
+  const requestTemplate = `请帮我处理一个具体的 AI 执行任务。
+
+我的目标是：
+我现在卡住的问题是：
+我希望 Codex 帮我执行的是：
+最终我希望得到的结果是：
+
+这次允许你处理的范围是：
+这次不要修改的内容是：
+需要特别保留的内容是：
+
+完成后请告诉我：
+
+1. 你做了什么
+2. 修改了哪些内容
+3. 是否影响其他页面或文件
+4. 是否有风险
+5. 我应该如何验收
+
+要求：
+
+不要擅自扩大修改范围。
+不要替我决定项目方向。
+不要处理我没有授权的隐私、账号、密钥或客户资料。
+如果发现风险，请先说明，不要直接继续。`;
+
+  const executionCards = [
+    ["内容执行", "写文章草稿、整理资料、生成结构化内容、更新内容文件。"],
+    ["页面执行", "修改网页、调整模块、修复链接、优化展示效果。"],
+    ["项目执行", "拆任务、改文件、跑检查、输出改动说明。"],
+    ["工具雏形", "先做一个小功能、小页面、小工具原型，再由人验收。"]
+  ];
+  const canDoItems = [
+    ["写一篇结构清楚的文章", "让 Codex 先把结构和初稿跑起来，人再判断观点和表达。"],
+    ["整理一份资料或文档", "把散乱信息归类、提炼、转成更容易阅读的文档。"],
+    ["生成一个网页或落地页", "先做出可查看的页面雏形，再由人检查定位和体验。"],
+    ["修改一个已有页面", "针对一个明确问题调整模块、文案、链接或展示效果。"],
+    ["做一个小工具雏形", "先把核心输入、输出和页面流程做出来，不急着做复杂系统。"],
+    ["整理一个知识库目录", "把已有内容分组、排序，形成可继续补充的知识结构。"],
+    ["拆一个项目执行计划", "把一个模糊目标拆成步骤、边界、检查点和下一步。"],
+    ["检查一批文件或链接问题", "让 Codex 先找出异常，再由人判断哪些需要处理。"]
+  ];
+  const cannotItems = [
+    "项目方向判断",
+    "商业模式判断",
+    "用户真实需求判断",
+    "未经确认的上线发布",
+    "涉及隐私、账号、密钥、客户资料的内容",
+    "一次性大范围重构"
+  ];
+  const flowItems = [
+    ["先说清目标", "先说明你想得到什么结果，不要只说“帮我优化一下”。"],
+    ["再说清当前问题", "告诉 Codex 你卡在哪里，问题出现在哪个页面、文件或任务里。"],
+    ["限定允许修改范围", "让执行范围变小，方便回看和验收。"],
+    ["明确不能碰的内容", "保护正文、定位、隐私、账号和其他不该动的资产。"],
+    ["让 Codex 执行", "把已经说清楚的需求交给 Codex 跑起来。"],
+    ["看结果和页面体验", "不要只看输出说明，要回到真实页面或文件里检查。"],
+    ["决定是否继续、提交或回退", "最后由人判断这个结果是否符合方向和边界。"]
+  ];
+  const articleItems = [
+    [
+      "普通人怎么用 Codex 参与一个真实项目",
+      "先学会把一个具体问题说清楚，再让 Codex 执行，并由人完成验收。",
+      `${baseRoot}tutorials/codex-real-project-guide/`
+    ],
+    [
+      "凡人修AI项目协作流程：老张、小张、导师和 Codex 各负责什么",
+      "看清项目负责人、执行伙伴、导师和 Codex 的分工，避免把方向判断完全交给工具。",
+      `${baseRoot}tutorials/codex-project-collaboration/`
+    ]
+  ];
+
+  return layout({
+    title: "Codex专区 | 凡人修AI",
+    description: "凡人修AI Codex专区，定位为普通人的 AI 执行中心，帮助普通人把内容、页面、资料、工具雏形和项目任务交给 Codex 执行。",
+    base: baseRoot,
+    bodyClass: "codex-zone-page",
+    canonicalUrl: `${site.origin}/tutorials/category/codex/`,
+    body: `<section class="codex-hero section-pad" aria-labelledby="codex-title">
+      <div class="codex-hero-inner">
+        <p class="page-hero-eyebrow">AI Execution Center</p>
+        <h1 id="codex-title">普通人的 AI 执行中心</h1>
+        <p>不用一上来学编程，也不用到处找工具。先学会把内容、页面、资料、工具雏形和项目任务交给 Codex 执行，再由人判断方向和验收结果。</p>
+        <p><strong>Codex 负责执行，人负责判断。</strong></p>
+        <div class="codex-hero-actions">
+          <a class="btn btn-primary" href="#codex-can-do">查看哪些需求适合交给 Codex</a>
+          <a class="btn btn-secondary" href="#codex-request-template">复制一段清楚需求</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="codex-section section-pad" aria-labelledby="codex-role-title">
+      <div class="codex-section-head">
+        <span>Execution Layer</span>
+        <h2 id="codex-role-title">Codex 不是编程炫技工具，而是普通人的 AI 执行层</h2>
+        <p>普通人最常见的问题，不是没有想法，而是不知道怎么把想法落到页面、文件、资料和项目里。Codex 的价值，是把已经说清楚的需求，变成可以修改、可以保存、可以检查的结果。</p>
+      </div>
+      <div class="codex-card-grid">${executionCards
+        .map(([title, description]) => `<article><h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p></article>`)
+        .join("")}</div>
+    </section>
+
+    <section class="codex-section section-pad" id="codex-can-do" aria-labelledby="codex-can-do-title">
+      <div class="codex-section-head">
+        <span>Scenarios</span>
+        <h2 id="codex-can-do-title">普通人哪些 AI 需求，可以先交给 Codex？</h2>
+        <p>很多项目型 AI 需求，都可以先从 Codex 开始。不是让 Codex 替你判断，而是让 Codex 先把执行部分跑起来。</p>
+      </div>
+      <div class="codex-case-grid">${canDoItems
+        .map(([title, description]) => `<article><h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p></article>`)
+        .join("")}</div>
+    </section>
+
+    <section class="codex-section section-pad" aria-labelledby="codex-boundary-title">
+      <div class="codex-section-head">
+        <span>Boundary</span>
+        <h2 id="codex-boundary-title">哪些事情不能直接甩给 Codex？</h2>
+        <p>Codex 可以承担执行，但不能替你负责。方向、边界、隐私和上线判断，仍然要由人来掌握。</p>
+      </div>
+      <div class="codex-split">
+        <article><h3>不要直接交出去</h3><ul>${cannotItems.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></article>
+        <article><h3>更稳的做法</h3><p>先把目标、范围和风险说清楚。涉及隐私、账号、密钥、客户资料和大范围改动时，先停下来判断，再决定是否让 Codex 执行。</p></article>
+      </div>
+    </section>
+
+    <section class="codex-section section-pad" aria-labelledby="codex-order-title">
+      <div class="codex-section-head">
+        <span>Order</span>
+        <h2 id="codex-order-title">普通人使用 Codex 的正确顺序</h2>
+        <p>先判断，再执行；先限定边界，再让 Codex 动手。</p>
+      </div>
+      <ol class="codex-flow">${flowItems
+        .map(
+          ([title, description], index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p></div></li>`
+        )
+        .join("")}</ol>
+    </section>
+
+    <section class="codex-section section-pad" id="codex-request-template" aria-labelledby="codex-template-title">
+      <div class="codex-section-head">
+        <span>Template</span>
+        <h2 id="codex-template-title">直接复制这段，给 Codex 一个清楚需求</h2>
+        <p>这个模板可以直接复制给 Codex。提示词式表达只放在这里，正文里仍然先讲清方向和边界。</p>
+      </div>
+      ${renderStaticCopyBlock("可复制请求模板", requestTemplate)}
+    </section>
+
+    <section class="codex-section section-pad" aria-labelledby="codex-articles-title">
+      <div class="codex-section-head">
+        <span>Read First</span>
+        <h2 id="codex-articles-title">从这两篇开始理解 Codex</h2>
+        <p>101 和 102 是 Codex 专区的基础阅读入口。先学会说清需求，再看懂人和 Codex 如何分工。</p>
+      </div>
+      <div class="codex-article-grid">${articleItems
+        .map(
+          ([title, description, href]) => `<a class="codex-article-card" href="${escapeHtml(href)}"><h3>${escapeHtml(title)}</h3><p>${escapeHtml(description)}</p><span>开始阅读</span></a>`
+        )
+        .join("")}</div>
+    </section>
+
+    <section class="tutorial-next-actions codex-next-actions section-pad" aria-label="下一步行动">
+      <h3>先把一个真实需求交给 Codex</h3>
+      <p>不用一开始就做大项目。先选一个小任务：一篇文章、一个页面、一个资料整理、一个工具雏形，练会说清目标、限定边界、查看结果。</p>
+      <div>
+        <a class="tutorial-next-card" href="#codex-request-template"><strong>复制需求模板</strong><span>先把一个执行任务说清楚。</span></a>
+        <a class="tutorial-next-card" href="/tutorials/codex-real-project-guide/"><strong>阅读 Codex 入门实战</strong><span>从一个真实项目小问题开始练。</span></a>
+        <a class="tutorial-next-card" href="/tutorials/map/"><strong>回到内容地图</strong><span>看 001-051 的完整 AI 修炼路径。</span></a>
+      </div>
+    </section>`
+  });
+}
+
 function renderCategoryPage(slug, pageArticles, totalArticles, current = 1, total = 1, baseRoot = "../../../") {
+  if (slug === "codex") {
+    return renderCodexZonePage(baseRoot);
+  }
+
   const name = categories[slug] || slug;
   const cards = pageArticles.map((article) => renderArticleCard(article, baseRoot)).join("\n");
   return layout({
@@ -624,6 +811,7 @@ function writeSitemap(articles) {
     `${site.origin}/`,
     `${site.origin}/tutorials/`,
     `${site.origin}/tutorials/map/`,
+    `${site.origin}/tutorials/category/codex/`,
     ...published.map((article) => `${site.origin}/tutorials/${article.slug}/`)
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

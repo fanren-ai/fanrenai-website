@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="复盘凡人修AI项目里的真实协作方式，讲清项目负责人、执行伙伴、导师和 Codex 的分工，让普通人理解如何把 AI 工具放进可控的项目流程。" />
+    <meta property="og:site_name" content="凡人修AI" />
+    <meta property="og:title" content="凡人修AI项目协作流程：老张、小张、导师和 Codex 各负责什么 | 凡人修AI" />
+    <meta property="og:description" content="复盘凡人修AI项目里的真实协作方式，讲清项目负责人、执行伙伴、导师和 Codex 的分工，让普通人理解如何把 AI 工具放进可控的项目流程。" />
+    <meta property="og:url" content="https://www.fanrenai.cn/tutorials/codex-project-collaboration/" />
+    <meta property="og:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <link rel="canonical" href="https://www.fanrenai.cn/tutorials/codex-project-collaboration/" />
+    <meta property="article:published_time" content="2026-06-14" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"凡人修AI项目协作流程：老张、小张、导师和 Codex 各负责什么","description":"复盘凡人修AI项目里的真实协作方式，讲清项目负责人、执行伙伴、导师和 Codex 的分工，让普通人理解如何把 AI 工具放进可控的项目流程。","author":{"@type":"Organization","name":"凡人修AI"},"datePublished":"2026-06-14","mainEntityOfPage":"https://www.fanrenai.cn/tutorials/codex-project-collaboration/"}</script>
+    <title>凡人修AI项目协作流程：老张、小张、导师和 Codex 各负责什么 | 凡人修AI</title>
+    <link rel="icon" type="image/png" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="apple-touch-icon" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="stylesheet" href="../../styles.css?v=20260614-codex-zone" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="../../index.html" aria-label="凡人修AI 首页">
+          <img class="brand-logo" src="../../assets/brand/fanrenai-logo-mark-256.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+          <span>凡人修AI</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="site-menu">
+          <a href="../../index.html">首页</a><a href="../../tutorials/index.html">AI教程</a><a href="../../tutorials/map/index.html">内容地图</a><a href="../../tutorials/category/codex/index.html">Codex专区</a><a href="https://tools.fanrenai.cn/">AI工具箱</a>
+          <a class="nav-cta" href="../../community/index.html">加入社区</a>
+        </div>
+      </nav>
+    </header>
+    <main><div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="lesson-shell">
+      <header class="lesson-hero section-pad">
+        <div class="lesson-hero-inner">
+          <a class="back-link" href="../">返回修炼手册</a>
+          <div class="lesson-meta-pills" aria-label="文章信息">
+            <span class="lesson-pill">Codex专区</span>
+            <span class="lesson-pill">项目实战</span>
+            <span class="lesson-pill">24分钟</span>
+          </div>
+          <h1>凡人修AI项目协作流程：老张、小张、导师和 Codex 各负责什么</h1>
+          <p class="lesson-description">复盘凡人修AI项目里的真实协作方式，讲清项目负责人、执行伙伴、导师和 Codex 的分工，让普通人理解如何把 AI 工具放进可控的项目流程。</p>
+          <div class="lesson-goal-strip">
+            <span>本篇目标</span>
+            <strong>理解真实 AI 项目中人和 Codex 的分工，避免把方向判断完全交给工具。</strong>
+          </div>
+        </div>
+      </header>
+
+      <div class="lesson-body section-pad">
+        <aside class="lesson-sidebar" aria-label="修炼摘要">
+          <div>
+            <span>本篇目标</span>
+            <p>理解真实 AI 项目中人和 Codex 的分工，避免把方向判断完全交给工具。</p>
+          </div>
+          <div>
+            <span>建议节奏</span>
+            <p>24分钟读完，立刻完成文末实战任务。</p>
+          </div>
+          <div>
+            <span>所属路径</span>
+            <p>Codex专区 · 项目实战</p>
+          </div>
+        </aside>
+        <div class="article-content" data-copy-protected="article"><h2>做 AI 项目，最怕的不是不会技术，而是分工混乱</h2>
+<p>普通人开始做 AI 项目，很容易以为最难的是代码。好像只要有人会改页面、会跑命令、会处理报错，项目就能往前走。</p>
+<p>凡人修AI一路做下来，真正容易乱的地方不是某一行代码，而是谁负责什么。如果分工不清，很多事情都会混在一起：谁决定项目方向，谁把想法拆成任务，谁操作 Codex，谁看构建结果，谁做最后验收，谁决定是否提交和上线。</p>
+<p>这些问题不先说清楚，项目就会变成一团。Codex 可能改了很多，但方向不一定对；人看不懂改动，就不敢提交；每个问题都混在一起改，最后无法验收；构建通过了，但页面体验仍然不舒服。</p>
+<p>所以普通人用 Codex 做项目，第一步不是学一堆技术词，而是把协作关系理顺。你要知道哪些判断必须由人来做，哪些执行可以交给 Codex，哪些结果需要回到页面里看。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="四个角色分工卡">
+        <header>
+          <span>Flow</span>
+          <h3>四个角色分工卡</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>老张</strong>
+              <p>项目负责人，决定方向、定位和是否上线。</p>
+            </li><li>
+              <span>02</span>
+              <strong>小张</strong>
+              <p>执行伙伴，操作项目、反馈问题、做第一轮检查。</p>
+            </li><li>
+              <span>03</span>
+              <strong>导师</strong>
+              <p>判断需求、拆任务、定边界和设计验收方式。</p>
+            </li><li>
+              <span>04</span>
+              <strong>Codex</strong>
+              <p>执行修改、查找文件、跑构建并输出结果。</p>
+            </li></ol>
+      </section>
+<p>这四个角色不一定真的对应四个人。有时候一个人会同时承担其中两三种角色。但只要你心里分得清，项目就不容易失控。</p>
+<h2>我现在更相信的一件事</h2>
+<p>我现在更相信的一件事是：一个普通人 AI 项目能跑起来，不是因为工具替人负责，而是因为人和工具各自站在正确位置上。</p>
+<p>老张负责方向判断。凡人修AI到底是什么，不是什么，适合谁，哪些功能符合这个定位，哪些东西看起来热闹但不该做，最后都要有人拍板。</p>
+<p>小张负责具体操作和反馈。截图、问题、页面效果、浏览器状态、构建结果，这些都要有人看见、拿出来、说清楚。没有这一层反馈，导师和 Codex 都容易在抽象问题里打转。</p>
+<p>导师负责拆任务、定边界、把关路径。一个模糊问题，比如“文章页感觉有点乱”，不能直接丢给 Codex。它要先被拆成能执行的任务：改哪里，保留什么，别动什么，完成后怎么看。</p>
+<p>Codex 负责执行文件修改、跑构建、输出结果。它很适合做具体执行，但不适合替人决定“项目应该长成什么样”。</p>
+<p>真正稳定的协作不是“谁都能管一切”，而是：</p>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">方向有人定
+任务有人拆
+执行有人做
+结果有人验
+提交有人决定</code></pre>
+    </div>
+<p>这套分工看起来朴素，但它让普通人可以把 AI 工具放进真实项目，而不是把项目交给一个模糊的自动化想象。</p>
+<section class="tutorial-visual-card tutorial-role-split" aria-label="人负责什么 vs Codex 负责什么">
+        <header>
+          <span>Roles</span>
+          <h3>人负责什么 vs Codex 负责什么</h3>
+        </header>
+        <div class="tutorial-role-grid">
+          <div>
+            <strong>你负责：</strong>
+            <ul><li>判断项目方向,说明真实用户场景,限定改动边界,检查页面体验,决定是否提交</li></ul>
+          </div>
+          <div>
+            <strong>Codex 负责：</strong>
+            <ul><li>阅读项目结构,查找相关位置,执行具体修改,运行检查命令,整理改动结果</li></ul>
+          </div>
+        </div>
+      </section>
+<h2>四个角色分别负责什么</h2>
+<h3>老张：项目负责人</h3>
+<p>老张不是“发号施令的人”，而是项目方向的负责人。</p>
+<p>他要决定凡人修AI的定位，判断用户真正需要什么，决定哪些功能该做、哪些不该做。比如一个页面看起来可以加很多模块，但如果它让普通人更迷路，就不应该加。</p>
+<p>老张还要拍板是否上线。Codex 可以把页面改出来，导师可以设计检查标准，小张可以截图反馈，但最后这个改动是不是符合凡人修AI，仍然要有人承担判断。</p>
+<h3>小张：执行伙伴</h3>
+<p>小张不是简单打杂。真实项目里，很多关键问题都来自执行现场。</p>
+<p>他负责操作本地项目，把截图、问题和当前效果发出来，按导师拆好的任务交给 Codex，做第一轮页面检查，再反馈哪里不舒服。</p>
+<p>比如页面切换时标题位置有波动，如果没有人打开页面、来回切换、指出“不稳定”，这个问题就不会变成一个可执行任务。小张的价值，是把抽象感觉变成可观察的问题。</p>
+<h3>导师：项目判断和任务拆解</h3>
+<p>导师不是神秘角色，更像项目方法和判断层。在这个项目里，导师更像一个临时的产品负责人和内容主编，负责让需求不跑偏。</p>
+<p>它要判断需求是否符合凡人修AI定位，把模糊问题拆成 Codex 能执行的任务，明确哪些范围可以动、哪些内容要保留，设计验收标准，并判断哪些问题现在修，哪些放到后面。</p>
+<p>一个项目最怕所有问题一起改。导师的作用，是让问题变小，让边界变清，让每次改动都能被验收。</p>
+<h3>Codex：执行型协作工具</h3>
+<p>Codex 的位置很清楚：执行。</p>
+<p>它负责查找文件、修改代码和样式、调整页面结构、执行构建、输出改动结果，也可以协助检查问题。</p>
+<p>但 Codex 执行强，不代表它应该替人决定方向。它不知道凡人修AI真正想给普通人什么感觉，也不知道某个模块是否应该被保留。它只能根据人给出的目标、范围和边界，把判断落到项目里。</p>
+<h2>一个真实流程：从“文章目录鸡肋”到页面完成调整</h2>
+<p>凡人修AI文章页左侧曾经有一个文章目录。它能跳转标题，看起来很完整，但放在这个站里不太合适。</p>
+<p>第一步，老张发现问题：文章页目录有点鸡肋，占注意力，影响阅读沉浸感。</p>
+<p>第二步，导师做判断：不要删整个左侧栏。左侧的“本篇目标、建议节奏、所属路径”仍然有价值，它们能提醒读者这篇文章要完成什么。真正需要去掉的，是目录感。</p>
+<p>第三步，小张提供现场反馈：当前页面截图是什么样，左侧哪些内容让人分心，正文阅读时哪里不舒服。</p>
+<p>第四步，导师把问题拆成任务：这次只围绕文章详情页左侧栏处理，保留修炼提醒，去掉文章目录，让页面更像内容站而不是文档站。</p>
+<p>第五步，Codex 执行调整：把判断落到页面结构和交互里。</p>
+<p>第六步，小张查看结果：左侧提醒是否还在，正文是否更安静，阅读时有没有更沉浸。</p>
+<p>第七步，老张拍板：如果这个方向符合凡人修AI，就进入下一步；如果只是技术上完成，但体验不对，就继续调整。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="一次有效 Codex 协作 7 步">
+        <header>
+          <span>Flow</span>
+          <h3>一次有效 Codex 协作 7 步</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>发现问题</strong>
+              <p>项目负责人或执行伙伴先看见真实不舒服的地方。</p>
+            </li><li>
+              <span>02</span>
+              <strong>判断方向</strong>
+              <p>确认这个问题是否真的影响凡人修AI的阅读体验。</p>
+            </li><li>
+              <span>03</span>
+              <strong>拆成任务</strong>
+              <p>把模糊感受拆成一个可执行的小范围改动。</p>
+            </li><li>
+              <span>04</span>
+              <strong>交给 Codex</strong>
+              <p>让 Codex 负责具体执行，而不是负责方向判断。</p>
+            </li><li>
+              <span>05</span>
+              <strong>查看结果</strong>
+              <p>回到页面看体验，而不是只看改动说明。</p>
+            </li><li>
+              <span>06</span>
+              <strong>决定去留</strong>
+              <p>由人判断这个改动是否符合项目定位。</p>
+            </li><li>
+              <span>07</span>
+              <strong>沉淀方法</strong>
+              <p>把这次协作变成下一次可复用的流程。</p>
+            </li></ol>
+      </section>
+<p>这个流程里，每个角色都有位置。最重要的是，Codex 没有被当成项目负责人。它只是把人的判断执行出来。</p>
+<h2>每次让 Codex 动手前，先过这 5 个问题</h2>
+<p>如果这 5 个问题没想清楚，不要急着让 Codex 动手。</p>
+<p>第一个问题：这个问题是不是真的要现在解决？有些问题只是看起来不完美，但不影响当前版本上线。先判断优先级，能避免改动发散。</p>
+<p>第二个问题：它符合凡人修AI定位吗？凡人修AI是普通人的 AI 修炼路径，不是技术炫技站。一个改动如果只是更复杂、更花哨，却没有帮助用户学习，就要谨慎。</p>
+<p>第三个问题：这次只改一个范围吗？一次只处理一个页面、一个模块、一个明确问题，后面才知道结果是谁带来的。</p>
+<p>第四个问题：哪些内容绝对不能动？正文、标题、主路径、页面定位、已有入口，这些都可能是项目资产。动手前要先说清楚。</p>
+<p>第五个问题：改完怎么判断通过？不是“看起来好了”就结束，而是要回到页面体验、链接、移动端和项目定位里看。</p>
+<section class="tutorial-visual-card tutorial-task-card" aria-label="动手前 5 个问题">
+        <header>
+          <span>Task</span>
+          <h3>动手前 5 个问题</h3>
+        </header>
+        <div class="tutorial-task-grid">
+          <div>
+            <span>任务目标</span>
+            <strong>让 Codex 开始执行前，先把方向、范围和验收想清楚。</strong>
+          </div>
+          <div>
+            <span>页面包含什么</span>
+            <ul><li>是否现在解决</li><li>是否符合定位</li><li>是否只改一个范围</li><li>哪些内容不能动</li><li>改完怎么判断</li></ul>
+          </div>
+          <div>
+            <span>完成标准</span>
+            <ul><li>任务足够小</li><li>边界足够清楚</li><li>结果能被人验收</li></ul>
+          </div>
+        </div>
+      </section>
+<p>这 5 个问题不是为了让流程变慢，而是为了避免项目越改越乱。</p>
+<h2>直接复制这段，先把项目分工说清楚</h2>
+<p>下面这段可以直接复制。它不是为了制造仪式感，而是帮你在让 Codex 动手前，先把谁负责什么说清楚。</p>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">这次项目协作先按下面方式分工：
+
+项目负责人负责：
+- 判断这件事是否符合项目定位
+- 决定是否现在做
+- 最后确认是否通过
+
+执行伙伴负责：
+- 提供当前截图或问题描述
+- 按任务要求操作 Codex
+- 做第一轮页面检查
+- 反馈哪里还不舒服
+
+导师/产品判断负责：
+- 把模糊需求拆成具体任务
+- 明确允许修改范围
+- 明确禁止修改内容
+- 设计验收标准
+
+Codex 负责：
+- 查找相关文件
+- 执行修改
+- 跑构建检查
+- 输出改动说明
+
+本次要解决的问题是：
+希望达到的效果是：
+这次允许修改的范围是：
+这次不能修改的内容是：
+完成后必须检查：
+最后由谁决定是否提交：</code></pre>
+    </div>
+<p>这段话真正要解决的，是项目里最常见的混乱：大家都以为“交给 AI 了”，但没人负责方向，没人负责验收，也没人决定要不要提交。</p>
+<h2>用 Codex 协作时，最容易乱的 5 个地方</h2>
+<section class="tutorial-visual-card tutorial-compare-table" aria-label="常见混乱点提醒">
+        <header>
+          <span>Compare</span>
+          <h3>常见混乱点提醒</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody><tr><td>负责人不拍板，Codex 越改越多</td><td>先决定这个问题是否值得做，再让工具执行。</td></tr><tr><td>需求没拆清，执行就会乱</td><td>把模糊感受拆成一个页面、一个模块、一个目标。</td></tr><tr><td>小张只复制结果，不看页面</td><td>执行伙伴必须回到真实页面看体验。</td></tr><tr><td>构建通过就以为完成</td><td>构建只是基础检查，体验和定位还要人判断。</td></tr><tr><td>没人决定是否提交</td><td>最后必须有人拍板，而不是让工具默认推进。</td></tr></tbody>
+        </table>
+      </section>
+<p>第一个乱点，是负责人不拍板。没人说“这个方向要做”，Codex 就会在细节里不断推进，最后改得很多，但不知道为什么改。</p>
+<p>第二个乱点，是需求没拆清。比如“页面有点 low”不是任务，“文章标题太大、阅读压迫感强”才更接近任务。</p>
+<p>第三个乱点，是执行伙伴只复制结果，不看页面。Codex 的输出说明再完整，也替代不了真实页面体验。很多问题只有打开页面才看得出来。</p>
+<p>第四个乱点，是构建通过就以为完成。构建通过只能说明技术链路没有断，不代表用户读起来舒服。</p>
+<p>第五个乱点，是没人决定是否提交。提交不是一个技术动作，而是项目判断：这个改动是否真的让凡人修AI更接近它应该成为的样子。</p>
+<h2>后面继续怎么练</h2>
+<p>后面 Codex 专区可以继续把凡人修AI的真实改动拆成案例：首页入口怎么分流，内容地图为什么要对齐，文章页为什么去掉目录，Git 收口为什么不能乱提交，上线前为什么要验收。</p>
+<p>这些内容都不会从安装和参数讲起，而是继续从真实项目里拆解：普通人怎么发现问题，怎么提出需求，怎么限定范围，怎么让 Codex 执行，怎么回到页面做判断。</p>
+<p>普通人用 Codex 参与项目，最该练的不是“让 AI 全部接管”，而是让 AI 进入一套可控的协作流程。人负责方向，工具负责执行，人再验收结果。这个顺序稳住了，项目才会越来越清楚。</p>
+<section class="tutorial-next-actions" aria-label="继续练 Codex 协作">
+        <h3>继续练 Codex 协作</h3>
+        <div><a class="tutorial-next-card" href="/tutorials/category/codex/">
+              <strong>回到 Codex 专区</strong>
+              <span>继续看凡人修AI里的 Codex 协作实录。</span>
+            </a><a class="tutorial-next-card" href="/tutorials/codex-real-project-guide/">
+              <strong>阅读上一篇 Codex 实战</strong>
+              <span>先学会把一个具体问题交给 Codex。</span>
+            </a><a class="tutorial-next-card" href="/tutorials/map/">
+              <strong>查看内容地图</strong>
+              <span>回到 001-051 的完整 AI 修炼路径。</span>
+            </a></div>
+      </section>
+          <footer class="article-copyright">本文由凡人修AI原创整理，转载请注明来源。</footer>
+        </div>
+      </div>
+
+      <section class="lesson-practice section-pad" aria-labelledby="practice-title">
+        <div>
+          <p class="eyebrow">Practice</p>
+          <h2 id="practice-title">实战任务</h2>
+          <p>修炼不是看完就结束。本篇读完后，请把下面任务变成一次真实输出。</p>
+        </div>
+        <ol><li><span>01</span>分清角色</li><li><span>02</span>拆任务边界</li><li><span>03</span>执行修改</li><li><span>04</span>人工验收</li><li><span>05</span>决定提交</li></ol>
+      </section>
+
+      <section class="lesson-related section-pad" aria-labelledby="related-title">
+        <div class="lesson-section-title">
+          <p class="eyebrow">Next</p>
+          <h2 id="related-title">相关教程</h2>
+        </div>
+        <div class="lesson-related-grid"><a class="lesson-related-card" href="../codex-real-project-guide/index.html">
+        <span>Codex专区</span>
+        <strong>普通人怎么用 Codex 参与一个真实项目</strong>
+        <p>面向非技术背景的普通人，讲清如何把想法、问题和页面需求交给 Codex 执行，同时由人负责方向判断、边界控制和最终验收。</p>
+      </a><a class="lesson-related-card" href="../001-what-is-ai/index.html">
+        <span>AI基础认知</span>
+        <strong>什么是AI：第一次打开AI工具，别只问“帮我写一下”</strong>
+        <p>面向第一次打开 AI 工具的普通人，讲清 AI 可以怎样协助起草、整理和改写，以及如何用一个真实小练习学会给背景、看输出和人工检查。</p>
+      </a><a class="lesson-related-card" href="../002-ai-history/index.html">
+        <span>AI基础认知</span>
+        <strong>AI的发展历史：它不是突然火了，而是终于轮到普通人使用了</strong>
+        <p>面向刚开始关注 AI 的普通人，讲清 AI 为什么看起来像突然火了，其实长期藏在搜索、推荐、地图和客服等后台能力里，现在才变成普通人能直接对话使用的助手。</p>
+      </a></div>
+      </section>
+
+      <section class="lesson-join section-pad" aria-labelledby="join-title">
+        <div>
+          <p class="eyebrow">Community</p>
+          <h2 id="join-title">加入凡人修AI道友群</h2>
+          <p>把你的实战任务、踩坑记录和作品发出来，和一群普通人一起复盘、迭代、成长。</p>
+        </div>
+        <a class="btn btn-primary" href="../../index.html#community">加入道友群</a>
+      </section>
+    </article></main>
+    <footer class="site-footer">
+      <p>凡人修AI © 2026</p>
+      <p><a href="../../about/">关于</a> · <a href="../../community/">社区</a> · 普通人的AI学习与实践平台</p>
+    </footer>
+    <script src="../../script.js?v=20260614-codex-zone"></script>
+  </body>
+</html>

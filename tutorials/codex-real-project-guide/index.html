@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="面向非技术背景的普通人，讲清如何把想法、问题和页面需求交给 Codex 执行，同时由人负责方向判断、边界控制和最终验收。" />
+    <meta property="og:site_name" content="凡人修AI" />
+    <meta property="og:title" content="普通人怎么用 Codex 参与一个真实项目 | 凡人修AI" />
+    <meta property="og:description" content="面向非技术背景的普通人，讲清如何把想法、问题和页面需求交给 Codex 执行，同时由人负责方向判断、边界控制和最终验收。" />
+    <meta property="og:url" content="https://www.fanrenai.cn/tutorials/codex-real-project-guide/" />
+    <meta property="og:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark.png" />
+    <link rel="canonical" href="https://www.fanrenai.cn/tutorials/codex-real-project-guide/" />
+    <meta property="article:published_time" content="2026-06-14" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"普通人怎么用 Codex 参与一个真实项目","description":"面向非技术背景的普通人，讲清如何把想法、问题和页面需求交给 Codex 执行，同时由人负责方向判断、边界控制和最终验收。","author":{"@type":"Organization","name":"凡人修AI"},"datePublished":"2026-06-14","mainEntityOfPage":"https://www.fanrenai.cn/tutorials/codex-real-project-guide/"}</script>
+    <title>普通人怎么用 Codex 参与一个真实项目 | 凡人修AI</title>
+    <link rel="icon" type="image/png" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="apple-touch-icon" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="stylesheet" href="../../styles.css?v=20260614-codex-zone" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="../../index.html" aria-label="凡人修AI 首页">
+          <img class="brand-logo" src="../../assets/brand/fanrenai-logo-mark-256.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+          <span>凡人修AI</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="site-menu">
+          <a href="../../index.html">首页</a><a href="../../tutorials/index.html">AI教程</a><a href="../../tutorials/map/index.html">内容地图</a><a href="../../tutorials/category/codex/index.html">Codex专区</a><a href="https://tools.fanrenai.cn/">AI工具箱</a>
+          <a class="nav-cta" href="../../community/index.html">加入社区</a>
+        </div>
+      </nav>
+    </header>
+    <main><div class="reading-progress" aria-hidden="true"><span></span></div>
+    <article class="lesson-shell">
+      <header class="lesson-hero section-pad">
+        <div class="lesson-hero-inner">
+          <a class="back-link" href="../">返回修炼手册</a>
+          <div class="lesson-meta-pills" aria-label="文章信息">
+            <span class="lesson-pill">Codex专区</span>
+            <span class="lesson-pill">项目实战</span>
+            <span class="lesson-pill">25分钟</span>
+          </div>
+          <h1>普通人怎么用 Codex 参与一个真实项目</h1>
+          <p class="lesson-description">面向非技术背景的普通人，讲清如何把想法、问题和页面需求交给 Codex 执行，同时由人负责方向判断、边界控制和最终验收。</p>
+          <div class="lesson-goal-strip">
+            <span>本篇目标</span>
+            <strong>学会用 Codex 参与真实项目改动，而不是把项目方向完全交给工具。</strong>
+          </div>
+        </div>
+      </header>
+
+      <div class="lesson-body section-pad">
+        <aside class="lesson-sidebar" aria-label="修炼摘要">
+          <div>
+            <span>本篇目标</span>
+            <p>学会用 Codex 参与真实项目改动，而不是把项目方向完全交给工具。</p>
+          </div>
+          <div>
+            <span>建议节奏</span>
+            <p>25分钟读完，立刻完成文末实战任务。</p>
+          </div>
+          <div>
+            <span>所属路径</span>
+            <p>Codex专区 · 项目实战</p>
+          </div>
+        </aside>
+        <div class="article-content" data-copy-protected="article"><h2>第一次用 Codex，不要先想着“让它全自动做项目”</h2>
+<p>一个普通人想做网站、改页面、修文章、加功能，最容易卡住的地方不是想法不够多，而是不知道怎么把想法变成项目里的一个具体改动。</p>
+<p>你不是没有想法，而是经常卡在“我知道哪里不舒服，但不知道该让谁改、怎么改、改完怎么检查”。</p>
+<p>你可能不是程序员，不熟悉文件结构，也不确定一个按钮、一个页面、一个样式到底藏在哪个文件里。看到 Codex 之后，很自然会冒出一个念头：能不能直接让它把网站做好？</p>
+<p>真正危险的地方就在这里。</p>
+<p>Codex 能执行很多事，但它不能代替你判断项目方向。它可以读文件、改代码、跑构建、查报错，也可以告诉你改了哪里。但一个页面该不该改，一个功能是不是符合用户，一个内容模块是不是应该保留，这些判断仍然要由人来做。</p>
+<p>第一次用 Codex，真正要练的不是“全自动”，而是把一个具体问题交代清楚：</p>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">把一个具体问题说清楚
+把允许修改的范围说清楚
+把不能动的内容说清楚
+让它执行
+再由人检查结果</code></pre>
+    </div>
+<p>这件事听起来不炫，但它很重要。普通人参与真实项目，不是靠一句“帮我优化一下”把项目交出去，而是把模糊想法拆成可以执行、可以检查、可以回退的小任务。</p>
+<p>凡人修AI这个站点就是这样一点点做出来的。很多改动不是一次性重做，而是先发现一个具体问题，再把问题、范围、边界和验收标准写清楚，让 Codex 执行，最后由人看页面、看差异、看构建结果。</p>
+<h2>Codex 在项目里到底负责什么</h2>
+<p>Codex 在项目里更像一个执行型协作伙伴。它擅长把已经说清楚的任务，落到文件、页面和命令上。</p>
+<p>它可以帮你看项目结构，找到相关文件，修改代码和样式，调整页面结构，跑构建命令，检查报错，输出修改报告，也可以协助 Git 收口。</p>
+<p>但它不应该负责项目定位、用户判断、商业承诺和最终验收。一个普通人用 Codex，最容易犯的错，是把“我不会代码”理解成“我不用判断”。恰恰相反，越是不写代码，越要把判断说清楚。</p>
+<section class="tutorial-visual-card tutorial-role-split" aria-label="Codex 能做什么 vs 人必须负责什么">
+        <header>
+          <span>Roles</span>
+          <h3>Codex 能做什么 vs 人必须负责什么</h3>
+        </header>
+        <div class="tutorial-role-grid">
+          <div>
+            <strong>你负责：</strong>
+            <ul><li>判断项目方向,说明用户场景,限定修改范围,检查体验结果,决定是否提交</li></ul>
+          </div>
+          <div>
+            <strong>Codex 负责：</strong>
+            <ul><li>阅读项目文件,查找相关模块,修改代码样式,执行构建检查,整理改动报告</li></ul>
+          </div>
+        </div>
+      </section>
+<p>Codex 可以做执行，但不要让它替你决定方向。比如要不要删除某个模块，要不要改变首页定位，要不要改掉文章结构，这些不是纯技术问题，而是产品和内容判断。</p>
+<p>如果你没有说清楚，它可能会为了完成任务改动太大；如果你没有限制范围，它可能会顺手改到别的页面；如果你只看构建通过，它可能已经改掉了你不想动的内容。</p>
+<p>普通人用 Codex 的基本姿势，是先把任务变小，再把边界写清。</p>
+<h2>我现在更相信的一件事</h2>
+<p>我现在更相信的一件事是：Codex 的价值，不是让普通人不再判断，而是让普通人可以把判断变成可执行的项目改动。</p>
+<p>过去很多普通人有想法，但离项目很远。你能感觉到页面不舒服，知道某个模块没必要，也能判断一段文案不合适，可你不知道怎么改文件、怎么跑构建、怎么确认有没有影响其他页面。</p>
+<p>Codex 补上的，是中间这一段执行距离。</p>
+<p>普通人用 Codex，最重要的不是“我不会代码也能全交给它”，而是“我可以把需求说清楚，再让它帮我落地”。</p>
+<p>真正的协作关系更像这样：</p>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">人判断方向
+人限定边界
+Codex 执行修改
+构建负责验证
+截图负责体验验收
+最后人决定是否提交</code></pre>
+    </div>
+<p>这里面每一步都不能省。构建能告诉你页面有没有生成、命令有没有报错；截图能告诉你页面是否真的舒服；diff 能告诉你有没有改到不该改的地方；最后的提交决定，仍然应该由人来做。</p>
+<h2>一个真实例子：去掉文章页鸡肋的文章目录</h2>
+<p>凡人修AI的文章详情页，左侧原来有一个“文章目录”。它会自动列出文章里的标题，看起来很像文档站。</p>
+<p>但凡人修AI不是文档站。它更像一条普通人的 AI 修炼路径。用户读一篇文章时，更需要沉浸正文，也更需要知道这篇文章的目标、建议节奏和所属路径。</p>
+<p>文章目录在这个场景里有点鸡肋：目录项多，占注意力，分散阅读，还会让页面更像技术文档。</p>
+<p>人先做判断：不要整个左侧栏都删，只去掉真正干扰阅读的文章目录。</p>
+<p>原因很简单。文章目录解决的是“快速跳转”的问题，但凡人修AI的文章更需要用户顺着一条思路读下去。左侧真正有帮助的，不是十几个标题链接，而是提醒用户：这篇文章要完成什么、建议用什么节奏读、它属于哪条修炼路径。</p>
+<p>接下来，人的任务不是自己去翻代码，而是把判断讲清楚：保留有用的修炼提醒，去掉干扰阅读的目录感。</p>
+<section class="tutorial-visual-card tutorial-flow" aria-label="真实案例：删除文章目录">
+        <header>
+          <span>Flow</span>
+          <h3>真实案例：删除文章目录</h3>
+        </header>
+        <ol><li>
+              <span>01</span>
+              <strong>发现问题</strong>
+              <p>文章目录让页面更像文档站，分散了连续阅读的注意力。</p>
+            </li><li>
+              <span>02</span>
+              <strong>做出判断</strong>
+              <p>保留有帮助的修炼提醒，去掉干扰阅读的目录感。</p>
+            </li><li>
+              <span>03</span>
+              <strong>交给 Codex</strong>
+              <p>把这个判断落到侧栏结构和页面交互里。</p>
+            </li><li>
+              <span>04</span>
+              <strong>回到页面</strong>
+              <p>观察左侧是否更安静，正文是否更适合沉浸阅读。</p>
+            </li><li>
+              <span>05</span>
+              <strong>形成方法</strong>
+              <p>先判断该留什么、该删什么，再让 Codex 去执行。</p>
+            </li></ol>
+      </section>
+<p>Codex 负责把这个判断落到页面里。它去处理目录展示、侧栏结构和相关交互，让页面不再像文档站，而更像一篇可以沉浸阅读的修炼文章。</p>
+<p>改完以后，人再回到页面上看：左侧是否还保留目标和路径提醒，正文阅读是否更安静，页面有没有变得更像凡人修AI，而不是普通技术文档。</p>
+<p>结果是，文章目录被去掉了，左侧留下“本篇目标、建议节奏、所属路径”三块提醒，并在桌面端跟随正文滚动。这个改动本身不复杂，但它体现了普通人使用 Codex 的关键方法：先判断什么该留、什么该删，再让 Codex 去执行。</p>
+<p>这个例子最重要的不是“Codex 会删目录”，而是：Codex 不是自己决定删目录，是人在判断后，把一个具体改动讲清楚。</p>
+<h2>普通人给 Codex 提需求，要说清 6 件事</h2>
+<p>如果你想让 Codex 帮你参与一个真实项目，不要只说“帮我优化一下”。这句话太大，边界也太模糊。</p>
+<p>更稳的做法，是每次只处理一个具体问题，并说清 6 件事。</p>
+<section class="tutorial-visual-card tutorial-task-card" aria-label="提需求要说清 6 件事">
+        <header>
+          <span>Task</span>
+          <h3>提需求要说清 6 件事</h3>
+        </header>
+        <div class="tutorial-task-grid">
+          <div>
+            <span>任务目标</span>
+            <strong>把一个模糊项目想法变成 Codex 能执行的小任务。</strong>
+          </div>
+          <div>
+            <span>页面包含什么</span>
+            <ul><li>项目目标</li><li>当前问题</li><li>希望结果</li><li>允许修改范围</li><li>禁止修改范围</li><li>验收方式</li></ul>
+          </div>
+          <div>
+            <span>完成标准</span>
+            <ul><li>Codex 知道要改哪里</li><li>知道哪些不能碰</li><li>知道完成后怎么检查</li></ul>
+          </div>
+        </div>
+      </section>
+<p>第一，项目目标。你要说明这个网站、页面或功能是为了什么。目标不是越大越好，而是让 Codex 知道这次改动服务于什么方向。</p>
+<p>第二，当前问题。哪个页面、哪个模块、哪里不好，要尽量具体。比如“文章页左侧目录太吵”，比“文章页不够高级”更容易执行。</p>
+<p>第三，希望结果。你希望它变成什么样。是更克制、更清楚、更适合阅读，还是按钮跳转更明确？结果说得越清楚，执行越不容易跑偏。</p>
+<p>第四，允许修改范围。哪些文件可以动，哪些模块可以调整。即使你不知道完整文件名，也可以说清页面范围和功能范围。</p>
+<p>第五，禁止修改范围。哪些正文、数据、页面、功能不能碰。这一点很关键。真实项目里，保护边界和完成任务一样重要。</p>
+<p>第六，验收方式。完成后执行什么命令，检查哪些页面，是否需要截图，是否要看搜索索引、sitemap、链接和移动端。</p>
+<h2>用 Codex 做项目时，最容易踩的坑</h2>
+<p>Codex 很强，但项目里真正容易出问题的地方，往往不是它不会执行，而是人没有把任务说清楚。</p>
+<section class="tutorial-visual-card tutorial-compare-table" aria-label="常见踩坑提醒">
+        <header>
+          <span>Compare</span>
+          <h3>常见踩坑提醒</h3>
+        </header>
+        <table>
+          <thead><tr><th>错误做法</th><th>更好的做法</th></tr></thead>
+          <tbody><tr><td>需求太大</td><td>把任务缩成一个页面、一个模块、一个具体问题。</td></tr><tr><td>边界不清</td><td>提前写清允许修改和禁止修改的范围。</td></tr><tr><td>只看构建通过</td><td>构建之后还要看页面体验和移动端显示。</td></tr><tr><td>不看 diff 就提交</td><td>提交前要确认没有改到不该改的文件。</td></tr><tr><td>让 Codex 判断方向</td><td>方向由人判断，Codex 负责把判断落地。</td></tr></tbody>
+        </table>
+      </section>
+<p>第一个坑，是需求太大。比如“帮我优化整个网站”。这种需求听起来明确，其实没法验收。优化哪里？首页、文章页、导航、内容地图，还是移动端？每个地方都可能变成一堆改动。</p>
+<p>第二个坑，是边界不清。你没有说哪些正文不能动、哪些页面不能改、哪些功能必须保留，Codex 就只能根据自己的理解推进。真实项目里，最怕的不是没改，而是改多了。</p>
+<p>第三个坑，是只看构建通过。构建通过只说明页面能生成，不代表体验好，也不代表定位正确。一个按钮位置、一个标题大小、一个左侧栏是否抢注意力，都要人来看。</p>
+<p>第四个坑，是不看 diff 就提交。哪怕结果看起来没问题，也要看改了哪些文件。普通人不一定能读懂每一行代码，但至少要知道改动范围是不是符合自己允许的边界。</p>
+<p>第五个坑，是让 Codex 判断方向。工具执行能力强，但方向应该由人决定。不要把本地路径、密钥、账号、隐私内容暴露给 Codex，也不要让它擅自修改大量文件。最后一定要由人验收。</p>
+<h2>直接复制这段，给 Codex 提一个清楚需求</h2>
+<p>下面这段可以直接复制。你不用一次填得很完美，但至少要把目标、问题、范围和检查方式写出来。</p>
+<div class="copy-block">
+      <div class="copy-block-header">
+        <span>可复制内容</span>
+        <button class="copy-button" type="button" data-copy-button aria-label="复制这段内容">复制</button>
+      </div>
+      <pre><code class="language-text">请帮我处理项目中的一个具体问题。
+
+项目目标是：
+当前遇到的问题是：
+问题出现在哪个页面或功能：
+我希望最终效果是：
+允许你修改的文件范围：
+不要修改的内容：
+需要特别保留的功能：
+完成后请执行的检查命令：
+需要重点检查的页面：
+我希望你完成后输出：
+
+1. 修改了哪些文件
+2. 为什么这样修改
+3. 是否影响其他页面
+4. 是否修改了我禁止修改的内容
+5. 构建是否通过
+6. 是否建议人工截图验收
+
+要求：
+
+不要擅自扩大修改范围。
+不要修改文章正文、标题、slug 或 frontmatter，除非我明确允许。
+不要提交 git commit。
+如果你发现风险，请先说明，不要直接改。</code></pre>
+    </div>
+<p>这段话的核心不是格式，而是提醒你：不要把项目交给一个模糊指令。你越能说清楚，Codex 越像协作伙伴；你越模糊，它越容易变成一个不可控的自动执行器。</p>
+<h2>后面继续怎么练</h2>
+<p>当你能把一个小问题说清楚，就可以继续学习凡人修AI的 Codex 协作流程。</p>
+<p>Codex 专区后面的内容，不会从安装和参数讲起，而会继续从凡人修AI的真实改动里，拆解普通人怎么提需求、怎么验收、怎么把 AI 变成项目协作力。</p>
+<p>先从小范围修改开始，逐步练会：提需求、限边界、看结果、跑构建、做验收，再决定是否提交。</p>
+<p>普通人参与真实 AI 项目，不是一下子变成程序员，也不是把方向交给工具，而是学会把自己的判断变成可执行的小改动。</p>
+<section class="tutorial-next-actions" aria-label="继续练 Codex 协作">
+        <h3>继续练 Codex 协作</h3>
+        <div><a class="tutorial-next-card" href="/tutorials/category/codex/">
+              <strong>回到 Codex 专区</strong>
+              <span>看 Codex 在凡人修AI里的协作方式。</span>
+            </a><a class="tutorial-next-card" href="/tutorials/map/">
+              <strong>查看内容地图</strong>
+              <span>回到完整 AI 修炼路径。</span>
+            </a><a class="tutorial-next-card" href="/tutorials/001-what-is-ai/">
+              <strong>从 001 开始修炼</strong>
+              <span>先把 AI 是什么看清楚。</span>
+            </a></div>
+      </section>
+          <footer class="article-copyright">本文由凡人修AI原创整理，转载请注明来源。</footer>
+        </div>
+      </div>
+
+      <section class="lesson-practice section-pad" aria-labelledby="practice-title">
+        <div>
+          <p class="eyebrow">Practice</p>
+          <h2 id="practice-title">实战任务</h2>
+          <p>修炼不是看完就结束。本篇读完后，请把下面任务变成一次真实输出。</p>
+        </div>
+        <ol><li><span>01</span>说清目标</li><li><span>02</span>限定范围</li><li><span>03</span>让Codex执行</li><li><span>04</span>构建检查</li><li><span>05</span>人工验收</li></ol>
+      </section>
+
+      <section class="lesson-related section-pad" aria-labelledby="related-title">
+        <div class="lesson-section-title">
+          <p class="eyebrow">Next</p>
+          <h2 id="related-title">相关教程</h2>
+        </div>
+        <div class="lesson-related-grid"><a class="lesson-related-card" href="../codex-project-collaboration/index.html">
+        <span>Codex专区</span>
+        <strong>凡人修AI项目协作流程：老张、小张、导师和 Codex 各负责什么</strong>
+        <p>复盘凡人修AI项目里的真实协作方式，讲清项目负责人、执行伙伴、导师和 Codex 的分工，让普通人理解如何把 AI 工具放进可控的项目流程。</p>
+      </a><a class="lesson-related-card" href="../001-what-is-ai/index.html">
+        <span>AI基础认知</span>
+        <strong>什么是AI：第一次打开AI工具，别只问“帮我写一下”</strong>
+        <p>面向第一次打开 AI 工具的普通人，讲清 AI 可以怎样协助起草、整理和改写，以及如何用一个真实小练习学会给背景、看输出和人工检查。</p>
+      </a><a class="lesson-related-card" href="../002-ai-history/index.html">
+        <span>AI基础认知</span>
+        <strong>AI的发展历史：它不是突然火了，而是终于轮到普通人使用了</strong>
+        <p>面向刚开始关注 AI 的普通人，讲清 AI 为什么看起来像突然火了，其实长期藏在搜索、推荐、地图和客服等后台能力里，现在才变成普通人能直接对话使用的助手。</p>
+      </a></div>
+      </section>
+
+      <section class="lesson-join section-pad" aria-labelledby="join-title">
+        <div>
+          <p class="eyebrow">Community</p>
+          <h2 id="join-title">加入凡人修AI道友群</h2>
+          <p>把你的实战任务、踩坑记录和作品发出来，和一群普通人一起复盘、迭代、成长。</p>
+        </div>
+        <a class="btn btn-primary" href="../../index.html#community">加入道友群</a>
+      </section>
+    </article></main>
+    <footer class="site-footer">
+      <p>凡人修AI © 2026</p>
+      <p><a href="../../about/">关于</a> · <a href="../../community/">社区</a> · 普通人的AI学习与实践平台</p>
+    </footer>
+    <script src="../../script.js?v=20260614-codex-zone"></script>
+  </body>
+</html>

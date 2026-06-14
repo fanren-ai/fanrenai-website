@@ -4,7 +4,7 @@ const site = {
   description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
 };
 
-const assetVersion = "20260613-sidebar-sticky";
+const assetVersion = "20260614-codex-zone";
 
 const categories = {
   "ai-cognition": "AI基础认知",
