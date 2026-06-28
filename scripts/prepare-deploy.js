@@ -13,6 +13,8 @@ const entries = [
   "assets",
   "about",
   "community",
+  "execute",
+  "tools",
   "tutorials"
 ];
 

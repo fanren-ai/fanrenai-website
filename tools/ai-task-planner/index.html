@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="把模糊的 AI 需求整理成 Codex 能执行、能检查、能验收的清楚任务。" />
+    <meta name="keywords" content="AI需求拆解,Codex提示词,AI任务拆解,AI项目执行" />
+    <meta name="theme-color" content="#111827" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="凡人修AI" />
+    <meta property="og:title" content="AI需求任务拆解器 | 凡人修AI" />
+    <meta property="og:description" content="把模糊的 AI 需求整理成 Codex 能执行、能检查、能验收的清楚任务。" />
+    <meta property="og:url" content="https://www.fanrenai.cn/tools/ai-task-planner/" />
+    <meta property="og:image" content="https://www.fanrenai.cn/assets/hero-v2-ai-cultivation.png" />
+    <meta property="og:image:alt" content="凡人修AI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI需求任务拆解器 | 凡人修AI" />
+    <meta name="twitter:description" content="把模糊的 AI 需求整理成 Codex 能执行、能检查、能验收的清楚任务。" />
+    <meta name="twitter:image" content="https://www.fanrenai.cn/assets/hero-v2-ai-cultivation.png" />
+    <link rel="canonical" href="https://www.fanrenai.cn/tools/ai-task-planner/" />
+    
+    
+    
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://www.fanrenai.cn/#organization","name":"凡人修AI","url":"https://www.fanrenai.cn","logo":{"@type":"ImageObject","url":"https://www.fanrenai.cn/assets/brand/fanrenai-logo-mark-256.png"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.fanrenai.cn/#website","name":"凡人修AI","url":"https://www.fanrenai.cn","description":"普通人的AI修行之路，帮助普通人从AI小白到AI高手。","publisher":{"@id":"https://www.fanrenai.cn/#organization"},"inLanguage":"zh-CN"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.fanrenai.cn/"},{"@type":"ListItem","position":2,"name":"AI需求任务拆解器","item":"https://www.fanrenai.cn/tools/ai-task-planner/"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI需求任务拆解器","description":"把模糊的 AI 需求整理成 Codex 能执行、能检查、能验收的清楚任务。","url":"https://www.fanrenai.cn/tools/ai-task-planner/","applicationCategory":"ProductivityApplication","operatingSystem":"Web"}</script>
+    <title>AI需求任务拆解器 | 凡人修AI</title>
+    <link rel="icon" type="image/png" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="apple-touch-icon" href="../../assets/brand/fanrenai-logo-mark-256.png" />
+    <link rel="stylesheet" href="../../styles.css?v=20260614-codex-zone" />
+  </head>
+  <body class="tool-page ai-task-planner-page">
+    <header class="site-header" id="top">
+      <nav class="nav-shell" aria-label="主导航">
+        <a class="brand" href="../../index.html" aria-label="凡人修AI 首页">
+          <img class="brand-logo" src="../../assets/brand/fanrenai-logo-mark-256.png" alt="" width="40" height="40" loading="eager" decoding="async" />
+          <span>凡人修AI</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-menu" id="site-menu">
+          <a href="../../index.html">首页</a><a href="../../tutorials/index.html">AI教程</a><a href="../../tutorials/map/index.html">内容地图</a><a href="../../tutorials/category/codex/index.html">Codex专区</a><a href="https://tools.fanrenai.cn/">AI工具箱</a>
+          <a class="nav-cta" href="../../community/index.html">加入社区</a>
+        </div>
+      </nav>
+    </header>
+    <main><section class="tool-hero section-pad" aria-labelledby="task-planner-title">
+      <div class="tool-hero-inner">
+        <p class="page-hero-eyebrow">AI Task Planner</p>
+        <h1 id="task-planner-title">把你的 AI 需求，拆成 Codex 能执行的任务</h1>
+        <p>很多普通人不是没有想法，而是不知道怎么把想法说成一个 AI 可以执行、可以检查、可以验收的任务。这个工具帮你先把目标、范围、边界和验收方式说清楚，再交给 Codex 执行。</p>
+        <p><strong>Codex 负责执行，人负责判断和验收。</strong></p>
+        <div class="codex-hero-actions">
+          <a class="btn btn-primary" href="#task-planner-form">开始拆解任务</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool-shell section-pad">
+      <section class="tool-panel" id="task-planner-form" aria-labelledby="task-form-title">
+        <div class="tool-section-head">
+          <span>Step 01</span>
+          <h2 id="task-form-title">先把你的需求说清楚</h2>
+          <p>可以先粗略填写。没写的地方，生成结果会提醒你后续补充。</p>
+        </div>
+        <form class="task-planner-form" data-ai-task-planner-form>
+          <label>
+            <span>我想完成什么？</span>
+            <textarea name="goal" rows="3" placeholder="例如：我想把一篇公众号文章整理成网页版本 / 我想修改网站首页的入口 / 我想做一个小工具雏形"></textarea>
+          </label>
+          <label>
+            <span>这是哪类任务？</span>
+            <select name="type">
+              <option value="写文章或内容">写文章或内容</option><option value="整理资料或文档">整理资料或文档</option><option value="生成网页或落地页">生成网页或落地页</option><option value="修改已有页面">修改已有页面</option><option value="做一个小工具雏形">做一个小工具雏形</option><option value="拆项目执行计划">拆项目执行计划</option><option value="检查文件或链接问题">检查文件或链接问题</option><option value="其他">其他</option>
+            </select>
+          </label>
+          <label>
+            <span>我现在卡在哪里？</span>
+            <textarea name="stuck" rows="3" placeholder="例如：我不知道怎么组织结构 / 页面效果不舒服 / 不知道该让 Codex 改哪里 / 怕它乱改"></textarea>
+          </label>
+          <label>
+            <span>我希望最终得到什么结果？</span>
+            <textarea name="result" rows="3" placeholder="例如：生成一个清楚的页面结构 / 输出一份可复制的文章文件 / 修改指定页面但不影响其他页面"></textarea>
+          </label>
+          <label>
+            <span>这次允许 AI 处理什么？</span>
+            <textarea name="allowed" rows="3" placeholder="例如：只允许处理这个页面 / 只允许整理这份资料 / 只允许生成新文件，不改已有内容"></textarea>
+          </label>
+          <label>
+            <span>这次不能碰什么？</span>
+            <textarea name="forbidden" rows="3" placeholder="例如：不要改已有文章标题 / 不要修改首页 / 不要处理账号、密钥、客户隐私资料"></textarea>
+          </label>
+          <label>
+            <span>完成后我怎么验收？</span>
+            <textarea name="acceptance" rows="3" placeholder="例如：页面能正常打开 / 文案逻辑清楚 / 链接可点击 / 移动端不横向滚动 / 我最终人工确认"></textarea>
+          </label>
+          <button class="btn btn-primary task-planner-submit" type="submit">生成 Codex 任务</button>
+        </form>
+      </section>
+
+      <section class="tool-output" data-task-planner-output hidden aria-live="polite">
+        <div class="tool-section-head">
+          <span>Step 02</span>
+          <h2>生成结果</h2>
+          <p>复制第一块内容给 Codex，再用风险提醒和验收清单守住边界。</p>
+        </div>
+        <article class="tool-result-card">
+          <h3>给 Codex 的任务提示词</h3>
+          <div class="copy-block">
+            <div class="copy-block-header">
+              <span>可复制任务提示词</span>
+              <button class="copy-button" type="button" data-copy-button data-copy-success-label="已复制，可以交给 Codex 了。" aria-label="复制给 Codex">复制给 Codex</button>
+            </div>
+            <pre><code data-task-planner-prompt></code></pre>
+          </div>
+        </article>
+        <div class="tool-output-grid">
+          <article class="tool-result-card">
+            <h3>风险提醒</h3>
+            <ul>
+              <li>不要把项目方向完全交给 Codex</li>
+              <li>不要一次让 Codex 改太大范围</li>
+              <li>不要提交未经人工检查的结果</li>
+              <li>不要输入账号、密钥、客户资料等敏感信息</li>
+              <li>构建通过不等于体验通过，最终还要人工验收</li>
+            </ul>
+          </article>
+          <article class="tool-result-card">
+            <h3>人工验收清单</h3>
+            <ul>
+              <li>结果是否符合最初目标</li>
+              <li>是否只处理了允许范围</li>
+              <li>是否碰了禁止内容</li>
+              <li>页面或文件是否能正常使用</li>
+              <li>移动端是否正常</li>
+              <li>是否需要继续修改、提交或回退</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <section class="tutorial-next-actions tool-next-actions section-pad" aria-label="下一步行动">
+      <h3>继续让需求变清楚</h3>
+      <div>
+        <a class="tutorial-next-card" href="/tutorials/category/codex/"><strong>回到 Codex 专区</strong><span>继续理解普通人的 AI 执行中心。</span></a>
+        <a class="tutorial-next-card" href="/tutorials/codex-real-project-guide/"><strong>阅读：普通人怎么用 Codex 参与一个真实项目</strong><span>先学会把一个具体问题交给 Codex。</span></a>
+        <a class="tutorial-next-card" href="/tutorials/map/"><strong>查看内容地图</strong><span>回到完整 AI 修炼路径。</span></a>
+      </div>
+    </section></main>
+    <footer class="site-footer">
+      <p>凡人修AI © 2026</p>
+      <p><a href="../../about/">关于</a> · <a href="../../community/">社区</a> · 普通人的AI学习与实践平台</p>
+    </footer>
+    <script src="../../script.js?v=20260614-codex-zone"></script>
+  </body>
+</html>

@@ -140,7 +140,7 @@ document.addEventListener("click", async (event) => {
 
   try {
     await copyText(text);
-    button.textContent = "已复制";
+    button.textContent = button.dataset.copySuccessLabel || "已复制";
     button.classList.add("is-copied");
   } catch {
     button.textContent = "请手动复制";
@@ -152,6 +152,68 @@ document.addEventListener("click", async (event) => {
     }, 1600);
   }
 });
+
+function setupAiTaskPlanner() {
+  const form = document.querySelector("[data-ai-task-planner-form]");
+  const output = document.querySelector("[data-task-planner-output]");
+  const promptTarget = document.querySelector("[data-task-planner-prompt]");
+  if (!(form instanceof HTMLFormElement) || !(output instanceof HTMLElement) || !(promptTarget instanceof HTMLElement)) return;
+
+  const fallback = "请根据实际情况补充";
+  const valueOf = (name) => {
+    const field = form.elements.namedItem(name);
+    if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement || field instanceof HTMLSelectElement) {
+      return field.value.trim() || fallback;
+    }
+    return fallback;
+  };
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const prompt = `请帮我处理一个具体的 AI 执行任务。
+
+我的目标是：
+${valueOf("goal")}
+
+任务类型是：
+${valueOf("type")}
+
+我现在卡住的问题是：
+${valueOf("stuck")}
+
+我希望最终得到：
+${valueOf("result")}
+
+这次允许你处理的范围是：
+${valueOf("allowed")}
+
+这次不能修改或处理的内容是：
+${valueOf("forbidden")}
+
+完成后请按下面方式帮助我验收：
+${valueOf("acceptance")}
+
+请你完成后告诉我：
+
+1. 你具体做了什么
+2. 修改或生成了哪些内容
+3. 是否影响其他页面、文件或功能
+4. 是否存在风险
+5. 我应该如何人工验收
+
+要求：
+
+不要擅自扩大任务范围。
+不要替我决定项目方向。
+不要处理我没有授权的隐私、账号、密钥或客户资料。
+如果发现风险，请先说明，不要直接继续。`;
+
+    promptTarget.textContent = prompt;
+    output.hidden = false;
+    output.classList.add("is-visible");
+    output.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
+  });
+}
 
 const copyProtectedArticleSelector = '[data-copy-protected="article"]';
 const copyAllowedSelector = 'code, pre, input, textarea, [data-copy-unlocked="true"], .copy-block, .copy-code-block';
@@ -232,3 +294,4 @@ document.addEventListener("keydown", (event) => {
 setupRevealMotion();
 setupReadingProgress();
 setupArticleHeadingIds();
+setupAiTaskPlanner();

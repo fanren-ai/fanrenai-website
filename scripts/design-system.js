@@ -1,7 +1,10 @@
+const siteOrigin = "https://www.fanrenai.cn";
 const site = {
   name: "凡人修AI",
-  origin: "https://www.fanrenai.cn",
-  description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。"
+  origin: siteOrigin,
+  description: "普通人的AI修行之路，帮助普通人从AI小白到AI高手。",
+  logo: `${siteOrigin}/assets/brand/fanrenai-logo-mark-256.png`,
+  socialImage: `${siteOrigin}/assets/hero-v2-ai-cultivation.png`
 };
 
 const assetVersion = "20260614-codex-zone";
@@ -66,6 +69,67 @@ function escapeHtml(value = "") {
     .replaceAll('"', "&quot;");
 }
 
+function normalizeAbsoluteUrl(value = "") {
+  if (!value) return "";
+  if (/^https?:\/\//.test(value)) return value;
+  if (value.startsWith("/")) return `${site.origin}${value}`;
+  return `${site.origin}/${value.replace(/^\.?\//, "")}`;
+}
+
+function safeJsonLd(value) {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}
+
+function renderJsonLd(data) {
+  const blocks = Array.isArray(data) ? data : [data];
+  return blocks
+    .filter(Boolean)
+    .map((block) => `<script type="application/ld+json">${safeJsonLd(block)}</script>`)
+    .join("\n    ");
+}
+
+function organizationJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${site.origin}/#organization`,
+    name: site.name,
+    url: site.origin,
+    logo: {
+      "@type": "ImageObject",
+      url: site.logo
+    }
+  };
+}
+
+function webSiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${site.origin}/#website`,
+    name: site.name,
+    url: site.origin,
+    description: site.description,
+    publisher: {
+      "@id": `${site.origin}/#organization`
+    },
+    inLanguage: "zh-CN"
+  };
+}
+
+function breadcrumbJsonLd(items = []) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url
+    }))
+  };
+}
+
 function homeHref(base, anchor, isHome) {
   return isHome ? `#${anchor}` : `${base}index.html#${anchor}`;
 }
@@ -113,26 +177,56 @@ function renderFooter(base = "") {
     </footer>`;
 }
 
-function layout({ title, description, base = "", body, extraHead = "", bodyClass = "", headerVariant = "default", canonicalUrl = "" }) {
+function layout({
+  title,
+  description,
+  base = "",
+  body,
+  extraHead = "",
+  bodyClass = "",
+  headerVariant = "default",
+  canonicalUrl = "",
+  ogType = "website",
+  socialImage = site.socialImage,
+  keywords = [],
+  prevUrl = "",
+  nextUrl = "",
+  structuredData = []
+}) {
   const safeTitle = escapeHtml(title);
   const safeDescription = escapeHtml(description || site.description);
+  const safeImage = escapeHtml(normalizeAbsoluteUrl(socialImage) || site.socialImage);
   const ogUrl = canonicalUrl || site.origin;
   const canonical = canonicalUrl ? `<link rel="canonical" href="${escapeHtml(canonicalUrl)}" />` : "";
+  const keywordContent = Array.isArray(keywords) ? keywords.filter(Boolean).join(",") : keywords;
+  const keywordMeta = keywordContent ? `<meta name="keywords" content="${escapeHtml(keywordContent)}" />` : "";
+  const paginationLinks = `${prevUrl ? `<link rel="prev" href="${escapeHtml(prevUrl)}" />` : ""}
+    ${nextUrl ? `<link rel="next" href="${escapeHtml(nextUrl)}" />` : ""}`;
+  const jsonLd = renderJsonLd([organizationJsonLd(), webSiteJsonLd(), ...[].concat(structuredData || [])]);
   return `<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="${safeDescription}" />
-    <meta property="og:site_name" content="${site.name}" />
+    ${keywordMeta}
+    <meta name="theme-color" content="#111827" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:type" content="${escapeHtml(ogType)}" />
+    <meta property="og:site_name" content="${escapeHtml(site.name)}" />
     <meta property="og:title" content="${safeTitle}" />
     <meta property="og:description" content="${safeDescription}" />
     <meta property="og:url" content="${escapeHtml(ogUrl)}" />
-    <meta property="og:image" content="${site.origin}/assets/brand/fanrenai-logo-mark.png" />
+    <meta property="og:image" content="${safeImage}" />
+    <meta property="og:image:alt" content="${escapeHtml(site.name)}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="${site.origin}/assets/brand/fanrenai-logo-mark.png" />
+    <meta name="twitter:title" content="${safeTitle}" />
+    <meta name="twitter:description" content="${safeDescription}" />
+    <meta name="twitter:image" content="${safeImage}" />
     ${canonical}
+    ${paginationLinks}
     ${extraHead}
+    ${jsonLd}
     <title>${safeTitle}</title>
     <link rel="icon" type="image/png" href="${base}assets/brand/fanrenai-logo-mark-256.png" />
     <link rel="apple-touch-icon" href="${base}assets/brand/fanrenai-logo-mark-256.png" />
@@ -223,20 +317,43 @@ function renderHomeLatestCards(articles = []) {
     .join("");
 }
 
-function renderArticlePage(article, related) {
+function renderArticlePage(article, related = []) {
   const isPublished = article.status === "published";
+  const articleUrl = `${site.origin}/tutorials/${article.slug}/`;
+  const articleImage = normalizeAbsoluteUrl(article.cover) || site.socialImage;
+  const wordCount = article.body ? article.body.replace(/\s/g, "").length : 0;
+  const durationMinutes = Number((article.duration || "").match(/\d+/)?.[0] || article.minutes || 1);
+  const articleTags = article.tags || [];
+  const categoryName = article.categoryName || article.section || "AI教程";
+  const categorySlug = article.category || "ai-cognition";
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
+    "@id": `${articleUrl}#article`,
     headline: article.title,
     description: article.description,
-    author: { "@type": "Organization", name: article.author },
+    image: articleImage,
+    url: articleUrl,
+    inLanguage: "zh-CN",
+    isPartOf: { "@id": `${site.origin}/#website` },
+    author: { "@type": "Organization", name: article.author || site.name },
+    publisher: { "@id": `${site.origin}/#organization` },
     datePublished: article.date,
-    mainEntityOfPage: `${site.origin}/tutorials/${article.slug}/`
+    dateModified: article.updated || article.date,
+    articleSection: categoryName,
+    keywords: articleTags,
+    wordCount,
+    timeRequired: `PT${durationMinutes}M`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl
+    }
   };
   const seoHead = isPublished
     ? `<meta property="article:published_time" content="${article.date}" />
-    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`
+    <meta property="article:modified_time" content="${escapeHtml(article.updated || article.date)}" />
+    <meta property="article:section" content="${escapeHtml(categoryName)}" />
+    ${articleTags.map((tag) => `<meta property="article:tag" content="${escapeHtml(tag)}" />`).join("\n    ")}`
     : '<meta name="robots" content="noindex,nofollow" />';
   const duration = article.duration || `${article.minutes}分钟`;
 
@@ -245,7 +362,21 @@ function renderArticlePage(article, related) {
     description: article.description,
     base: "../../",
     canonicalUrl: isPublished ? `${site.origin}/tutorials/${article.slug}/` : "",
+    ogType: "article",
+    socialImage: articleImage,
+    keywords: articleTags,
     extraHead: seoHead,
+    structuredData: isPublished
+      ? [
+          jsonLd,
+          breadcrumbJsonLd([
+            { name: "首页", url: `${site.origin}/` },
+            { name: "AI教程", url: `${site.origin}/tutorials/` },
+            { name: categoryName, url: `${site.origin}/tutorials/category/${categorySlug}/` },
+            { name: article.title, url: articleUrl }
+          ])
+        ]
+      : [],
     body: `<div class="reading-progress" aria-hidden="true"><span></span></div>
     <article class="lesson-shell">
       <header class="lesson-hero section-pad">
@@ -381,6 +512,14 @@ function renderHomePage(articles = []) {
     ["完成作品", "做出第一个小作品"],
     ["复盘入群", "进入社区继续修炼"]
   ];
+  const latestItems = [...articles]
+    .filter((article) => article.status === "published")
+    .sort((a, b) => {
+      const dateCompare = b.date.localeCompare(a.date);
+      if (dateCompare) return dateCompare;
+      return (b.order || 0) - (a.order || 0);
+    })
+    .slice(0, 6);
 
   return layout({
     title: "凡人修AI | 普通人的AI学习与实践平台",
@@ -389,6 +528,20 @@ function renderHomePage(articles = []) {
     bodyClass: "platform-home",
     headerVariant: "home",
     canonicalUrl: `${site.origin}/`,
+    keywords: ["AI教程", "普通人学AI", "Prompt工作流", "Codex实战", "AI副业", "AI办公"],
+    structuredData: [
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "凡人修AI最新教程",
+        itemListElement: latestItems.map((article, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: `${site.origin}/tutorials/${article.slug}/`,
+          name: article.title
+        }))
+      }
+    ],
     body: `<section class="platform-hero" aria-labelledby="home-title">
         <div class="platform-hero-grid">
           <div class="platform-hero-copy">
@@ -538,7 +691,14 @@ function renderAboutPage() {
     description: "为什么创建凡人修AI：一个非技术背景创业者，从百度SEM销售、团队管理、企业金融服务和创业实践，到转型AI实践者的真实记录。",
     base: "../",
     canonicalUrl: `${site.origin}/about/`,
-    body: `<main class="about-page">
+    keywords: ["凡人修AI", "AI转型", "普通人学AI", "AI创业"],
+    structuredData: [
+      breadcrumbJsonLd([
+        { name: "首页", url: `${site.origin}/` },
+        { name: "关于凡人修AI", url: `${site.origin}/about/` }
+      ])
+    ],
+    body: `<div class="about-page">
       <section class="about-hero">
         <p class="eyebrow">创始故事</p>
         <h1>为什么创建凡人修AI？</h1>
@@ -644,7 +804,7 @@ function renderAboutPage() {
           ${renderButton({ href: "/community/", label: "加入社区", variant: "secondary" })}
         </div>
       </section>
-    </main>`
+    </div>`
   });
 }
 
@@ -654,6 +814,13 @@ function renderCommunityPage() {
     description: "加入凡人修AI社区，和更多普通人一起学习AI、实践AI、参与共学营、直播分享、项目实战和作品复盘。",
     base: "../",
     canonicalUrl: `${site.origin}/community/`,
+    keywords: ["凡人修AI社区", "AI学习社群", "AI共学", "Codex实战"],
+    structuredData: [
+      breadcrumbJsonLd([
+        { name: "首页", url: `${site.origin}/` },
+        { name: "凡人修AI社区", url: `${site.origin}/community/` }
+      ])
+    ],
     body: `<section class="static-page trust-page community-page section-pad">
       <p class="eyebrow">社区</p>
       <h1>加入凡人修AI社区</h1>
@@ -755,8 +922,10 @@ module.exports = {
   site,
   categories,
   cultivationLevels,
+  breadcrumbJsonLd,
   escapeHtml,
   layout,
+  normalizeAbsoluteUrl,
   renderArticleCard,
   renderArticlePage,
   renderAboutPage,
